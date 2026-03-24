@@ -31,11 +31,13 @@ const Home = () => (
             </div>
           </div>
           <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            <img
-              src={solarianHero}
-              alt="The Solarian Deep by David Deane Haskell"
-              className="w-full rounded-sm shadow-lg"
-            />
+            <a href="https://www.amazon.com/dp/B0GPN8DBJS" target="_blank" rel="noopener noreferrer">
+              <img
+                src={solarianHero}
+                alt="The Solarian Deep by David Deane Haskell"
+                className="w-full rounded-sm shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+              />
+            </a>
           </div>
         </div>
       </div>

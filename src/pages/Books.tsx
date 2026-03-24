@@ -45,13 +45,13 @@ const Books = () => (
 
         {/* Featured: Solarian Deep */}
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <img src={solarianHero} alt="The Solarian Deep" className="w-full rounded-sm shadow-lg" />
-          <BookCard
-            title="The Solarian Deep"
-            description="The surface is lost. The evolution has begun. Book 1 of the Technoquatics Series plunges you into a world where humanity must adapt or perish beneath the waves."
-            buyUrl="https://www.amazon.com/dp/B0GPN8DBJS"
-            buyLabel="Read It Now"
-          />
+          <a href="https://www.amazon.com/dp/B0GPN8DBJS" target="_blank" rel="noopener noreferrer">
+            <img src={solarianHero} alt="The Solarian Deep" className="w-full rounded-sm shadow-lg hover:shadow-xl transition-shadow cursor-pointer" />
+          </a>
+          <div className="space-y-4">
+            <h3 className="heading-subsection">The Solarian Deep</h3>
+            <p className="body-text">The surface is lost. The evolution has begun. Book 1 of the Technoquatics Series plunges you into a world where humanity must adapt or perish beneath the waves.</p>
+          </div>
         </div>
 
         {/* Collection image */}
@@ -64,7 +64,8 @@ const Books = () => (
           <BookCard
             title="Emergence"
             description="In the gleaming city of Tera-Prime, the future has just been cancelled. Alixs uncovers a 'kill switch' designed to wipe his people from existence. Marked for death, he must run into the shadows of the underground to expose the dangerous truth."
-            buyUrl="https://amzn.to/4cXhYiJ"
+            buyUrl="https://dl.bookfunnel.com/k7osg3nq37"
+            buyLabel="Read Free"
           />
           <BookCard
             title="The Gold Club"
