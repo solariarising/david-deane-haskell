@@ -16,7 +16,15 @@ const Contact = () => {
           <div className="space-y-6 text-center">
             <h1 className="heading-display">Get in Touch</h1>
             <p className="body-large">
-              Whether it's about books, drumming, collaboration, or just saying hello—David would love to hear from you.
+              Whether it's about books, collaboration, or just saying hello—David would love to hear from you.
+            </p>
+          </div>
+
+          <div className="divider" />
+
+          <div className="space-y-4 text-center">
+            <p className="body-text">
+              David is available for book signings, interviews, podcasts, sci-fi and healing outreach, music and performance, and teaching across all of the above. If it sounds like a good fit, reach out.
             </p>
           </div>
 
