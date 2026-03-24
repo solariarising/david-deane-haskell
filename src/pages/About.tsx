@@ -17,19 +17,18 @@ const About = () => (
             <h1 className="heading-display">About David</h1>
             <div className="space-y-5 body-text">
               <p>
-                David Deane Haskell writes how transformation feels—from trauma to healing, disconnection to self-return.
+                David Deane Haskell is a novelist, visionary, and storyteller working at the frontier of speculative fiction and human transformation.
               </p>
               <p>
-                His memoir, <em>Wounded Angels</em>, is a raw, intimate dive into despair, hopelessness, and the long road to peace. His science fiction blends visionary imagery with the truths they reflect—where tech-heavy futures meet long-lost truths, and the loving heart always finds a way to short-circuit the machine.
+                His science fiction blends bold, tech-heavy futures with long-lost truths—worlds where artificial intelligence meets ancient consciousness, where domed cities hum with secrets, and the loving heart always finds a way to short-circuit the machine. These are stories of what we might become when we stop forgetting who we are.
               </p>
               <p>
-                David is currently wandering around Asia for a while, writing from the edge of where the old world ends and the new one begins.
+                His memoir, <em>Wounded Angels</em>, takes a different path—inward. It's a raw, intimate journey through despair, hopelessness, and the long road to peace. A homecoming to the parts of ourselves we left behind. Because sometimes, the bravest act of all is simply coming back to yourself—so you can step forward again.
+              </p>
+              <p>
+                David is currently wandering around Asia, writing from the edge of where the old world ends and the new one begins.
               </p>
             </div>
-            <div className="divider !mx-0 !w-12 my-8" />
-            <p className="text-sm text-muted-foreground italic leading-relaxed">
-              A quick note on the name: David Deane Haskell is an author of optimistic sci-fi and inner-child healing memoirs. He is not the British-American biologist David George Haskell, and is completely unaffiliated with the Haskell programming language.
-            </p>
           </div>
         </div>
       </div>
