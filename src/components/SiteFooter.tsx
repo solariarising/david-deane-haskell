@@ -5,7 +5,7 @@ const SiteFooter = () => (
     <div className="page-container text-center space-y-4">
       <p className="font-heading text-lg text-foreground">David Deane Haskell</p>
       <p className="body-text text-sm">
-        Novelist · Drummer · Teacher
+        Novelist · Visionary · Storyteller
       </p>
       <div className="flex justify-center gap-6 text-sm text-muted-foreground">
         <Link to="/books" className="hover:text-foreground transition-colors">Books</Link>
