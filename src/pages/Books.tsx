@@ -64,7 +64,8 @@ const Books = () => (
           <BookCard
             title="Emergence"
             description="In the gleaming city of Tera-Prime, the future has just been cancelled. Alixs uncovers a 'kill switch' designed to wipe his people from existence. Marked for death, he must run into the shadows of the underground to expose the dangerous truth."
-            buyUrl="https://amzn.to/4cXhYiJ"
+            buyUrl="https://dl.bookfunnel.com/k7osg3nq37"
+            buyLabel="Read Free"
           />
           <BookCard
             title="The Gold Club"

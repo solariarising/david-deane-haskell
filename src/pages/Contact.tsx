@@ -24,7 +24,7 @@ const Contact = () => {
 
           <div className="space-y-4 text-center">
             <p className="body-text">
-              David is available for book signings, interviews, podcasts, sci-fi and healing outreach, music and performance, and teaching across all of the above. If it sounds like a good fit, reach out.
+              David is available for book signings, interviews, podcasts, sci-fi and healing outreach, music and performance, clinics and workshops, and one-on-one educational sessions. If it sounds like a good fit, reach out.
             </p>
           </div>
 
