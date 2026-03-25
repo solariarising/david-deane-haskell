@@ -156,4 +156,104 @@
     background: hsl(var(--card));
     box-shadow: var(--shadow-card);
   }
+
+  /* Sci-fi zone */
+  .zone-scifi {
+    background: hsl(var(--scifi-bg));
+    color: hsl(var(--scifi-fg));
+  }
+
+  .zone-scifi .heading-display,
+  .zone-scifi .heading-section,
+  .zone-scifi .heading-subsection {
+    color: hsl(var(--scifi-fg));
+  }
+
+  .zone-scifi .body-text,
+  .zone-scifi .body-large {
+    color: hsl(var(--scifi-muted));
+  }
+
+  .zone-scifi .btn-primary {
+    background: hsl(var(--scifi-accent));
+    color: hsl(var(--scifi-bg));
+  }
+
+  .zone-scifi .btn-outline {
+    border-color: hsl(var(--scifi-accent));
+    color: hsl(var(--scifi-accent));
+  }
+
+  .zone-scifi .btn-outline:hover {
+    background: hsl(var(--scifi-accent));
+    color: hsl(var(--scifi-bg));
+  }
+
+  .zone-scifi .divider {
+    background: hsl(var(--scifi-border));
+  }
+
+  .zone-scifi .text-muted-foreground {
+    color: hsl(var(--scifi-accent));
+  }
+
+  /* Transition bridge */
+  .zone-bridge {
+    background: linear-gradient(
+      to bottom,
+      hsl(var(--scifi-bg)),
+      hsl(25 20% 16%) 40%,
+      hsl(30 25% 30%) 70%,
+      hsl(var(--healing-bg))
+    );
+    color: hsl(35 30% 80%);
+  }
+
+  .zone-bridge .heading-section {
+    color: hsl(35 40% 80%);
+  }
+
+  .zone-bridge .body-text {
+    color: hsl(35 20% 65%);
+  }
+
+  /* Healing zone */
+  .zone-healing {
+    background: hsl(var(--healing-bg));
+    color: hsl(var(--healing-fg));
+  }
+
+  .zone-healing .heading-display,
+  .zone-healing .heading-section,
+  .zone-healing .heading-subsection {
+    color: hsl(var(--healing-fg));
+  }
+
+  .zone-healing .body-text,
+  .zone-healing .body-large {
+    color: hsl(var(--healing-muted));
+  }
+
+  .zone-healing .btn-primary {
+    background: hsl(var(--healing-accent));
+    color: hsl(0 0% 100%);
+  }
+
+  .zone-healing .btn-outline {
+    border-color: hsl(var(--healing-fg));
+    color: hsl(var(--healing-fg));
+  }
+
+  .zone-healing .btn-outline:hover {
+    background: hsl(var(--healing-fg));
+    color: hsl(var(--healing-bg));
+  }
+
+  .zone-healing .text-muted-foreground {
+    color: hsl(var(--healing-accent));
+  }
+
+  .zone-healing .divider {
+    background: hsl(var(--healing-border));
+  }
 }
