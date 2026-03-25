@@ -6,7 +6,10 @@ import solarianHero from "@/assets/solarian-deep-hero.jpg";
 import fictionBooks from "@/assets/fiction-books.jpg";
 import woundedAngels from "@/assets/wounded-angels.jpg";
 
-const Home = () => (
+const Home = () => {
+  const [showFreeStories, setShowFreeStories] = useState(false);
+
+  return (
   <PageLayout>
     {/* Hero — Sci-Fi Zone */}
     <div className="zone-scifi">
