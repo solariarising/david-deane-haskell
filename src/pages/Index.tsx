@@ -117,20 +117,33 @@ const Home = () => (
       {/* CTA */}
       <section className="section-spacing">
         <div className="page-container text-center max-w-2xl mx-auto space-y-6">
-          <h2 className="heading-section">Begin with two free stories.</h2>
+          <h2 className="heading-section">Begin with free bonus stories.</h2>
           <p className="body-text">
-            Get instant access to two of David's short stories—no spam, just fiction that stays with you.
+            Start exploring David's science fiction right now for free—no spam, just fiction that resonates.
+          </p>
+          <button onClick={() => setShowFreeStories(true)} className="btn-primary">
+            Free Bonus Stories
+          </button>
+        </div>
+      </section>
+
+      {/* Free Stories Popup */}
+      <Dialog open={showFreeStories} onOpenChange={setShowFreeStories}>
+        <DialogContent className="zone-scifi border-primary/20 text-center max-w-md space-y-5 p-8">
+          <DialogTitle className="heading-section text-xl">Free Bonus Stories</DialogTitle>
+          <p className="body-text text-sm">
+            Get instant access to David's bonus science fiction stories. Delivered straight to your inbox via BookFunnel—no spam, ever.
           </p>
           <a
             href="https://dl.bookfunnel.com/k7osg3nq37"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary"
+            className="btn-primary inline-block"
           >
-            Join for Free Fiction
+            Get Your Free Stories
           </a>
-        </div>
-      </section>
+        </DialogContent>
+      </Dialog>
     </div>
   </PageLayout>
 );
