@@ -42,6 +42,22 @@
     --shadow-soft: 0 4px 24px -4px hsl(220 15% 15% / 0.06);
     --shadow-card: 0 8px 32px -8px hsl(220 15% 15% / 0.08);
 
+    /* Sci-fi atmosphere */
+    --scifi-bg: 220 25% 8%;
+    --scifi-fg: 200 30% 85%;
+    --scifi-muted: 210 20% 55%;
+    --scifi-accent: 195 85% 45%;
+    --scifi-border: 210 20% 20%;
+    --scifi-glow: 195 100% 50%;
+
+    /* Healing atmosphere */
+    --healing-bg: 35 35% 95%;
+    --healing-fg: 25 20% 20%;
+    --healing-muted: 25 15% 45%;
+    --healing-accent: 30 60% 50%;
+    --healing-border: 35 25% 85%;
+    --healing-glow: 35 70% 65%;
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
