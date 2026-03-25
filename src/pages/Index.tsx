@@ -80,9 +80,6 @@ const Home = () => (
           <h2 className="heading-section text-2xl md:text-3xl italic font-light">
             Hopeful futures can only spring from a past that has received its healing.
           </h2>
-          <p className="body-text text-sm">
-            The same heart that imagines new worlds must first tend to the one it carries.
-          </p>
         </div>
       </section>
     </div>
