@@ -149,6 +149,7 @@ const Home = () => {
       </Dialog>
     </div>
   </PageLayout>
-);
+  );
+};
 
 export default Home;
