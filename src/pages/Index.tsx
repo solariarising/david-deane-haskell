@@ -25,7 +25,7 @@ const Home = () => {
                 Science fiction at the edge of consciousness. Memoir from the depths of transformation. The work of David Deane Haskell.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link to="/books" className="btn-primary">Explore the Books</Link>
+                <a href="https://www.amazon.com/dp/B0GPN8DBJS" target="_blank" rel="noopener noreferrer" className="btn-primary">Buy on Amazon</a>
                 <a
                   href="https://dl.bookfunnel.com/k7osg3nq37"
                   target="_blank"
