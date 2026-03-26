@@ -90,7 +90,7 @@ const Vault = () => (
       <section className="section-spacing">
         <div className="page-container text-center max-w-2xl mx-auto space-y-6">
           <p className="body-large italic font-heading">
-            For readers drawn to science fiction with pressure, intelligence, and danger. About people trying to stay human inside systems that don't care whether they survive.
+            For readers drawn to science fiction with relentless tension, sweeping vision, and existential stakes. About people trying to stay human inside systems that don't care whether they survive.
           </p>
           <a
             href="https://dl.bookfunnel.com/k7osg3nq37"
