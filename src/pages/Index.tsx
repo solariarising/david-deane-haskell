@@ -6,8 +6,6 @@ import woundedAngels from "@/assets/wounded-angels.jpg";
 
 const Home = () => {
   return (
-
-  return (
   <PageLayout>
     {/* Hero — Sci-Fi Zone */}
     <div className="zone-scifi">
@@ -25,7 +23,6 @@ const Home = () => {
               <div className="flex flex-wrap gap-4">
                 <a href="https://www.amazon.com/dp/B0GPN8DBJS" target="_blank" rel="noopener noreferrer" className="btn-primary">Buy on Amazon</a>
                 <Link to="/vault" className="btn-outline">Free Fiction</Link>
-                </a>
               </div>
             </div>
             <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
@@ -119,6 +116,8 @@ const Home = () => {
           <Link to="/vault" className="btn-primary">
             Free Bonus Stories
           </Link>
+        </div>
+      </section>
     </div>
   </PageLayout>
   );
