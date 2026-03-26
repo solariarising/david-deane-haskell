@@ -47,9 +47,9 @@ const Vault = () => (
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             <div className="flex justify-center">
               <img
-                src={tommytune}
-                alt="TommyTune — A Resona Series Short Story by David Deane Haskell"
-                className="w-full max-w-sm rounded-sm shadow-lg"
+                src={vaultBooks}
+                alt="Tommytune and Emergence — Free bonus stories by David Deane Haskell"
+                className="w-full max-w-md rounded-sm shadow-lg"
               />
             </div>
             <div className="space-y-8">
