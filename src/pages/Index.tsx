@@ -1,14 +1,10 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import solarianHero from "@/assets/solarian-deep-hero.jpg";
 import fictionBooks from "@/assets/fiction-books.jpg";
 import woundedAngels from "@/assets/wounded-angels.jpg";
 
 const Home = () => {
-  const [showFreeStories, setShowFreeStories] = useState(false);
-
   return (
   <PageLayout>
     {/* Hero — Sci-Fi Zone */}
@@ -26,14 +22,7 @@ const Home = () => {
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="https://www.amazon.com/dp/B0GPN8DBJS" target="_blank" rel="noopener noreferrer" className="btn-primary">Buy on Amazon</a>
-                <a
-                  href="https://dl.bookfunnel.com/k7osg3nq37"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-outline"
-                >
-                  Free Fiction
-                </a>
+                <Link to="/vault" className="btn-outline">Free Fiction</Link>
               </div>
             </div>
             <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
@@ -124,29 +113,11 @@ const Home = () => {
           <p className="body-text">
             Start exploring David's science fiction right now for free—no spam, just fiction that resonates.
           </p>
-          <button onClick={() => setShowFreeStories(true)} className="btn-primary">
+          <Link to="/vault" className="btn-primary">
             Free Bonus Stories
-          </button>
+          </Link>
         </div>
       </section>
-
-      {/* Free Stories Popup */}
-      <Dialog open={showFreeStories} onOpenChange={setShowFreeStories}>
-        <DialogContent className="zone-scifi border-primary/20 text-center max-w-md space-y-5 p-8">
-          <DialogTitle className="heading-section text-xl">Free Bonus Stories</DialogTitle>
-          <p className="body-text text-sm">
-            Get instant access to David's bonus science fiction stories. Delivered straight to your inbox via BookFunnel—no spam, ever.
-          </p>
-          <a
-            href="https://dl.bookfunnel.com/k7osg3nq37"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary inline-block"
-          >
-            Get Your Free Stories
-          </a>
-        </DialogContent>
-      </Dialog>
     </div>
   </PageLayout>
   );
