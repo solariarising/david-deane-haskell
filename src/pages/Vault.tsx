@@ -1,5 +1,5 @@
 import PageLayout from "@/components/PageLayout";
-import tommytune from "@/assets/tommytune-cover.jpg";
+import vaultBooks from "@/assets/vault-books-composite.jpg";
 
 const Vault = () => (
   <PageLayout>
@@ -47,9 +47,9 @@ const Vault = () => (
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             <div className="flex justify-center">
               <img
-                src={tommytune}
-                alt="TommyTune — A Resona Series Short Story by David Deane Haskell"
-                className="w-full max-w-sm rounded-sm shadow-lg"
+                src={vaultBooks}
+                alt="Tommytune and Emergence — Free bonus stories by David Deane Haskell"
+                className="w-full max-w-md rounded-sm shadow-lg"
               />
             </div>
             <div className="space-y-8">
@@ -90,7 +90,7 @@ const Vault = () => (
       <section className="section-spacing">
         <div className="page-container text-center max-w-2xl mx-auto space-y-6">
           <p className="body-large italic font-heading">
-            For readers drawn to science fiction with pressure, intelligence, and danger. About people trying to stay human inside systems that don't care whether they survive.
+            For readers drawn to science fiction with relentless tension, sweeping vision, and existential stakes. About people trying to stay human inside systems that don't care whether they survive.
           </p>
           <a
             href="https://dl.bookfunnel.com/k7osg3nq37"
