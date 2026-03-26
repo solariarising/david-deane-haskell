@@ -24,13 +24,7 @@ const Home = () => {
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="https://www.amazon.com/dp/B0GPN8DBJS" target="_blank" rel="noopener noreferrer" className="btn-primary">Buy on Amazon</a>
-                <a
-                  href="https://dl.bookfunnel.com/k7osg3nq37"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-outline"
-                >
-                  Free Fiction
+                <Link to="/vault" className="btn-outline">Free Fiction</Link>
                 </a>
               </div>
             </div>
