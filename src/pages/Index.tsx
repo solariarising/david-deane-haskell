@@ -1,7 +1,5 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import solarianHero from "@/assets/solarian-deep-hero.jpg";
 import fictionBooks from "@/assets/fiction-books.jpg";
 import woundedAngels from "@/assets/wounded-angels.jpg";
