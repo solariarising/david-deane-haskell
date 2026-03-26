@@ -1,5 +1,5 @@
 import PageLayout from "@/components/PageLayout";
-import tommytune from "@/assets/tommytune-cover.jpg";
+import vaultBooks from "@/assets/vault-books-composite.jpg";
 
 const Vault = () => (
   <PageLayout>
