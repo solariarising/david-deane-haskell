@@ -114,8 +114,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+    </div>
 
-      {/* Return-to-SciFi CTA Zone */}
+    {/* Return-to-SciFi CTA Zone */}
       <div className="zone-return-scifi">
         <section className="section-spacing">
           <div className="page-container text-center max-w-2xl mx-auto space-y-6">
