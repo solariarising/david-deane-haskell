@@ -238,18 +238,24 @@
   }
 
   .zone-healing .btn-primary {
-    background: hsl(var(--healing-accent));
-    color: hsl(0 0% 100%);
+    background: hsl(var(--healing-accent) / 0.75);
+    color: hsl(40 30% 98%);
+    border-color: hsl(var(--healing-glow) / 0.4);
+  }
+
+  .zone-healing .btn-primary:hover {
+    background: hsl(var(--healing-accent) / 0.9);
+    box-shadow: 0 0 16px hsl(var(--healing-glow) / 0.25);
   }
 
   .zone-healing .btn-outline {
-    border-color: hsl(var(--healing-fg));
+    border-color: hsl(var(--healing-fg) / 0.4);
     color: hsl(var(--healing-fg));
   }
 
   .zone-healing .btn-outline:hover {
-    background: hsl(var(--healing-fg));
-    color: hsl(var(--healing-bg));
+    background: hsl(var(--healing-fg) / 0.1);
+    border-color: hsl(var(--healing-fg) / 0.6);
   }
 
   .zone-healing .text-muted-foreground {
