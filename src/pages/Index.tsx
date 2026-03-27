@@ -102,7 +102,7 @@ const Home = () => {
               <p className="body-text">
                 Honest explorations of the Inner Child, mindfulness, and the path to healing. Raw, unfolding, and deeply human.
               </p>
-              <a href="https://www.amazon.com/dp/B0DQST4RQ4" target="_blank" rel="noopener noreferrer" className="btn-outline">Buy on Amazon</a>
+              <Link to="/books#wounded-angels" className="btn-outline">Learn More</Link>
             </div>
             <div className="md:order-0">
               <img
@@ -114,22 +114,22 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      <div className="divider" />
-
-      {/* CTA */}
-      <section className="section-spacing">
-        <div className="page-container text-center max-w-2xl mx-auto space-y-6">
-          <h2 className="heading-section">Begin with free bonus stories.</h2>
-          <p className="body-text">
-            Start exploring David's science fiction right now for free—no spam, just fiction that resonates.
-          </p>
-          <Link to="/vault" className="btn-primary">
-            Free Bonus Stories
-          </Link>
-        </div>
-      </section>
     </div>
+
+    {/* Return-to-SciFi CTA Zone */}
+      <div className="zone-return-scifi">
+        <section className="section-spacing">
+          <div className="page-container text-center max-w-2xl mx-auto space-y-6">
+            <h2 className="heading-section">Begin with free bonus stories.</h2>
+            <p className="body-text">
+              Start exploring David's science fiction right now for free—no spam, just fiction that resonates.
+            </p>
+            <Link to="/vault" className="btn-primary">
+              Free Bonus Stories
+            </Link>
+          </div>
+        </section>
+      </div>
 
       {/* Timed free stories popup */}
       <Dialog open={showPopup} onOpenChange={setShowPopup}>

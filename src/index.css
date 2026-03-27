@@ -265,4 +265,35 @@
   .zone-healing .divider {
     background: hsl(var(--healing-border));
   }
+
+  /* Return-to-SciFi zone — blend back from healing warmth toward sci-fi cool */
+  .zone-return-scifi {
+    background: linear-gradient(
+      to bottom,
+      hsl(var(--healing-bg)),
+      hsl(30 20% 70%) 20%,
+      hsl(220 20% 30%) 60%,
+      hsl(var(--scifi-bg))
+    );
+    color: hsl(var(--scifi-fg));
+  }
+
+  .zone-return-scifi .heading-section {
+    color: hsl(200 30% 88%);
+  }
+
+  .zone-return-scifi .body-text {
+    color: hsl(210 15% 60%);
+  }
+
+  .zone-return-scifi .btn-primary {
+    background: hsl(var(--scifi-accent) / 0.7);
+    color: hsl(200 30% 95%);
+    border-color: hsl(var(--scifi-glow) / 0.4);
+  }
+
+  .zone-return-scifi .btn-primary:hover {
+    background: hsl(var(--scifi-accent) / 0.9);
+    box-shadow: 0 0 16px hsl(var(--scifi-glow) / 0.3);
+  }
 }
