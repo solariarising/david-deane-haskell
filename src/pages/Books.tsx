@@ -161,6 +161,7 @@ const Books = () => {
       </section>
     </div>
   </PageLayout>
-);
+  );
+};
 
 export default Books;
