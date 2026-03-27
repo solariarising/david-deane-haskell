@@ -1,10 +1,25 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import PageLayout from "@/components/PageLayout";
 import solarianHero from "@/assets/solarian-deep-hero.jpg";
 import fictionBooks from "@/assets/fiction-books.jpg";
 import woundedAngels from "@/assets/wounded-angels.jpg";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 const Home = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    const alreadyShown = sessionStorage.getItem("freeStoriesPopupShown");
+    if (alreadyShown) return;
+
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+      sessionStorage.setItem("freeStoriesPopupShown", "true");
+    }, 25000);
+
+    return () => clearTimeout(timer);
+  }, []);
   return (
   <PageLayout>
     {/* Hero — Sci-Fi Zone */}
