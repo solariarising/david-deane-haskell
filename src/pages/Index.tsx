@@ -102,7 +102,7 @@ const Home = () => {
               <p className="body-text">
                 Honest explorations of the Inner Child, mindfulness, and the path to healing. Raw, unfolding, and deeply human.
               </p>
-              <a href="https://www.amazon.com/dp/B0DQST4RQ4" target="_blank" rel="noopener noreferrer" className="btn-outline">Buy on Amazon</a>
+              <Link to="/books#wounded-angels" className="btn-outline">Learn More</Link>
             </div>
             <div className="md:order-0">
               <img
