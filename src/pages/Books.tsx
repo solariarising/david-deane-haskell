@@ -52,7 +52,7 @@ const Books = () => (
             </a>
             <div className="space-y-4">
               <h3 className="heading-subsection">The Solarian Deep</h3>
-              <p className="body-text">The surface is lost. The evolution has begun. Book 1 of the Technoquatics Series plunges you into a world where humanity must adapt or perish beneath the waves.</p>
+              <p className="body-text">Book 1 of the Technoquatics Series plunges you into a world where humanity must adapt or perish beneath the waves. Click the cover and dive in.</p>
             </div>
           </div>
 
