@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
 import fictionBooks from "@/assets/fiction-books.jpg";
 import solarianHero from "@/assets/solarian-deep-hero.jpg";
@@ -21,7 +23,19 @@ const BookCard = ({ title, description, buyUrl, buyLabel = "Buy Novel" }: BookCa
   </div>
 );
 
-const Books = () => (
+const Books = () => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 100);
+      }
+    }
+  }, [hash]);
+
+  return (
   <PageLayout>
     {/* Sci-Fi Zone */}
     <div className="zone-scifi">
