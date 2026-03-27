@@ -130,6 +130,38 @@ const Home = () => {
         </div>
       </section>
     </div>
+
+      {/* Timed free stories popup */}
+      <Dialog open={showPopup} onOpenChange={setShowPopup}>
+        <DialogContent className="sm:max-w-md text-center space-y-6 bg-background border-border">
+          <div className="space-y-4 pt-4">
+            <p className="text-xs uppercase tracking-[0.3em]" style={{ color: "hsl(195 85% 45%)" }}>
+              Free Fiction
+            </p>
+            <h2 className="font-heading text-2xl md:text-3xl font-semibold text-foreground">
+              Want free stories?
+            </h2>
+            <p className="body-text text-sm">
+              Get a standalone short story and a full-length sci-fi novel—completely free. No spam, just fiction that resonates.
+            </p>
+          </div>
+          <a
+            href="https://dl.bookfunnel.com/k7osg3nq37"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary inline-block"
+            onClick={() => setShowPopup(false)}
+          >
+            Get My Free Stories
+          </a>
+          <button
+            onClick={() => setShowPopup(false)}
+            className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+          >
+            No thanks, maybe later
+          </button>
+        </DialogContent>
+      </Dialog>
   </PageLayout>
   );
 };
