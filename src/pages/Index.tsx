@@ -1,10 +1,25 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import PageLayout from "@/components/PageLayout";
 import solarianHero from "@/assets/solarian-deep-hero.jpg";
 import fictionBooks from "@/assets/fiction-books.jpg";
 import woundedAngels from "@/assets/wounded-angels.jpg";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 const Home = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    const alreadyShown = sessionStorage.getItem("freeStoriesPopupShown");
+    if (alreadyShown) return;
+
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+      sessionStorage.setItem("freeStoriesPopupShown", "true");
+    }, 25000);
+
+    return () => clearTimeout(timer);
+  }, []);
   return (
   <PageLayout>
     {/* Hero — Sci-Fi Zone */}
@@ -12,20 +27,7 @@ const Home = () => {
       <section className="relative overflow-hidden">
         <div className="page-container section-spacing">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-            <div className="space-y-8 animate-fade-in">
-              <h1 className="heading-display">
-                Stories that heal.<br />
-                <span style={{ color: "hsl(195 85% 45%)" }}>Worlds that awaken.</span>
-              </h1>
-              <p className="body-large max-w-lg">
-                Science fiction at the edge of consciousness. Memoir from the depths of transformation. The work of David Deane Haskell.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <a href="https://www.amazon.com/dp/B0GPN8DBJS" target="_blank" rel="noopener noreferrer" className="btn-primary">Buy on Amazon</a>
-                <Link to="/vault" className="btn-outline">Free Fiction</Link>
-              </div>
-            </div>
-            <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            <div className="animate-fade-in">
               <a href="https://www.amazon.com/dp/B0GPN8DBJS" target="_blank" rel="noopener noreferrer">
                 <img
                   src={solarianHero}
@@ -33,6 +35,15 @@ const Home = () => {
                   className="w-full rounded-sm shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
                 />
               </a>
+            </div>
+            <div className="space-y-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+              <h1 className="heading-display">
+                Stories that heal.<br />
+                <span style={{ color: "hsl(195 85% 45%)" }}>Worlds that awaken.</span>
+              </h1>
+              <p className="body-large max-w-lg">
+                Science fiction at the edge of consciousness. Memoir from the depths of transformation. The work of David Deane Haskell.
+              </p>
             </div>
           </div>
         </div>
@@ -119,6 +130,38 @@ const Home = () => {
         </div>
       </section>
     </div>
+
+      {/* Timed free stories popup */}
+      <Dialog open={showPopup} onOpenChange={setShowPopup}>
+        <DialogContent className="sm:max-w-md text-center space-y-6 bg-background border-border">
+          <div className="space-y-4 pt-4">
+            <p className="text-xs uppercase tracking-[0.3em]" style={{ color: "hsl(195 85% 45%)" }}>
+              Free Fiction
+            </p>
+            <h2 className="font-heading text-2xl md:text-3xl font-semibold text-foreground">
+              Want free stories?
+            </h2>
+            <p className="body-text text-sm">
+              Get a standalone short story and a full-length sci-fi novel—completely free. No spam, just fiction that resonates.
+            </p>
+          </div>
+          <a
+            href="https://dl.bookfunnel.com/k7osg3nq37"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary inline-block"
+            onClick={() => setShowPopup(false)}
+          >
+            Get My Free Stories
+          </a>
+          <button
+            onClick={() => setShowPopup(false)}
+            className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+          >
+            No thanks, maybe later
+          </button>
+        </DialogContent>
+      </Dialog>
   </PageLayout>
   );
 };
