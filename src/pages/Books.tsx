@@ -115,7 +115,7 @@ const Books = () => (
     </div>
 
     {/* Healing Zone — Non-Fiction */}
-    <div className="zone-healing">
+    <div className="zone-healing" id="wounded-angels">
       <section className="section-spacing">
         <div className="page-container space-y-12">
           <div className="text-center space-y-2">
