@@ -62,7 +62,7 @@ const Vault = () => (
                     </h3>
                     <p className="text-xs uppercase tracking-widest text-muted-foreground">A Resona Series Short Story</p>
                     <p className="body-text">
-                      A standalone story set on the edge of a larger world—where music, memory, and identity collide in unexpected ways. Your first glimpse into the Resona universe.
+                      A standalone story set on the edge of a larger world—where resonance, confidence, and identity collide in vibrant, unexpected ways. Your first glimpse into the Resona universe.
                     </p>
                   </div>
 
@@ -72,9 +72,9 @@ const Vault = () => (
                     <h3 className="font-heading text-xl font-medium" style={{ color: "hsl(195 85% 45%)" }}>
                       Emergence
                     </h3>
-                    <p className="text-xs uppercase tracking-widest text-muted-foreground">Full-Length Sci-Fi Novel</p>
+                    <p className="text-xs uppercase tracking-widest text-muted-foreground">A Full-Length Sci-Fi Novel</p>
                     <p className="body-text">
-                      In the gleaming city of Tera-Prime, the future has just been cancelled. Alixs uncovers a kill switch designed to wipe his people from existence. Marked for death, he must run into the shadows of the underground to expose the dangerous truth.
+                      In the gleaming city of Tera-Prime, the future has just been cancelled. Alixs uncovers a kill switch designed to wipe his people from existence. Marked for death, he must run into the shadows of the underground to expose the chilling truth.
                     </p>
                   </div>
                 </div>

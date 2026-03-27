@@ -12,20 +12,7 @@ const Home = () => {
       <section className="relative overflow-hidden">
         <div className="page-container section-spacing">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-            <div className="space-y-8 animate-fade-in">
-              <h1 className="heading-display">
-                Stories that heal.<br />
-                <span style={{ color: "hsl(195 85% 45%)" }}>Worlds that awaken.</span>
-              </h1>
-              <p className="body-large max-w-lg">
-                Science fiction at the edge of consciousness. Memoir from the depths of transformation. The work of David Deane Haskell.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <a href="https://www.amazon.com/dp/B0GPN8DBJS" target="_blank" rel="noopener noreferrer" className="btn-primary">Buy on Amazon</a>
-                <Link to="/vault" className="btn-outline">Free Fiction</Link>
-              </div>
-            </div>
-            <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            <div className="animate-fade-in">
               <a href="https://www.amazon.com/dp/B0GPN8DBJS" target="_blank" rel="noopener noreferrer">
                 <img
                   src={solarianHero}
@@ -33,6 +20,15 @@ const Home = () => {
                   className="w-full rounded-sm shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
                 />
               </a>
+            </div>
+            <div className="space-y-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+              <h1 className="heading-display">
+                Stories that heal.<br />
+                <span style={{ color: "hsl(195 85% 45%)" }}>Worlds that awaken.</span>
+              </h1>
+              <p className="body-large max-w-lg">
+                Science fiction at the edge of consciousness. Memoir from the depths of transformation. The work of David Deane Haskell.
+              </p>
             </div>
           </div>
         </div>
