@@ -1,19 +1,17 @@
 import PageLayout from "@/components/PageLayout";
-import { useState, FormEvent } from "react";
+import logo from "@/assets/logo.png";
 
 const Contact = () => {
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
   return (
     <PageLayout>
       <section className="section-spacing">
         <div className="page-container max-w-2xl mx-auto space-y-12">
           <div className="space-y-6 text-center">
+            <img
+              src={logo}
+              alt="David Deane Haskell"
+              className="w-24 h-24 mx-auto rounded-full"
+            />
             <h1 className="heading-display">Get in Touch</h1>
             <p className="body-large">
               Whether it's about books, collaboration, or just saying hello—David would love to hear from you.
@@ -22,64 +20,53 @@ const Contact = () => {
 
           <div className="divider" />
 
-          <div className="space-y-4 text-center">
+          <div className="space-y-6 text-center">
             <p className="body-text">
-              David is available for events, interviews, podcasts, music and performance, clinics and workshops, and one-on-one educational sessions. If it sounds like a good fit, reach out.
+              David is the author of the sci-fi novel <em>The Solarian Deep</em>, the foundational thriller <em>Emergence</em>, and the inner-child healing memoir <em>Wounded Angels</em>. His work spans the distance between envisioning hopeful futures and integrating the past—and he brings that same range to everything he does in person.
+            </p>
+            <p className="body-text">
+              He is available for events, interviews, podcasts, music and performance, clinics and workshops, and one-on-one educational sessions. If it sounds like a good fit, reach out.
             </p>
           </div>
 
           <div className="divider" />
 
-          {submitted ? (
-            <div className="text-center space-y-4 py-12">
-              <h2 className="heading-subsection">Thank you.</h2>
-              <p className="body-text">Your message has been received. David will get back to you soon.</p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-medium text-foreground">Name</label>
-                <input
-                  id="name"
-                  type="text"
-                  required
-                  className="w-full px-4 py-3 bg-card border border-border rounded-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
-                  placeholder="Your name"
-                />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium text-foreground">Email</label>
-                <input
-                  id="email"
-                  type="email"
-                  required
-                  className="w-full px-4 py-3 bg-card border border-border rounded-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
-                  placeholder="you@example.com"
-                />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium text-foreground">Message</label>
-                <textarea
-                  id="message"
-                  required
-                  rows={6}
-                  className="w-full px-4 py-3 bg-card border border-border rounded-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring resize-none"
-                  placeholder="What's on your mind?"
-                />
-              </div>
-              <button type="submit" className="btn-primary w-full">
-                Send Message
-              </button>
-            </form>
-          )}
-
-          <div className="text-center space-y-2 pt-4">
-            <p className="text-sm text-muted-foreground">
-              You can also reach David directly at{" "}
-              <a href="mailto:david@daviddeanehaskell.com" className="link-accent">
-                david@daviddeanehaskell.com
-              </a>
+          <div className="text-center space-y-4">
+            <p className="body-text">
+              The best way to reach David is by email:
             </p>
+            <a
+              href="mailto:david@daviddeanehaskell.com"
+              className="btn-primary inline-block"
+            >
+              david@daviddeanehaskell.com
+            </a>
+          </div>
+
+          <div className="divider" />
+
+          <div className="text-center space-y-4">
+            <p className="text-sm text-muted-foreground">
+              For readers and community, join David on Substack:
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <a
+                href="https://daviddeanehaskellstories.substack.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-accent text-sm"
+              >
+                Fiction Substack
+              </a>
+              <a
+                href="https://innerchildjournal.substack.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-accent text-sm"
+              >
+                Inner Child Journal
+              </a>
+            </div>
           </div>
         </div>
       </section>
