@@ -138,7 +138,7 @@ const Books = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <img src={woundedAngels} alt="Wounded Angels by David Deane Haskell" className="w-full max-w-sm mx-auto rounded-sm shadow-lg" />
+            <img src={woundedAngels} alt="Wounded Angels by David Deane Haskell" className="w-full max-w-sm mx-auto rounded-sm shadow-lg" loading="lazy" decoding="async" />
             <div className="space-y-6">
               <h3 className="heading-subsection">Wounded Angels</h3>
               <p className="body-text italic font-heading text-lg">
