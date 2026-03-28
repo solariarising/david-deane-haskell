@@ -61,6 +61,8 @@ const Home = () => {
               src={fictionBooks}
               alt="David Deane Haskell's fiction collection"
               className="w-full max-w-md mx-auto rounded-sm shadow-lg"
+              loading="lazy"
+              decoding="async"
             />
             <div className="space-y-6">
               <p className="text-sm uppercase tracking-widest text-muted-foreground">SciFi & Suspense</p>
