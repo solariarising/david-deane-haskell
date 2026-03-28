@@ -7,7 +7,7 @@ const SiteFooter = () => (
       <img src={logo} alt="David Deane Haskell" className="w-12 h-12 mx-auto rounded-full" />
       <p className="font-heading text-lg text-foreground">David Deane Haskell</p>
       <p className="body-text text-sm">
-        Visionary · Wayfinder · Storyteller
+        Pathfinder · Storyteller · Visionary
       </p>
       <div className="flex justify-center gap-6 text-sm text-muted-foreground">
         <Link to="/books" className="hover:text-foreground transition-colors">Books</Link>
