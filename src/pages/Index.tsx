@@ -73,6 +73,19 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Free Bonus Stories — still in sci-fi zone */}
+      <section className="section-spacing">
+        <div className="page-container text-center max-w-2xl mx-auto space-y-6">
+          <h2 className="heading-section">Begin with free bonus stories.</h2>
+          <p className="body-text">
+            Start exploring David's science fiction right now for free—no spam, just fiction that resonates.
+          </p>
+          <Link to="/vault" className="btn-primary">
+            Free Bonus Stories
+          </Link>
+        </div>
+      </section>
     </div>
 
     {/* Transition Bridge */}
@@ -115,21 +128,6 @@ const Home = () => {
         </div>
       </section>
     </div>
-
-    {/* Return-to-SciFi CTA Zone */}
-      <div className="zone-return-scifi">
-        <section className="section-spacing">
-          <div className="page-container text-center max-w-2xl mx-auto space-y-6">
-            <h2 className="heading-section">Begin with free bonus stories.</h2>
-            <p className="body-text">
-              Start exploring David's science fiction right now for free—no spam, just fiction that resonates.
-            </p>
-            <Link to="/vault" className="btn-primary">
-              Free Bonus Stories
-            </Link>
-          </div>
-        </section>
-      </div>
 
       {/* Timed free stories popup */}
       <Dialog open={showPopup} onOpenChange={setShowPopup}>

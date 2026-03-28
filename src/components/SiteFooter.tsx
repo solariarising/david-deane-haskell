@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const SiteFooter = () => (
   <footer className="border-t border-border py-12 mt-16">
     <div className="page-container text-center space-y-4">
+      <img src={logo} alt="David Deane Haskell" className="w-12 h-12 mx-auto rounded-full" />
       <p className="font-heading text-lg text-foreground">David Deane Haskell</p>
       <p className="body-text text-sm">
         Visionary · Wayfinder · Storyteller
