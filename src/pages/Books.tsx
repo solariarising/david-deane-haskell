@@ -62,7 +62,7 @@ const Books = () => {
           {/* Featured: Solarian Deep */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <a href="https://www.amazon.com/dp/B0GPN8DBJS" target="_blank" rel="noopener noreferrer">
-              <img src={solarianHero} alt="The Solarian Deep" className="w-full rounded-sm shadow-lg hover:shadow-xl transition-shadow cursor-pointer" />
+              <img src={solarianHero} alt="The Solarian Deep" className="w-full rounded-sm shadow-lg hover:shadow-xl transition-shadow cursor-pointer" loading="eager" decoding="async" />
             </a>
             <div className="space-y-4">
               <h3 className="heading-subsection">The Solarian Deep</h3>
