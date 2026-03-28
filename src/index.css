@@ -297,3 +297,25 @@
     box-shadow: 0 0 16px hsl(var(--scifi-glow) / 0.3);
   }
 }
+
+/* Soft image edges — subtle vignette blend into surrounding backgrounds */
+.zone-scifi img:not([class*="logo"]):not([class*="rounded-full"]) {
+  mask-image: radial-gradient(ellipse 98% 96% at center, black 85%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 98% 96% at center, black 85%, transparent 100%);
+}
+
+.zone-healing img:not([class*="logo"]):not([class*="rounded-full"]) {
+  mask-image: radial-gradient(ellipse 97% 95% at center, black 82%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 97% 95% at center, black 82%, transparent 100%);
+}
+
+.zone-return-scifi img:not([class*="logo"]):not([class*="rounded-full"]) {
+  mask-image: radial-gradient(ellipse 98% 96% at center, black 85%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 98% 96% at center, black 85%, transparent 100%);
+}
+
+/* Pages without zones (About, Contact) */
+main > section img:not([class*="rounded-full"]) {
+  mask-image: radial-gradient(ellipse 98% 96% at center, black 86%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 98% 96% at center, black 86%, transparent 100%);
+}
