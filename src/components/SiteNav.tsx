@@ -18,7 +18,8 @@ const SiteNav = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="page-container flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="font-heading text-xl md:text-2xl font-semibold tracking-tight text-foreground">
+        <Link to="/" className="flex items-center gap-3 font-heading text-xl md:text-2xl font-semibold tracking-tight text-foreground">
+          <img src={logo} alt="" className="w-8 h-8 rounded-full" />
           David Deane Haskell
         </Link>
 
