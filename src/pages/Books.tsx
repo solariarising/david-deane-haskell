@@ -72,7 +72,7 @@ const Books = () => {
 
           {/* Collection image */}
           <div className="flex justify-center">
-            <img src={fictionBooks} alt="David's fiction collection" className="w-full max-w-lg rounded-sm shadow-lg" />
+            <img src={fictionBooks} alt="David's fiction collection" className="w-full max-w-lg rounded-sm shadow-lg" loading="lazy" decoding="async" />
           </div>
 
           {/* Other novels grid */}
