@@ -33,6 +33,8 @@ const Home = () => {
                   src={solarianHero}
                   alt="The Solarian Deep by David Deane Haskell"
                   className="w-full rounded-sm shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+                  loading="eager"
+                  decoding="async"
                 />
               </a>
             </div>
