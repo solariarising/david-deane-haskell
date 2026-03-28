@@ -50,6 +50,8 @@ const Vault = () => (
                 src={vaultBooks}
                 alt="Tommytune and Emergence — Free bonus stories by David Deane Haskell"
                 className="w-full max-w-md rounded-sm shadow-lg"
+                loading="eager"
+                decoding="async"
               />
             </div>
             <div className="space-y-8">

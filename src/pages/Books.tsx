@@ -62,7 +62,7 @@ const Books = () => {
           {/* Featured: Solarian Deep */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <a href="https://www.amazon.com/dp/B0GPN8DBJS" target="_blank" rel="noopener noreferrer">
-              <img src={solarianHero} alt="The Solarian Deep" className="w-full rounded-sm shadow-lg hover:shadow-xl transition-shadow cursor-pointer" />
+              <img src={solarianHero} alt="The Solarian Deep" className="w-full rounded-sm shadow-lg hover:shadow-xl transition-shadow cursor-pointer" loading="eager" decoding="async" />
             </a>
             <div className="space-y-4">
               <h3 className="heading-subsection">The Solarian Deep</h3>
@@ -72,7 +72,7 @@ const Books = () => {
 
           {/* Collection image */}
           <div className="flex justify-center">
-            <img src={fictionBooks} alt="David's fiction collection" className="w-full max-w-lg rounded-sm shadow-lg" />
+            <img src={fictionBooks} alt="David's fiction collection" className="w-full max-w-lg rounded-sm shadow-lg" loading="lazy" decoding="async" />
           </div>
 
           {/* Other novels grid */}
@@ -102,7 +102,7 @@ const Books = () => {
 
           {/* TommyTune */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <img src={tommytune} alt="TommyTune - A Resona Series Short Story" className="w-full max-w-sm mx-auto rounded-sm shadow-lg" />
+            <img src={tommytune} alt="TommyTune - A Resona Series Short Story" className="w-full max-w-sm mx-auto rounded-sm shadow-lg" loading="lazy" decoding="async" />
             <BookCard
               title="TommyTune"
               description="A Resona Series short story. A glimpse into the world of The Vibrants—where music, memory, and identity collide in unexpected ways."
@@ -138,7 +138,7 @@ const Books = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <img src={woundedAngels} alt="Wounded Angels by David Deane Haskell" className="w-full max-w-sm mx-auto rounded-sm shadow-lg" />
+            <img src={woundedAngels} alt="Wounded Angels by David Deane Haskell" className="w-full max-w-sm mx-auto rounded-sm shadow-lg" loading="lazy" decoding="async" />
             <div className="space-y-6">
               <h3 className="heading-subsection">Wounded Angels</h3>
               <p className="body-text italic font-heading text-lg">

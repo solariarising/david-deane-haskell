@@ -33,6 +33,8 @@ const Home = () => {
                   src={solarianHero}
                   alt="The Solarian Deep by David Deane Haskell"
                   className="w-full rounded-sm shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+                  loading="eager"
+                  decoding="async"
                 />
               </a>
             </div>
@@ -59,6 +61,8 @@ const Home = () => {
               src={fictionBooks}
               alt="David Deane Haskell's fiction collection"
               className="w-full max-w-md mx-auto rounded-sm shadow-lg"
+              loading="lazy"
+              decoding="async"
             />
             <div className="space-y-6">
               <p className="text-sm uppercase tracking-widest text-muted-foreground">SciFi & Suspense</p>
@@ -122,6 +126,8 @@ const Home = () => {
                 src={woundedAngels}
                 alt="Wounded Angels by David Deane Haskell"
                 className="w-full max-w-sm mx-auto rounded-sm shadow-lg"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
