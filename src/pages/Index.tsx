@@ -126,6 +126,8 @@ const Home = () => {
                 src={woundedAngels}
                 alt="Wounded Angels by David Deane Haskell"
                 className="w-full max-w-sm mx-auto rounded-sm shadow-lg"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
