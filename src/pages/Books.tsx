@@ -102,7 +102,7 @@ const Books = () => {
 
           {/* TommyTune */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <img src={tommytune} alt="TommyTune - A Resona Series Short Story" className="w-full max-w-sm mx-auto rounded-sm shadow-lg" />
+            <img src={tommytune} alt="TommyTune - A Resona Series Short Story" className="w-full max-w-sm mx-auto rounded-sm shadow-lg" loading="lazy" decoding="async" />
             <BookCard
               title="TommyTune"
               description="A Resona Series short story. A glimpse into the world of The Vibrants—where music, memory, and identity collide in unexpected ways."
