@@ -14,7 +14,7 @@ const Contact = () => {
             />
             <h1 className="heading-display">Get in Touch</h1>
             <p className="body-large">
-              Whether it's about books, collaboration, or just saying hello—David would love to hear from you.
+              For books, interviews, podcast appearances, speaking invitations, or thoughtful collaboration, get in touch.
             </p>
           </div>
 
@@ -25,7 +25,7 @@ const Contact = () => {
               David is the author of the sci-fi novel <em>The Solarian Deep</em>, the foundational thriller <em>Emergence</em>, and the inner-child healing memoir <em>Wounded Angels</em>. His work spans the distance between envisioning hopeful futures and integrating the past—and he brings that same range to everything he does in person.
             </p>
             <p className="body-text">
-              He is available for events, interviews, podcasts, music and performance, clinics and workshops, and one-on-one educational sessions. If it sounds like a good fit, reach out.
+              He is available for interviews, podcast guest appearances, speaking, clinics and workshops, one-on-one educational sessions, and select collaborations.
             </p>
           </div>
 
