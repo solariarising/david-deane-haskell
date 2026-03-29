@@ -46,19 +46,14 @@ const Home = () => {
                 <p className="body-large max-w-lg">
                   David Deane Haskell writes fiction, essays, and healing-centered memoir about how we heal the past, understand the present, and imagine a future worth living in. Start with <em>The Solarian Deep</em> — or explore the free fiction vault.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <a
-                    href="https://www.amazon.com/dp/B0GPN8DBJS"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary"
-                  >
-                    Start with The Solarian Deep
-                  </a>
-                  <Link to="/vault" className="btn-outline">
-                    Get Free Bonus Fiction
-                  </Link>
-                </div>
+                <a
+                  href="https://www.amazon.com/dp/B0GPN8DBJS"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary"
+                >
+                  Start with The Solarian Deep
+                </a>
               </div>
             </div>
           </div>
