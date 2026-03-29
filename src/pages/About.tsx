@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
 import profile from "@/assets/profile.jpg";
 
@@ -19,17 +20,38 @@ const About = () => (
             <h1 className="heading-display">About David</h1>
             <div className="space-y-5 body-text">
               <p>
-                David Deane Haskell is a novelist, visionary, and storyteller working at the frontier of speculative fiction and human transformation.
+                David Deane Haskell writes about healing the past, understanding the present, and imagining futures worth living in.
               </p>
               <p>
-                His science fiction blends bold, tech-heavy futures with long-lost truths—worlds where artificial intelligence meets ancient consciousness, where domed cities hum with secrets, and the loving heart always finds a way to short-circuit the machine. These are stories of what we might become when we stop forgetting who we are.
+                His work spans speculative fiction, essays, and healing-centered memoir, with one mission: helping people make sense of an overwhelming world without abandoning hope.
               </p>
               <p>
-                His memoir, <em>Wounded Angels</em>, takes a different path—inward. It's a raw, intimate journey through despair, hopelessness, and the long road to peace. A homecoming to the parts of ourselves we left behind. Because sometimes, the bravest act of all is simply coming back to yourself—so you can step forward again.
+                He is the author of <em>The Solarian Deep</em>, <em>Wounded Angels</em>, <em>Emergence</em>, <em>Dark Alignment</em>, <em>Too Much Information</em>, and <em>Tommytune</em>.
               </p>
               <p>
-                David is currently wandering around Asia, writing from the edge of where the old world ends and the new one begins.
+                Start with <em>The Solarian Deep</em> for fiction, <em>Wounded Angels</em> for healing, or the free fiction vault to explore.
               </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 pt-2">
+              <a
+                href="https://www.amazon.com/dp/B0GPN8DBJS"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                The Solarian Deep
+              </a>
+              <a
+                href="https://mybook.to/woundedangels"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline"
+              >
+                Wounded Angels
+              </a>
+              <Link to="/vault" className="btn-outline">
+                Free Fiction Vault
+              </Link>
             </div>
           </div>
         </div>
