@@ -26,7 +26,8 @@ const Home = () => {
       <div className="zone-scifi">
         <section className="relative -mt-16 md:-mt-20">
           {/* Full-viewport hero image */}
-          <div className="relative min-h-screen flex items-end justify-center overflow-hidden">
+          {/* Full-viewport hero image */}
+          <div className="relative min-h-screen overflow-hidden">
             <img
               src={solarianHero}
               alt="The Solarian Deep by David Deane Haskell"
@@ -34,27 +35,25 @@ const Home = () => {
               loading="eager"
               decoding="async"
             />
-            {/* Gradient overlay for text legibility */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+          </div>
 
-            {/* Floating content at bottom */}
-            <div className="relative z-10 text-center pb-16 md:pb-24 px-6 space-y-6 animate-fade-in max-w-3xl">
-              <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-white leading-tight">
-                Stories that heal.<br />
-                <span style={{ color: "hsl(195 85% 55%)" }}>Worlds that awaken.</span>
-              </h1>
-              <p className="text-white/80 text-lg md:text-xl max-w-xl mx-auto font-body">
-                Speculative fiction, healing memoir, and essays by David Deane Haskell.
-              </p>
-              <a
-                href="https://www.amazon.com/dp/B0GPN8DBJS"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary inline-block"
-              >
-                Start with The Solarian Deep
-              </a>
-            </div>
+          {/* Content below hero */}
+          <div className="text-center py-12 md:py-16 px-6 space-y-6 animate-fade-in max-w-3xl mx-auto">
+            <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-tight" style={{ color: "hsl(var(--scifi-fg))" }}>
+              Stories that heal.<br />
+              <span style={{ color: "hsl(195 85% 55%)" }}>Worlds that awaken.</span>
+            </h1>
+            <p className="text-lg md:text-xl max-w-xl mx-auto font-body" style={{ color: "hsl(var(--scifi-muted))" }}>
+              Speculative fiction novels, healing memoirs, and short stories by David Deane Haskell.
+            </p>
+            <a
+              href="https://www.amazon.com/dp/B0GPN8DBJS"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-block"
+            >
+              Start with The Solarian Deep
+            </a>
           </div>
         </section>
 
