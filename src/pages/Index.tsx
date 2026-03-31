@@ -43,9 +43,6 @@ const Home = () => {
               Stories that heal.<br />
               <span style={{ color: "hsl(195 85% 55%)" }}>Worlds that awaken.</span>
             </h1>
-            <p className="text-lg md:text-xl max-w-xl mx-auto font-body" style={{ color: "hsl(var(--scifi-muted))" }}>
-              Speculative fiction novels, healing memoirs, and short stories by David Deane Haskell.
-            </p>
             <a
               href="https://www.amazon.com/dp/B0GPN8DBJS"
               target="_blank"
