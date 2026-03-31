@@ -56,45 +56,12 @@ const Home = () => {
 
         <div className="divider" />
 
-        {/* Where to Start */}
+        {/* Books By */}
         <section className="section-spacing">
-          <div className="page-container max-w-3xl mx-auto">
-            <div className="text-center space-y-2 mb-12">
-              <h2 className="heading-section">Where to Start</h2>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8 text-center">
-              <div className="space-y-3">
-                <h3 className="font-heading text-lg font-medium text-foreground">The Solarian Deep</h3>
-                <p className="body-text text-sm">Gripping speculative fiction. A world beneath the waves where humanity must adapt or perish.</p>
-                <a
-                  href="https://www.amazon.com/dp/B0GPN8DBJS"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-accent text-sm"
-                >
-                  Buy Novel →
-                </a>
-              </div>
-              <div className="space-y-3">
-                <h3 className="font-heading text-lg font-medium text-foreground">Wounded Angels</h3>
-                <p className="body-text text-sm">A raw memoir of inner-child healing — the truth behind the fiction.</p>
-                <a
-                  href="https://mybook.to/woundedangels"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-accent text-sm"
-                >
-                  Buy Memoir →
-                </a>
-              </div>
-              <div className="space-y-3">
-                <h3 className="font-heading text-lg font-medium text-foreground">Free Fiction Vault</h3>
-                <p className="body-text text-sm">A short story and a full novel — free. No spam, just resonant sci-fi.</p>
-                <Link to="/vault" className="link-accent text-sm">
-                  Explore Free →
-                </Link>
-              </div>
-            </div>
+          <div className="page-container max-w-3xl mx-auto text-center">
+            <p className="text-lg md:text-xl font-body" style={{ color: "hsl(var(--scifi-muted))" }}>
+              Speculative fiction novels, healing memoirs, and short stories by David Deane Haskell.
+            </p>
           </div>
         </section>
 
