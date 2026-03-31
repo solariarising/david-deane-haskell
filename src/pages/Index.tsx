@@ -134,7 +134,7 @@ const Home = () => {
               Start with free fiction.
             </h2>
             <p className="body-text text-sm">
-              Get <em>Tommytune</em> plus <em>Emergence</em> — a short story and a full novel — and step into David Deane Haskell's fiction world for free.
+              Get <em>Tommytune</em> plus <em>Emergence</em> — a short story and a full novel — and step into David Deane Haskell's visionary worlds for free.
             </p>
           </div>
           <a
