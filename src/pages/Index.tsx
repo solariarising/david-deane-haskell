@@ -43,9 +43,6 @@ const Home = () => {
               Stories that heal.<br />
               <span style={{ color: "hsl(195 85% 55%)" }}>Worlds that awaken.</span>
             </h1>
-            <p className="text-lg md:text-xl max-w-xl mx-auto font-body" style={{ color: "hsl(var(--scifi-muted))" }}>
-              Speculative fiction novels, healing memoirs, and short stories by David Deane Haskell.
-            </p>
             <a
               href="https://www.amazon.com/dp/B0GPN8DBJS"
               target="_blank"
@@ -59,57 +56,25 @@ const Home = () => {
 
         <div className="divider" />
 
-        {/* Where to Start */}
+        {/* Books By */}
         <section className="section-spacing">
-          <div className="page-container max-w-3xl mx-auto">
-            <div className="text-center space-y-2 mb-12">
-              <h2 className="heading-section">Where to Start</h2>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8 text-center">
-              <div className="space-y-3">
-                <h3 className="font-heading text-lg font-medium text-foreground">The Solarian Deep</h3>
-                <p className="body-text text-sm">Gripping speculative fiction. A world beneath the waves where humanity must adapt or perish.</p>
-                <a
-                  href="https://www.amazon.com/dp/B0GPN8DBJS"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-accent text-sm"
-                >
-                  Buy Novel →
-                </a>
-              </div>
-              <div className="space-y-3">
-                <h3 className="font-heading text-lg font-medium text-foreground">Wounded Angels</h3>
-                <p className="body-text text-sm">A raw memoir of inner-child healing — the truth behind the fiction.</p>
-                <a
-                  href="https://mybook.to/woundedangels"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-accent text-sm"
-                >
-                  Buy Memoir →
-                </a>
-              </div>
-              <div className="space-y-3">
-                <h3 className="font-heading text-lg font-medium text-foreground">Free Fiction Vault</h3>
-                <p className="body-text text-sm">A short story and a full novel — free. No spam, just resonant sci-fi.</p>
-                <Link to="/vault" className="link-accent text-sm">
-                  Explore Free →
-                </Link>
-              </div>
-            </div>
+          <div className="page-container max-w-3xl mx-auto text-center">
+            <p className="text-lg md:text-xl font-body" style={{ color: "hsl(var(--scifi-muted))" }}>
+              Speculative fiction novels, healing memoirs, and short stories by David Deane Haskell.
+            </p>
           </div>
         </section>
 
         {/* Free Bonus Stories */}
         <section className="section-spacing">
           <div className="page-container text-center max-w-2xl mx-auto space-y-6">
-            <h2 className="heading-section">Begin with free bonus stories.</h2>
+            <h2 className="heading-section">BONUS FICTION</h2>
+            <p className="heading-section text-xl md:text-2xl font-normal">Free Stories For You</p>
             <p className="body-text">
               Start exploring David's science fiction right now for free—no spam, just fiction that resonates.
             </p>
             <Link to="/vault" className="btn-primary">
-              Free Bonus Stories
+              FREE BONUS STORIES
             </Link>
           </div>
         </section>
@@ -169,7 +134,7 @@ const Home = () => {
               Start with free fiction.
             </h2>
             <p className="body-text text-sm">
-              Get <em>Tommytune</em> plus <em>Emergence</em> — a short story and a full novel — and step into David Deane Haskell's fiction world for free.
+              Get <em>Tommytune</em> plus <em>Emergence</em> — a short story and a full novel — and step into David Deane Haskell's visionary worlds for free.
             </p>
           </div>
           <a
