@@ -68,12 +68,13 @@ const Home = () => {
         {/* Free Bonus Stories */}
         <section className="section-spacing">
           <div className="page-container text-center max-w-2xl mx-auto space-y-6">
-            <h2 className="heading-section">Begin with free bonus stories.</h2>
+            <h2 className="heading-section">BONUS FICTION</h2>
+            <p className="heading-section text-xl md:text-2xl font-normal">Free Stories For You</p>
             <p className="body-text">
               Start exploring David's science fiction right now for free—no spam, just fiction that resonates.
             </p>
             <Link to="/vault" className="btn-primary">
-              Free Bonus Stories
+              FREE BONUS STORIES
             </Link>
           </div>
         </section>
