@@ -66,7 +66,7 @@ const Books = () => {
             <div className="space-y-4">
               <h3 className="heading-subsection">The Solarian Deep</h3>
               <p className="text-xs uppercase tracking-widest text-muted-foreground">Novel — Book 1 of the Technoquatics Series</p>
-              <p className="body-text">Begin with <em>The Solarian Deep</em>—or visit the <Link to="/vault" className="link-accent">Free Fiction Vault</Link> to see what resonates.</p>
+              <p className="body-text">David Deane Haskell's latest novel, <em>The Solarian Deep</em>—start reading now.</p>
               <a href="https://www.amazon.com/dp/B0GPN8DBJS" target="_blank" rel="noopener noreferrer" className="btn-primary inline-block">
                 READ THE SOLARIAN DEEP
               </a>
