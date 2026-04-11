@@ -164,7 +164,7 @@ const Books = () => {
                 rel="noopener noreferrer"
                 className="btn-primary"
               >
-                Buy Memoir
+                LEARN MORE
               </a>
             </div>
           </div>
