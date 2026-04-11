@@ -1,56 +1,119 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import PageLayout from "@/components/PageLayout";
-import solarianHero from "@/assets/solarian-deep-hero.jpg";
+import heroBrand from "@/assets/hero-author-brand.jpg";
 import woundedAngels from "@/assets/wounded-angels.jpg";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+
+const POPUP_STORAGE_KEY = "freeStoriesPopupDismissed";
+const POPUP_SIGNUP_KEY = "freeStoriesSignedUp";
+const SUPPRESS_DAYS = 7;
+
+function shouldSuppressPopup() {
+  if (sessionStorage.getItem("freeStoriesPopupShownThisSession")) return true;
+  if (localStorage.getItem(POPUP_SIGNUP_KEY)) return true;
+  const dismissed = localStorage.getItem(POPUP_STORAGE_KEY);
+  if (dismissed) {
+    const diff = Date.now() - Number(dismissed);
+    if (diff < SUPPRESS_DAYS * 24 * 60 * 60 * 1000) return true;
+  }
+  return false;
+}
 
 const Home = () => {
   const [showPopup, setShowPopup] = useState(false);
 
-  useEffect(() => {
-    const alreadyShown = sessionStorage.getItem("freeStoriesPopupShown");
-    if (alreadyShown) return;
-
-    const timer = setTimeout(() => {
-      setShowPopup(true);
-      sessionStorage.setItem("freeStoriesPopupShown", "true");
-    }, 25000);
-
-    return () => clearTimeout(timer);
+  const triggerPopup = useCallback(() => {
+    if (shouldSuppressPopup()) return;
+    setShowPopup(true);
+    sessionStorage.setItem("freeStoriesPopupShownThisSession", "true");
   }, []);
+
+  const dismissPopup = useCallback(() => {
+    setShowPopup(false);
+    localStorage.setItem(POPUP_STORAGE_KEY, String(Date.now()));
+  }, []);
+
+  const handleSignupClick = useCallback(() => {
+    setShowPopup(false);
+    localStorage.setItem(POPUP_SIGNUP_KEY, "true");
+  }, []);
+
+  useEffect(() => {
+    if (shouldSuppressPopup()) return;
+
+    // Exit intent on desktop
+    const handleMouseLeave = (e: MouseEvent) => {
+      if (e.clientY <= 0) triggerPopup();
+    };
+    document.addEventListener("mouseleave", handleMouseLeave);
+
+    // Scroll depth fallback (50% of page)
+    const handleScroll = () => {
+      const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+      if (scrollPercent > 0.5) triggerPopup();
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    // Time fallback (45s)
+    const timer = setTimeout(triggerPopup, 45000);
+
+    return () => {
+      document.removeEventListener("mouseleave", handleMouseLeave);
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(timer);
+    };
+  }, [triggerPopup]);
 
   return (
     <PageLayout>
-      {/* Hero — Sci-Fi Zone */}
+      {/* Hero */}
       <div className="zone-scifi">
         <section className="relative -mt-16 md:-mt-20">
-          {/* Full-viewport hero image */}
-          {/* Full-viewport hero image */}
-          <div className="relative min-h-screen overflow-hidden">
+          <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+            {/* Background image */}
             <img
-              src={solarianHero}
-              alt="The Solarian Deep by David Deane Haskell"
+              src={heroBrand}
+              alt="Atmospheric deep-ocean science fiction scene evoking consciousness, technology, and survival"
               className="absolute inset-0 w-full h-full object-cover"
               loading="eager"
               decoding="async"
+              fetchPriority="high"
+              width={1920}
+              height={1080}
             />
-          </div>
+            {/* Overlay for readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
 
-          {/* Content below hero */}
-          <div className="text-center py-12 md:py-16 px-6 space-y-6 animate-fade-in max-w-3xl mx-auto">
-            <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-tight" style={{ color: "hsl(var(--scifi-fg))" }}>
-              Stories that heal.<br />
-              <span style={{ color: "hsl(195 85% 55%)" }}>Worlds that awaken.</span>
-            </h1>
-            <a
-              href="https://www.amazon.com/dp/B0GPN8DBJS"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary inline-block"
-            >
-              Start with The Solarian Deep
-            </a>
+            {/* Hero content */}
+            <div className="relative z-10 text-center px-6 max-w-3xl mx-auto space-y-6 pt-16">
+              <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight leading-[1.05]" style={{ color: "hsl(200 30% 92%)" }}>
+                David Deane<br />Haskell
+              </h1>
+              <p className="text-base md:text-lg font-body leading-relaxed max-w-xl mx-auto" style={{ color: "hsl(200 20% 70%)" }}>
+                Visionary fiction at the edge of consciousness, technology, and survival.
+              </p>
+              <p className="text-sm md:text-base font-body leading-relaxed max-w-lg mx-auto" style={{ color: "hsl(200 15% 58%)" }}>
+                Start with two free stories where hidden worlds are revealed, dangerous transformations unfold, and the human spirit is always on the line.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a
+                  href="https://dl.bookfunnel.com/k7osg3nq37"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary text-base px-10 py-4"
+                  onClick={handleSignupClick}
+                >
+                  GET THE FREE STORIES
+                </a>
+                <Link
+                  to="/books"
+                  className="btn-outline"
+                >
+                  Browse the Books
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -60,22 +123,8 @@ const Home = () => {
         <section className="section-spacing">
           <div className="page-container max-w-3xl mx-auto text-center">
             <p className="text-lg md:text-xl font-body" style={{ color: "hsl(var(--scifi-muted))" }}>
-              Speculative fiction novels, healing memoirs, and short stories by David Deane Haskell.
+              Speculative fiction novels, healing memoirs, and short stories.
             </p>
-          </div>
-        </section>
-
-        {/* Free Bonus Stories */}
-        <section className="section-spacing">
-          <div className="page-container text-center max-w-2xl mx-auto space-y-6">
-            <h2 className="heading-section">BONUS FICTION</h2>
-            <p className="heading-section text-xl md:text-2xl font-normal">Free Stories For You</p>
-            <p className="body-text">
-              Start exploring David's science fiction right now for free—no spam, just fiction that resonates.
-            </p>
-            <Link to="/vault" className="btn-primary">
-              FREE BONUS STORIES
-            </Link>
           </div>
         </section>
       </div>
@@ -123,18 +172,18 @@ const Home = () => {
         </section>
       </div>
 
-      {/* Timed free stories popup */}
-      <Dialog open={showPopup} onOpenChange={setShowPopup}>
-        <DialogContent className="sm:max-w-md text-center space-y-6 bg-background border-border">
+      {/* Free fiction popup — secondary reinforcement */}
+      <Dialog open={showPopup} onOpenChange={(open) => { if (!open) dismissPopup(); }}>
+        <DialogContent className="sm:max-w-md text-center space-y-6" style={{ background: "hsl(220 25% 10%)", borderColor: "hsl(195 60% 25%)" }}>
           <div className="space-y-4 pt-4">
-            <p className="text-xs uppercase tracking-[0.3em]" style={{ color: "hsl(195 85% 45%)" }}>
+            <p className="text-xs uppercase tracking-[0.3em] font-medium" style={{ color: "hsl(195 85% 50%)" }}>
               Free Fiction
             </p>
-            <h2 className="font-heading text-2xl md:text-3xl font-semibold text-foreground">
-              Start with free fiction.
+            <h2 className="font-heading text-2xl md:text-3xl font-semibold" style={{ color: "hsl(200 30% 90%)" }}>
+              Start with two free stories.
             </h2>
-            <p className="body-text text-sm">
-              Get <em>Tommytune</em> plus <em>Emergence</em> — a short story and a full novel — and step into David Deane Haskell's visionary worlds for free.
+            <p className="text-sm leading-relaxed" style={{ color: "hsl(210 15% 58%)" }}>
+              Two free stories. Start here.
             </p>
           </div>
           <a
@@ -142,16 +191,13 @@ const Home = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary inline-block"
-            onClick={() => setShowPopup(false)}
+            onClick={handleSignupClick}
           >
-            Get Free Bonus Fiction
+            GET THE FREE STORIES
           </a>
-          <p className="text-xs text-muted-foreground">
-            No spam. Just resonant sci-fi and occasional updates.
-          </p>
           <button
-            onClick={() => setShowPopup(false)}
-            className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+            onClick={dismissPopup}
+            className="text-xs transition-colors" style={{ color: "hsl(210 15% 45%)" }}
           >
             No thanks, maybe later
           </button>

@@ -20,37 +20,21 @@ const About = () => (
             <h1 className="heading-display">About David</h1>
             <div className="space-y-5 body-text">
               <p>
-                David Deane Haskell writes about healing the past, understanding the present, and imagining futures worth living in.
+                David Deane Haskell writes about healing the past, understanding the present, and creating futures worth living in.
               </p>
               <p>
                 His work spans speculative fiction, essays, and healing-centered memoir, with one mission: helping people make sense of an overwhelming world without abandoning hope.
               </p>
               <p>
-                He is the author of <em>The Solarian Deep</em>, <em>Wounded Angels</em>, <em>Emergence</em>, <em>Dark Alignment</em>, <em>Too Much Information</em>, and <em>Tommytune</em>.
+                He is the author of <em>The Solarian Deep</em>, <em>Wounded Angels</em>, <em>Emergence</em>, <em>Dark Alignment</em>, and <em>Too Much Information</em>. His next novel, <em>THE VIBRANTS</em>, will be in your hands soon. <em>Tommytune</em> offers an early glimpse into that world.
               </p>
               <p>
-                Start with <em>The Solarian Deep</em> for fiction, <em>Wounded Angels</em> for healing, or the free fiction vault to explore.
+                Read <em>The Solarian Deep</em> for fiction, <em>Wounded Angels</em> for healing, or get <em>Tommytune</em> for an early glimpse of <em>THE VIBRANTS</em>.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 pt-2">
-              <a
-                href="https://www.amazon.com/dp/B0GPN8DBJS"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary"
-              >
-                The Solarian Deep
-              </a>
-              <a
-                href="https://mybook.to/woundedangels"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-outline"
-              >
-                Wounded Angels
-              </a>
-              <Link to="/vault" className="btn-outline">
-                Free Fiction Vault
+            <div className="pt-2">
+              <Link to="/books" className="btn-primary">
+                BOOKS BY DAVID
               </Link>
             </div>
           </div>

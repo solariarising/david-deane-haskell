@@ -48,10 +48,12 @@ const Vault = () => (
             <div className="flex justify-center">
               <img
                 src={vaultBooks}
-                alt="Tommytune and Emergence — Free bonus stories by David Deane Haskell"
+                alt="Tommytune and Emergence — free bonus stories by David Deane Haskell"
                 className="w-full max-w-md rounded-sm shadow-lg"
                 loading="eager"
                 decoding="async"
+                width={1200}
+                height={896}
               />
             </div>
             <div className="space-y-8">
