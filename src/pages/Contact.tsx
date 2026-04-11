@@ -14,7 +14,7 @@ const Contact = () => {
             />
             <h1 className="heading-display">Get in Touch</h1>
             <p className="body-large">
-              For books, interviews, podcast appearances, speaking invitations, or thoughtful collaboration, get in touch.
+              For interviews, podcasts, speaking invitations, clinics, workshops, one-on-one sessions, or select collaborations, get in touch.
             </p>
           </div>
 
@@ -22,10 +22,7 @@ const Contact = () => {
 
           <div className="space-y-6 text-center">
             <p className="body-text">
-              David is the author of the sci-fi novel <em>The Solarian Deep</em>, the foundational thriller <em>Emergence</em>, and the inner-child healing memoir <em>Wounded Angels</em>. His work spans the distance between envisioning hopeful futures and integrating the past—and he brings that same range to everything he does in person.
-            </p>
-            <p className="body-text">
-              He is available for interviews, podcast guest appearances, speaking, clinics and workshops, one-on-one educational sessions, and select collaborations.
+              David Deane Haskell is the author of <em>The Solarian Deep</em>, <em>Emergence</em>, and <em>Wounded Angels</em>. His work spans speculative fiction, personal nonfiction, and conversations about creativity, transformation, and what keeps us human.
             </p>
           </div>
 
@@ -39,7 +36,7 @@ const Contact = () => {
               href="mailto:david@daviddeanehaskell.com"
               className="btn-primary inline-block"
             >
-              david@daviddeanehaskell.com
+              EMAIL DAVID
             </a>
           </div>
 

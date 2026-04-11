@@ -86,17 +86,14 @@ const Home = () => {
 
             {/* Hero content */}
             <div className="relative z-10 text-center px-6 max-w-3xl mx-auto space-y-6 pt-16">
-              <p className="text-xs uppercase tracking-[0.35em] font-medium" style={{ color: "hsl(195 70% 60%)" }}>
-                Pathfinder · Storyteller · Visionary
-              </p>
               <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight leading-[1.05]" style={{ color: "hsl(200 30% 92%)" }}>
                 David Deane<br />Haskell
               </h1>
               <p className="text-base md:text-lg font-body leading-relaxed max-w-xl mx-auto" style={{ color: "hsl(200 20% 70%)" }}>
-                Science fiction at the edge of consciousness, AI, and survival.
+                Visionary fiction at the edge of consciousness, technology, and survival.
               </p>
               <p className="text-sm md:text-base font-body leading-relaxed max-w-lg mx-auto" style={{ color: "hsl(200 15% 58%)" }}>
-                Start with two free stories and enter a body of work shaped by pressure, memory, technology, and what remains human.
+                Start with two free stories and enter fiction shaped by hidden worlds, dangerous change, and what keeps us human.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                 <a
@@ -125,7 +122,7 @@ const Home = () => {
         <section className="section-spacing">
           <div className="page-container max-w-3xl mx-auto text-center">
             <p className="text-lg md:text-xl font-body" style={{ color: "hsl(var(--scifi-muted))" }}>
-              Speculative fiction novels, healing memoirs, and short stories by David Deane Haskell.
+              Speculative fiction novels, healing memoirs, and short stories.
             </p>
           </div>
         </section>
@@ -185,7 +182,7 @@ const Home = () => {
               Start with two free stories.
             </h2>
             <p className="text-sm leading-relaxed" style={{ color: "hsl(210 15% 58%)" }}>
-              Get a standalone short story and a full-length sci-fi novel free. No spam. Just fiction worth entering.
+              Two free stories. Start here.
             </p>
           </div>
           <a
