@@ -74,10 +74,11 @@ const Home = () => {
             {/* Background image */}
             <img
               src={heroBrand}
-              alt="Atmospheric deep-ocean science fiction scene"
+              alt="Atmospheric deep-ocean science fiction scene evoking consciousness, technology, and survival"
               className="absolute inset-0 w-full h-full object-cover"
               loading="eager"
               decoding="async"
+              fetchPriority="high"
               width={1920}
               height={1080}
             />

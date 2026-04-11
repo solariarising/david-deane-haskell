@@ -61,7 +61,7 @@ const Books = () => {
           {/* Featured: Solarian Deep */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <a href="https://www.amazon.com/dp/B0GPN8DBJS" target="_blank" rel="noopener noreferrer">
-              <img src={solarianHero} alt="The Solarian Deep" className="w-full rounded-sm shadow-lg hover:shadow-xl transition-shadow cursor-pointer" loading="eager" decoding="async" />
+              <img src={solarianHero} alt="The Solarian Deep — Book 1 of the Technoquatics Series by David Deane Haskell" className="w-full rounded-sm shadow-lg hover:shadow-xl transition-shadow cursor-pointer" loading="eager" decoding="async" width={1536} height={1024} />
             </a>
             <div className="space-y-4">
               <h3 className="heading-subsection">The Solarian Deep</h3>
@@ -75,7 +75,7 @@ const Books = () => {
 
           {/* Collection image */}
           <div className="flex justify-center">
-            <img src={fictionBooks} alt="David's fiction collection" className="w-full max-w-lg rounded-sm shadow-lg" loading="lazy" decoding="async" />
+            <img src={fictionBooks} alt="Fiction book collection by David Deane Haskell including Emergence, Dark Alignment, The Gold Club, and Too Much Information" className="w-full max-w-lg rounded-sm shadow-lg" loading="lazy" decoding="async" width={781} height={1182} />
           </div>
 
           {/* Other novels grid */}
@@ -112,7 +112,7 @@ const Books = () => {
 
           {/* TommyTune */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <img src={tommytune} alt="TommyTune - A Resona Series Short Story" className="w-full max-w-sm mx-auto rounded-sm shadow-lg" loading="lazy" decoding="async" />
+            <img src={tommytune} alt="Tommytune — a short story set in The Vibrants world by David Deane Haskell" className="w-full max-w-sm mx-auto rounded-sm shadow-lg" loading="lazy" decoding="async" width={600} height={900} />
             <BookCard
               title="Tommytune"
               subtitle="Short Story"
@@ -149,7 +149,7 @@ const Books = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <img src={woundedAngels} alt="Wounded Angels by David Deane Haskell" className="w-full max-w-sm mx-auto rounded-sm shadow-lg" loading="lazy" decoding="async" />
+            <img src={woundedAngels} alt="Wounded Angels — healing memoir by David Deane Haskell about inner child work and recovery" className="w-full max-w-sm mx-auto rounded-sm shadow-lg" loading="lazy" decoding="async" width={739} height={1182} />
             <div className="space-y-6">
               <h3 className="heading-subsection">Wounded Angels</h3>
               <p className="body-text italic font-heading text-lg">
@@ -164,7 +164,7 @@ const Books = () => {
                 rel="noopener noreferrer"
                 className="btn-primary"
               >
-                Buy Memoir
+                LEARN MORE
               </a>
             </div>
           </div>
