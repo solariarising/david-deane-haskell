@@ -20,7 +20,7 @@ const About = () => (
             <h1 className="heading-display">About David</h1>
             <div className="space-y-5 body-text">
               <p>
-                David Deane Haskell writes about healing the past, understanding the present, and imagining futures worth living in.
+                David Deane Haskell writes about healing the past, understanding the present, and creating futures worth living in.
               </p>
               <p>
                 His work spans speculative fiction, essays, and healing-centered memoir, with one mission: helping people make sense of an overwhelming world without abandoning hope.
