@@ -58,11 +58,6 @@ const Books = () => {
       {/* Fiction */}
       <section className="section-spacing">
         <div className="page-container space-y-16">
-          <div className="text-center space-y-2">
-            <p className="text-sm uppercase tracking-widest text-muted-foreground">Fiction</p>
-            <h2 className="heading-section">Technothrillers & Visionary Worlds</h2>
-          </div>
-
           {/* Featured: Solarian Deep */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <a href="https://www.amazon.com/dp/B0GPN8DBJS" target="_blank" rel="noopener noreferrer">
@@ -71,7 +66,10 @@ const Books = () => {
             <div className="space-y-4">
               <h3 className="heading-subsection">The Solarian Deep</h3>
               <p className="text-xs uppercase tracking-widest text-muted-foreground">Novel — Book 1 of the Technoquatics Series</p>
-              <p className="body-text">Book 1 of the Technoquatics Series plunges you into a world where humanity must adapt or perish beneath the waves. Click the cover and dive in.</p>
+              <p className="body-text">Begin with <em>The Solarian Deep</em>—or visit the <Link to="/vault" className="link-accent">Free Fiction Vault</Link> to see what resonates.</p>
+              <a href="https://www.amazon.com/dp/B0GPN8DBJS" target="_blank" rel="noopener noreferrer" className="btn-primary inline-block">
+                READ THE SOLARIAN DEEP
+              </a>
             </div>
           </div>
 

@@ -93,7 +93,7 @@ const Home = () => {
                 Visionary fiction at the edge of consciousness, technology, and survival.
               </p>
               <p className="text-sm md:text-base font-body leading-relaxed max-w-lg mx-auto" style={{ color: "hsl(200 15% 58%)" }}>
-                Start with two free stories and enter fiction shaped by hidden worlds, dangerous change, and what keeps us human.
+                Start with two free stories where hidden worlds are revealed, dangerous transformations unfold, and the human spirit is always on the line.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                 <a
