@@ -7,7 +7,7 @@ const navItems = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
   { label: "Books", path: "/books" },
-  { label: "Free Stories", path: "/vault" },
+  { label: "Free Fiction", path: "/vault" },
   { label: "Contact", path: "/contact" },
 ];
 

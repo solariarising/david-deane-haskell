@@ -104,7 +104,7 @@ const Home = () => {
                   className="btn-primary text-base px-10 py-4"
                   onClick={handleSignupClick}
                 >
-                  GET THE FREE STORIES
+                  GET FREE FICTION
                 </a>
                 <Link
                   to="/books"
@@ -123,7 +123,7 @@ const Home = () => {
         <section className="section-spacing">
           <div className="page-container max-w-3xl mx-auto text-center">
             <p className="text-lg md:text-xl font-body" style={{ color: "hsl(var(--scifi-muted))" }}>
-              Speculative fiction novels, healing memoirs, and short stories.
+              Scifi novels, healing memoirs, and short stories.
             </p>
           </div>
         </section>
@@ -149,7 +149,7 @@ const Home = () => {
           <div className="page-container">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6 md:order-1">
-                <p className="text-sm uppercase tracking-widest text-muted-foreground">Memoir & Recovery</p>
+                <p className="text-sm uppercase tracking-widest text-muted-foreground">Healing & Memoir</p>
                 <h2 className="heading-section">
                   A journey from trauma to peace.
                 </h2>
@@ -177,13 +177,13 @@ const Home = () => {
         <DialogContent className="sm:max-w-md text-center space-y-6" style={{ background: "hsl(220 25% 10%)", borderColor: "hsl(195 60% 25%)" }}>
           <div className="space-y-4 pt-4">
             <p className="text-xs uppercase tracking-[0.3em] font-medium" style={{ color: "hsl(195 85% 50%)" }}>
-              Free Fiction
+              Free Fiction Vault
             </p>
             <h2 className="font-heading text-2xl md:text-3xl font-semibold" style={{ color: "hsl(200 30% 90%)" }}>
-              Start with two free stories.
+              Two free reads are waiting.
             </h2>
             <p className="text-sm leading-relaxed" style={{ color: "hsl(210 15% 58%)" }}>
-              Two free stories. Start here.
+              A standalone short story and a full-length novel, free when you join.
             </p>
           </div>
           <a
@@ -193,7 +193,7 @@ const Home = () => {
             className="btn-primary inline-block"
             onClick={handleSignupClick}
           >
-            GET THE FREE STORIES
+            GET FREE FICTION
           </a>
           <button
             onClick={dismissPopup}
