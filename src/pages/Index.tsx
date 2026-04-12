@@ -177,13 +177,13 @@ const Home = () => {
         <DialogContent className="sm:max-w-md text-center space-y-6" style={{ background: "hsl(220 25% 10%)", borderColor: "hsl(195 60% 25%)" }}>
           <div className="space-y-4 pt-4">
             <p className="text-xs uppercase tracking-[0.3em] font-medium" style={{ color: "hsl(195 85% 50%)" }}>
-              Free Fiction
+              Free Fiction Vault
             </p>
             <h2 className="font-heading text-2xl md:text-3xl font-semibold" style={{ color: "hsl(200 30% 90%)" }}>
-              Start with two free stories.
+              Two free reads are waiting.
             </h2>
             <p className="text-sm leading-relaxed" style={{ color: "hsl(210 15% 58%)" }}>
-              Two free stories. Start here.
+              A standalone short story and a full-length novel, free when you join.
             </p>
           </div>
           <a
