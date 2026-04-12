@@ -1,5 +1,5 @@
 import PageLayout from "@/components/PageLayout";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.webp";
 
 const Contact = () => {
   return (
@@ -11,6 +11,10 @@ const Contact = () => {
               src={logo}
               alt="David Deane Haskell"
               className="w-24 h-24 mx-auto rounded-full"
+              loading="eager"
+              decoding="async"
+              width={96}
+              height={96}
             />
             <h1 className="heading-display">Get in Touch</h1>
             <p className="body-large">

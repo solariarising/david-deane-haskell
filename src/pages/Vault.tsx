@@ -1,5 +1,5 @@
 import PageLayout from "@/components/PageLayout";
-import vaultBooks from "@/assets/vault-books-composite.jpg";
+import vaultBooks from "@/assets/vault-books-composite.webp";
 
 const Vault = () => (
   <PageLayout>
