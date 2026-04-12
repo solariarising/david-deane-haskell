@@ -104,7 +104,7 @@ const Home = () => {
                   className="btn-primary text-base px-10 py-4"
                   onClick={handleSignupClick}
                 >
-                  GET THE FREE STORIES
+                  GET FREE FICTION
                 </a>
                 <Link
                   to="/books"
@@ -123,7 +123,7 @@ const Home = () => {
         <section className="section-spacing">
           <div className="page-container max-w-3xl mx-auto text-center">
             <p className="text-lg md:text-xl font-body" style={{ color: "hsl(var(--scifi-muted))" }}>
-              Speculative fiction novels, healing memoirs, and short stories.
+              Scifi novels, healing memoirs, and short stories.
             </p>
           </div>
         </section>
@@ -149,7 +149,7 @@ const Home = () => {
           <div className="page-container">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6 md:order-1">
-                <p className="text-sm uppercase tracking-widest text-muted-foreground">Memoir & Recovery</p>
+                <p className="text-sm uppercase tracking-widest text-muted-foreground">Healing & Memoir</p>
                 <h2 className="heading-section">
                   A journey from trauma to peace.
                 </h2>
@@ -193,7 +193,7 @@ const Home = () => {
             className="btn-primary inline-block"
             onClick={handleSignupClick}
           >
-            GET THE FREE STORIES
+            GET FREE FICTION
           </a>
           <button
             onClick={dismissPopup}

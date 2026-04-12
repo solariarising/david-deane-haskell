@@ -102,11 +102,11 @@ export const getSeoForPath = (pathname: string) => {
 
 const escapeHtml = (value: string) =>
   value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#39;");
+    .split("&").join("&amp;")
+    .split("<").join("&lt;")
+    .split(">").join("&gt;")
+    .split('"').join("&quot;")
+    .split("'").join("&#39;");
 
 const buildGraph = (pathname: string) => {
   const seo = getSeoForPath(pathname);
@@ -265,7 +265,7 @@ export const renderSeoTags = (pathname: string) => {
     `<meta name="twitter:description" content="${escapeHtml(seo.description)}" />`,
     `<meta name="twitter:image" content="${escapeHtml(seo.imageUrl)}" />`,
     `<meta name="twitter:image:alt" content="${escapeHtml(seo.imageAlt)}" />`,
-    `<script type="application/ld+json">${structuredData.replaceAll("</script>", "<\\/script>")}</script>`,
+    `<script type="application/ld+json">${structuredData.split("</script>").join("<\\/script>")}</script>`,
   ].join("\n    ");
 };
 

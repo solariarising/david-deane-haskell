@@ -33,7 +33,7 @@ const Vault = () => (
               rel="noopener noreferrer"
               className="btn-primary"
             >
-              Get Your Free Fiction
+              GET FREE FICTION
             </a>
           </div>
         </div>
@@ -76,7 +76,7 @@ const Vault = () => (
                     <h3 className="font-heading text-xl font-medium" style={{ color: "hsl(195 85% 45%)" }}>
                       Emergence
                     </h3>
-                    <p className="text-xs uppercase tracking-widest text-muted-foreground">A Full-Length Sci-Fi Novel</p>
+                    <p className="text-xs uppercase tracking-widest text-muted-foreground">A Full-Length Scifi Novel</p>
                     <p className="body-text">
                       In the gleaming city of Tera-Prime, the future has just been cancelled. Alixs uncovers a kill switch designed to wipe his people from existence. Marked for death, he must run into the shadows of the underground to expose the chilling truth.
                     </p>
@@ -102,11 +102,40 @@ const Vault = () => (
             rel="noopener noreferrer"
             className="btn-primary"
           >
-            Get My Bonus Stories
+            GET FREE FICTION
           </a>
           <p className="text-xs text-muted-foreground tracking-wide">
             No spam. Forever free. Unsubscribe any time.
           </p>
+        </div>
+      </section>
+
+      <div className="divider" />
+
+      {/* Substacks */}
+      <section className="section-spacing">
+        <div className="page-container text-center max-w-2xl mx-auto space-y-4">
+          <p className="text-sm text-muted-foreground">
+            Free short stories, serialized novels, and healing essays:
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="https://daviddeanehaskellstories.substack.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-accent text-sm"
+            >
+              Fiction Substack
+            </a>
+            <a
+              href="https://innerchildjournal.substack.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-accent text-sm"
+            >
+              Inner Child Journal
+            </a>
+          </div>
         </div>
       </section>
     </div>

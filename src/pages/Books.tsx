@@ -41,21 +41,21 @@ const Books = () => {
 
   return (
   <PageLayout>
-    {/* Sci-Fi Zone */}
+    {/* Scifi Zone */}
     <div className="zone-scifi">
       {/* Hero */}
       <section className="section-spacing pb-8">
         <div className="page-container text-center max-w-3xl mx-auto space-y-6">
-          <h1 className="heading-display">Books & Writing</h1>
+          <h1 className="heading-display">Books</h1>
           <p className="body-large">
-            Begin with <em>The Solarian Deep</em> for fiction, <em>Wounded Angels</em> for healing, or the <Link to="/vault" className="link-accent">Free Fiction Vault</Link> to sample first.
+            Begin with <em>The Solarian Deep</em> for scifi, <em>Wounded Angels</em> for healing, or visit the <Link to="/vault" className="link-accent">Free Fiction Vault</Link> to see what resonates.
           </p>
         </div>
       </section>
 
       <div className="divider" />
 
-      {/* Fiction */}
+      {/* Scifi */}
       <section className="section-spacing">
         <div className="page-container space-y-16">
           {/* Featured: Solarian Deep */}
