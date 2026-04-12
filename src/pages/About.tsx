@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
-import profile from "@/assets/profile.jpg";
+import profile from "@/assets/profile.webp";
 
 const About = () => (
   <PageLayout>

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect, useCallback } from "react";
 import PageLayout from "@/components/PageLayout";
-import heroBrand from "@/assets/hero-author-brand.jpg";
-import woundedAngels from "@/assets/wounded-angels.jpg";
+import heroBrand from "@/assets/hero-author-brand.webp";
+import woundedAngels from "@/assets/wounded-angels.webp";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 const POPUP_STORAGE_KEY = "freeStoriesPopupDismissed";

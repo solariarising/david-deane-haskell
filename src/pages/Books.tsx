@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
-import fictionBooks from "@/assets/fiction-books.jpg";
-import solarianHero from "@/assets/solarian-deep-hero.jpg";
-import woundedAngels from "@/assets/wounded-angels.jpg";
-import tommytune from "@/assets/tommytune-cover.jpg";
+import fictionBooks from "@/assets/fiction-books.webp";
+import solarianHero from "@/assets/solarian-deep-hero.webp";
+import woundedAngels from "@/assets/wounded-angels.webp";
+import tommytune from "@/assets/tommytune-cover.webp";
 
 interface BookCardProps {
   title: string;

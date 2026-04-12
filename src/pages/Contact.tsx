@@ -1,5 +1,5 @@
 import PageLayout from "@/components/PageLayout";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.webp";
 
 const Contact = () => {
   return (
