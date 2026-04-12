@@ -14,6 +14,8 @@ const About = () => (
               className="w-full max-w-md rounded-sm shadow-lg"
               loading="eager"
               decoding="async"
+              width={800}
+              height={800}
             />
           </div>
           <div className="space-y-6">
