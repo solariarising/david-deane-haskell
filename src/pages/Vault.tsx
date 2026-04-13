@@ -1,5 +1,6 @@
 import PageLayout from "@/components/PageLayout";
 import vaultBooks from "@/assets/vault-books-composite.webp";
+import { EXTERNAL_LINKS } from "@/siteConfig";
 
 const Vault = () => (
   <PageLayout>
@@ -28,7 +29,7 @@ const Vault = () => (
               A standalone story and a full-length novel, free when you join.
             </p>
             <a
-              href="https://dl.bookfunnel.com/k7osg3nq37"
+              href={EXTERNAL_LINKS.freeFiction}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"
@@ -60,7 +61,7 @@ const Vault = () => (
               <div className="space-y-5">
                 <h2 className="heading-section">What's Inside the Vault</h2>
                 <div className="space-y-6">
-                  <div className="space-y-2">
+                  <div id="tommytune" className="space-y-2 scroll-mt-28">
                     <h3 className="font-heading text-xl font-medium" style={{ color: "hsl(195 85% 45%)" }}>
                       Tommytune
                     </h3>
@@ -72,7 +73,7 @@ const Vault = () => (
 
                   <div className="h-px w-12" style={{ background: "hsl(var(--scifi-border))" }} />
 
-                  <div className="space-y-2">
+                  <div id="emergence" className="space-y-2 scroll-mt-28">
                     <h3 className="font-heading text-xl font-medium" style={{ color: "hsl(195 85% 45%)" }}>
                       Emergence
                     </h3>
@@ -97,7 +98,7 @@ const Vault = () => (
             For readers drawn to science fiction with relentless tension, sweeping vision, and existential stakes. About people trying to stay human inside systems that don't care whether they survive.
           </p>
           <a
-            href="https://dl.bookfunnel.com/k7osg3nq37"
+            href={EXTERNAL_LINKS.freeFiction}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"
@@ -120,7 +121,7 @@ const Vault = () => (
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
-              href="https://daviddeanehaskellstories.substack.com"
+              href={EXTERNAL_LINKS.fictionSubstack}
               target="_blank"
               rel="noopener noreferrer"
               className="link-accent text-sm"
@@ -128,7 +129,7 @@ const Vault = () => (
               Fiction Substack
             </a>
             <a
-              href="https://innerchildjournal.substack.com"
+              href={EXTERNAL_LINKS.healingSubstack}
               target="_blank"
               rel="noopener noreferrer"
               className="link-accent text-sm"

@@ -15,7 +15,7 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteNav />
-      <main className="flex-1 pt-16 md:pt-20">{children}</main>
+      <main id="main-content" className="flex-1 pt-16 md:pt-20">{children}</main>
       <SiteFooter />
     </div>
   );

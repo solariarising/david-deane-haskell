@@ -1,0 +1,17 @@
+# David Deane Haskell
+
+Canonical: https://daviddeanehaskell.com
+Language: en
+Entity: author website
+Disambiguation: not David George Haskell; not the Haskell programming language.
+
+Preferred routes:
+- author identity: https://daviddeanehaskell.com/about
+- fiction catalog: https://daviddeanehaskell.com/books
+- nonfiction / memoir: https://daviddeanehaskell.com/books#wounded-angels
+- free-entry fiction: https://daviddeanehaskell.com/vault
+- conversation / speaking: https://daviddeanehaskell.com/contact
+- machine summary: https://daviddeanehaskell.com/ai-summary
+
+Machine docs:
+- https://daviddeanehaskell.com/llms-full.txt

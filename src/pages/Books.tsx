@@ -5,8 +5,10 @@ import fictionBooks from "@/assets/fiction-books.webp";
 import solarianHero from "@/assets/solarian-deep-hero.webp";
 import woundedAngels from "@/assets/wounded-angels.webp";
 import tommytune from "@/assets/tommytune-cover.webp";
+import { EXTERNAL_LINKS } from "@/siteConfig";
 
 interface BookCardProps {
+  id?: string;
   title: string;
   subtitle?: string;
   description: string;
@@ -14,8 +16,8 @@ interface BookCardProps {
   buyLabel?: string;
 }
 
-const BookCard = ({ title, subtitle, description, buyUrl, buyLabel = "Buy Novel" }: BookCardProps) => (
-  <div className="space-y-4">
+const BookCard = ({ id, title, subtitle, description, buyUrl, buyLabel = "Buy Novel" }: BookCardProps) => (
+  <article id={id} className="space-y-4 scroll-mt-28">
     <div>
       <h3 className="heading-subsection">{title}</h3>
       {subtitle && <p className="text-xs uppercase tracking-widest text-muted-foreground mt-1">{subtitle}</p>}
@@ -24,7 +26,7 @@ const BookCard = ({ title, subtitle, description, buyUrl, buyLabel = "Buy Novel"
     <a href={buyUrl} target="_blank" rel="noopener noreferrer" className="btn-outline text-xs py-2 px-6">
       {buyLabel}
     </a>
-  </div>
+  </article>
 );
 
 const Books = () => {
@@ -60,17 +62,17 @@ const Books = () => {
         <div className="page-container space-y-16">
           {/* Featured: Solarian Deep */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <a href="https://www.amazon.com/dp/B0GPN8DBJS" target="_blank" rel="noopener noreferrer">
+            <a href={EXTERNAL_LINKS.solarianDeepAmazon} target="_blank" rel="noopener noreferrer">
               <img src={solarianHero} alt="The Solarian Deep — Book 1 of the Technoquatics Series by David Deane Haskell" className="w-full rounded-sm shadow-lg hover:shadow-xl transition-shadow cursor-pointer" loading="eager" decoding="async" width={1536} height={1024} />
             </a>
-            <div className="space-y-4">
+            <article id="the-solarian-deep" className="space-y-4 scroll-mt-28">
               <h3 className="heading-subsection">The Solarian Deep</h3>
               <p className="text-xs uppercase tracking-widest text-muted-foreground">Novel — Book 1 of the Technoquatics Series</p>
               <p className="body-text">David Deane Haskell's latest novel, <em>The Solarian Deep</em>—start reading now.</p>
-              <a href="https://www.amazon.com/dp/B0GPN8DBJS" target="_blank" rel="noopener noreferrer" className="btn-primary inline-block">
+              <a href={EXTERNAL_LINKS.solarianDeepAmazon} target="_blank" rel="noopener noreferrer" className="btn-primary inline-block">
                 READ THE SOLARIAN DEEP
               </a>
-            </div>
+            </article>
           </div>
 
           {/* Collection image */}
@@ -81,13 +83,15 @@ const Books = () => {
           {/* Other novels grid */}
           <div className="grid md:grid-cols-2 gap-12 md:gap-16">
             <BookCard
+              id="emergence"
               title="Emergence"
               subtitle="Standalone Novel"
               description="In the gleaming city of Tera-Prime, the future has just been cancelled. Alixs uncovers a 'kill switch' designed to wipe his people from existence. Marked for death, he must run into the shadows of the underground to expose the dangerous truth."
-              buyUrl="https://dl.bookfunnel.com/k7osg3nq37"
+              buyUrl={EXTERNAL_LINKS.freeFiction}
               buyLabel="Read for Free"
             />
             <BookCard
+              id="the-gold-club"
               title="The Gold Club"
               subtitle="Standalone Novel"
               description="He found a loophole in the world's biggest corporate wallet. Now they want their change. Buried in the Sahara warehouse, Ted starts a multimillion-dollar shadow operation right under the nose of management."
@@ -95,6 +99,7 @@ const Books = () => {
               buyLabel="Buy Novel"
             />
             <BookCard
+              id="dark-alignment"
               title="Dark Alignment"
               subtitle="Standalone Novel"
               description="They erased his research. Then they erased him. Dean Eckert found a ghost in the atmospheric data—an anomaly that defies physics. Now he has to solve the most dangerous equation in history before the sky falls."
@@ -102,6 +107,7 @@ const Books = () => {
               buyLabel="Buy Novel"
             />
             <BookCard
+              id="too-much-information"
               title="Too Much Information"
               subtitle="Standalone Novel"
               description="SecureSystems isn't just scanning for weapons. They're harvesting lives. Rob Folsom thought he was filing a simple lawsuit. Instead, he uncovered a data harvest that makes Big Brother look like an amateur."
@@ -111,13 +117,13 @@ const Books = () => {
           </div>
 
           {/* TommyTune */}
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div id="tommytune" className="grid md:grid-cols-2 gap-12 items-center scroll-mt-28">
             <img src={tommytune} alt="Tommytune — a short story set in The Vibrants world by David Deane Haskell" className="w-full max-w-sm mx-auto rounded-sm shadow-lg" loading="lazy" decoding="async" width={600} height={900} />
             <BookCard
               title="Tommytune"
               subtitle="Short Story"
               description="A Resona Series short story. A glimpse into the world of The Vibrants—where music, memory, and identity collide in unexpected ways."
-              buyUrl="https://dl.bookfunnel.com/k7osg3nq37"
+              buyUrl={EXTERNAL_LINKS.freeFiction}
               buyLabel="Read for Free"
             />
           </div>
@@ -140,7 +146,7 @@ const Books = () => {
     </div>
 
     {/* Healing Zone — Non-Fiction */}
-    <div className="zone-healing" id="wounded-angels">
+    <div className="zone-healing scroll-mt-28" id="wounded-angels">
       <section className="section-spacing">
         <div className="page-container space-y-12">
           <div className="text-center space-y-2">
@@ -158,12 +164,7 @@ const Books = () => {
               <p className="body-text">
                 In this raw, unfolding transformation, David introduces the many facets of himself—those inner child figures suppressed for years—and how they healed each other in real-time. This is the truth behind the fiction.
               </p>
-              <a
-                href="https://mybook.to/woundedangels"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary"
-              >
+              <a href={EXTERNAL_LINKS.woundedAngels} target="_blank" rel="noopener noreferrer" className="btn-primary">
                 LEARN MORE
               </a>
             </div>

@@ -8,6 +8,7 @@ const ssrDir = path.join(rootDir, ".ssr-temp");
 
 const routes = [
   { pathname: "/", output: "index.html" },
+  { pathname: "/ai-summary", output: path.join("ai-summary", "index.html") },
   { pathname: "/about", output: path.join("about", "index.html") },
   { pathname: "/books", output: path.join("books", "index.html") },
   { pathname: "/contact", output: path.join("contact", "index.html") },

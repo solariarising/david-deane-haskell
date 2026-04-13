@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { getSeoForPath, getStructuredData } from "@/seo";
+import { SITE_LANGUAGE, SITE_NAME } from "@/siteConfig";
 
 const ensureElement = <
   T extends HTMLMetaElement | HTMLLinkElement | HTMLScriptElement
@@ -34,12 +35,13 @@ const RouteSeo = () => {
   useEffect(() => {
     const seo = getSeoForPath(location.pathname);
     document.title = seo.title;
+    document.documentElement.lang = SITE_LANGUAGE;
 
     upsertMeta('meta[name="description"]', "name", "description", seo.description);
-    upsertMeta('meta[name="author"]', "name", "author", "David Deane Haskell");
+    upsertMeta('meta[name="author"]', "name", "author", SITE_NAME);
     upsertMeta('meta[name="robots"]', "name", "robots", seo.robots);
     upsertMeta('meta[property="og:type"]', "property", "og:type", seo.type);
-    upsertMeta('meta[property="og:site_name"]', "property", "og:site_name", "David Deane Haskell");
+    upsertMeta('meta[property="og:site_name"]', "property", "og:site_name", SITE_NAME);
     upsertMeta('meta[property="og:url"]', "property", "og:url", seo.canonicalUrl);
     upsertMeta('meta[property="og:title"]', "property", "og:title", seo.title);
     upsertMeta('meta[property="og:description"]', "property", "og:description", seo.description);

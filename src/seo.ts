@@ -1,4 +1,14 @@
-import { EXTERNAL_LINKS, SITE_EMAIL, SITE_NAME, SITE_URL, SOCIAL_IMAGES } from "./siteConfig";
+import {
+  AI_SUMMARY_PATH,
+  EXTERNAL_LINKS,
+  SITE_DESCRIPTION,
+  SITE_DISAMBIGUATION,
+  SITE_EMAIL,
+  SITE_LANGUAGE,
+  SITE_NAME,
+  SITE_URL,
+  SOCIAL_IMAGES,
+} from "./siteConfig";
 
 type SeoConfig = {
   title: string;
@@ -18,6 +28,15 @@ const ROUTE_SEO: Record<string, SeoConfig> = {
     type: "website",
     image: SOCIAL_IMAGES.default,
     imageAlt: "The Solarian Deep by David Deane Haskell",
+    pageType: "WebPage",
+  },
+  [AI_SUMMARY_PATH]: {
+    title: `AI Summary | ${SITE_NAME}`,
+    description:
+      "Plain-language, machine-readable summary of David Deane Haskell, his site structure, key books, and core reading routes.",
+    type: "website",
+    image: SOCIAL_IMAGES.about,
+    imageAlt: "Portrait of David Deane Haskell",
     pageType: "WebPage",
   },
   "/about": {
@@ -68,6 +87,14 @@ const ROUTE_SEO: Record<string, SeoConfig> = {
 };
 
 const DEFAULT_ROBOTS = "index,follow,max-image-preview:large";
+const ROUTE_LABELS: Record<string, string> = {
+  "/": "Home",
+  [AI_SUMMARY_PATH]: "AI Summary",
+  "/about": "About",
+  "/books": "Books",
+  "/contact": "Contact",
+  "/vault": "Free Fiction Vault",
+};
 
 const normalizePath = (pathname: string) => {
   if (!pathname || pathname === "/") {
@@ -109,22 +136,26 @@ const escapeHtml = (value: string) =>
     .split("'").join("&#39;");
 
 const buildGraph = (pathname: string) => {
-  const seo = getSeoForPath(pathname);
+  const normalizedPath = normalizePath(pathname);
+  const seo = getSeoForPath(normalizedPath);
   const webpageId = `${seo.canonicalUrl}#webpage`;
   const websiteId = `${SITE_URL}/#website`;
   const personId = `${SITE_URL}/#person`;
+  const breadcrumbId = `${seo.canonicalUrl}#breadcrumb`;
 
   const person = {
     "@type": "Person",
     "@id": personId,
     name: SITE_NAME,
+    givenName: "David",
+    additionalName: "Deane",
+    familyName: "Haskell",
     url: `${SITE_URL}/`,
     jobTitle: "Author",
     email: SITE_EMAIL,
-    description:
-      "David Deane Haskell writes fiction and nonfiction as one body of work centered on healing the past, understanding the present, and imagining futures worth living in.",
-    disambiguatingDescription:
-      "Author David Deane Haskell is distinct from naturalist David George Haskell and from the Haskell programming language.",
+    description: SITE_DESCRIPTION,
+    disambiguatingDescription: SITE_DISAMBIGUATION,
+    knowsLanguage: SITE_LANGUAGE,
     sameAs: [EXTERNAL_LINKS.fictionSubstack, EXTERNAL_LINKS.healingSubstack],
   };
 
@@ -133,28 +164,34 @@ const buildGraph = (pathname: string) => {
     "@id": websiteId,
     url: `${SITE_URL}/`,
     name: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    inLanguage: SITE_LANGUAGE,
     publisher: {
       "@id": personId,
     },
   };
 
-  const webpage = {
-    "@type": seo.pageType,
-    "@id": webpageId,
-    url: seo.canonicalUrl,
-    name: seo.title,
-    description: seo.description,
-    isPartOf: {
-      "@id": websiteId,
-    },
-    about: {
-      "@id": personId,
-    },
-    primaryImageOfPage: {
-      "@type": "ImageObject",
-      url: seo.imageUrl,
-    },
-  };
+  const breadcrumbList =
+    normalizedPath !== "/" && normalizedPath in ROUTE_LABELS
+      ? {
+          "@type": "BreadcrumbList",
+          "@id": breadcrumbId,
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: ROUTE_LABELS["/"],
+              item: `${SITE_URL}/`,
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: ROUTE_LABELS[normalizedPath],
+              item: seo.canonicalUrl,
+            },
+          ],
+        }
+      : null;
 
   const solarianDeep = {
     "@type": "Book",
@@ -164,7 +201,7 @@ const buildGraph = (pathname: string) => {
     author: {
       "@id": personId,
     },
-    inLanguage: "en",
+    inLanguage: SITE_LANGUAGE,
     genre: ["Science Fiction", "Technothriller"],
   };
 
@@ -176,70 +213,140 @@ const buildGraph = (pathname: string) => {
     author: {
       "@id": personId,
     },
-    inLanguage: "en",
+    inLanguage: SITE_LANGUAGE,
     genre: ["Memoir", "Nonfiction"],
   };
 
   const tommytune = {
-    "@type": "Book",
+    "@type": "ShortStory",
     "@id": `${SITE_URL}/vault#tommytune`,
     name: "Tommytune",
     url: EXTERNAL_LINKS.freeFiction,
     author: {
       "@id": personId,
     },
-    inLanguage: "en",
+    inLanguage: SITE_LANGUAGE,
     genre: ["Short Story", "Science Fiction"],
+    isAccessibleForFree: true,
   };
 
-  if (pathname === "/books") {
+  const emergence = {
+    "@type": "Book",
+    "@id": `${SITE_URL}/vault#emergence`,
+    name: "Emergence",
+    url: EXTERNAL_LINKS.freeFiction,
+    author: {
+      "@id": personId,
+    },
+    inLanguage: SITE_LANGUAGE,
+    genre: ["Science Fiction"],
+    isAccessibleForFree: true,
+  };
+
+  const booksList = {
+    "@type": "ItemList",
+    "@id": `${SITE_URL}/books#book-list`,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, item: { "@id": solarianDeep["@id"] } },
+      { "@type": "ListItem", position: 2, item: { "@id": woundedAngels["@id"] } },
+      { "@type": "ListItem", position: 3, item: { "@id": emergence["@id"] } },
+      { "@type": "ListItem", position: 4, item: { "@id": tommytune["@id"] } },
+    ],
+  };
+
+  const vaultList = {
+    "@type": "ItemList",
+    "@id": `${SITE_URL}/vault#vault-list`,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, item: { "@id": tommytune["@id"] } },
+      { "@type": "ListItem", position: 2, item: { "@id": emergence["@id"] } },
+    ],
+  };
+
+  const mainEntityId =
+    normalizedPath === "/about" || normalizedPath === AI_SUMMARY_PATH
+      ? personId
+      : normalizedPath === "/books"
+        ? booksList["@id"]
+        : normalizedPath === "/vault"
+          ? vaultList["@id"]
+          : undefined;
+
+  const webpage = {
+    "@type": seo.pageType,
+    "@id": webpageId,
+    url: seo.canonicalUrl,
+    name: seo.title,
+    description: seo.description,
+    inLanguage: SITE_LANGUAGE,
+    isPartOf: {
+      "@id": websiteId,
+    },
+    about: {
+      "@id": personId,
+    },
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: seo.imageUrl,
+    },
+    ...(breadcrumbList
+      ? {
+          breadcrumb: {
+            "@id": breadcrumbId,
+          },
+        }
+      : {}),
+    ...(mainEntityId
+      ? {
+          mainEntity: {
+            "@id": mainEntityId,
+          },
+        }
+      : {}),
+  };
+
+  if (normalizedPath === "/books") {
     return {
       "@context": "https://schema.org",
       "@graph": [
         person,
         website,
         webpage,
-        {
-          "@type": "ItemList",
-          "@id": `${SITE_URL}/books#book-list`,
-          itemListElement: [
-            { "@type": "ListItem", position: 1, item: { "@id": solarianDeep["@id"] } },
-            { "@type": "ListItem", position: 2, item: { "@id": woundedAngels["@id"] } },
-            { "@type": "ListItem", position: 3, item: { "@id": tommytune["@id"] } },
-          ],
-        },
+        ...(breadcrumbList ? [breadcrumbList] : []),
+        booksList,
         solarianDeep,
         woundedAngels,
+        emergence,
         tommytune,
       ],
     };
   }
 
-  if (pathname === "/vault") {
+  if (normalizedPath === "/vault") {
     return {
       "@context": "https://schema.org",
       "@graph": [
         person,
         website,
         webpage,
+        ...(breadcrumbList ? [breadcrumbList] : []),
+        vaultList,
         tommytune,
-        {
-          "@type": "CreativeWork",
-          "@id": `${SITE_URL}/vault#emergence`,
-          name: "Emergence",
-          url: EXTERNAL_LINKS.freeFiction,
-          author: {
-            "@id": personId,
-          },
-          inLanguage: "en",
-        },
+        emergence,
       ],
     };
   }
 
   return {
     "@context": "https://schema.org",
-    "@graph": [person, website, webpage, solarianDeep, woundedAngels],
+    "@graph": [
+      person,
+      website,
+      webpage,
+      ...(breadcrumbList ? [breadcrumbList] : []),
+      solarianDeep,
+      woundedAngels,
+    ],
   };
 };
 
@@ -265,7 +372,7 @@ export const renderSeoTags = (pathname: string) => {
     `<meta name="twitter:description" content="${escapeHtml(seo.description)}" />`,
     `<meta name="twitter:image" content="${escapeHtml(seo.imageUrl)}" />`,
     `<meta name="twitter:image:alt" content="${escapeHtml(seo.imageAlt)}" />`,
-    `<script type="application/ld+json">${structuredData.split("</script>").join("<\\/script>")}</script>`,
+    `<script type="application/ld+json" data-route-seo="jsonld">${structuredData.split("</script>").join("<\\/script>")}</script>`,
   ].join("\n    ");
 };
 

@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback } from "react";
 import PageLayout from "@/components/PageLayout";
 import heroBrand from "@/assets/hero-author-brand.webp";
 import woundedAngels from "@/assets/wounded-angels.webp";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 const POPUP_STORAGE_KEY = "freeStoriesPopupDismissed";
 const POPUP_SIGNUP_KEY = "freeStoriesSignedUp";
@@ -78,7 +78,7 @@ const Home = () => {
               className="absolute inset-0 w-full h-full object-cover"
               loading="eager"
               decoding="async"
-              fetchPriority="high"
+              {...{ fetchpriority: "high" }}
               width={1920}
               height={1080}
             />
@@ -175,6 +175,7 @@ const Home = () => {
       {/* Free fiction popup — secondary reinforcement */}
       <Dialog open={showPopup} onOpenChange={(open) => { if (!open) dismissPopup(); }}>
         <DialogContent className="sm:max-w-md text-center space-y-6" style={{ background: "hsl(220 25% 10%)", borderColor: "hsl(195 60% 25%)" }}>
+          <DialogTitle className="sr-only">Free Fiction Vault signup prompt</DialogTitle>
           <div className="space-y-4 pt-4">
             <p className="text-xs uppercase tracking-[0.3em] font-medium" style={{ color: "hsl(195 85% 50%)" }}>
               Free Fiction Vault

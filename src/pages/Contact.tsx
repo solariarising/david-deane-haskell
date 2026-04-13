@@ -1,5 +1,6 @@
 import PageLayout from "@/components/PageLayout";
 import logo from "@/assets/logo.webp";
+import { EXTERNAL_LINKS, SITE_EMAIL } from "@/siteConfig";
 
 const Contact = () => {
   return (
@@ -9,7 +10,7 @@ const Contact = () => {
           <div className="space-y-6 text-center">
             <img
               src={logo}
-              alt="David Deane Haskell"
+              alt="David Deane Haskell monogram logo"
               className="w-24 h-24 mx-auto rounded-full"
               loading="eager"
               decoding="async"
@@ -37,7 +38,7 @@ const Contact = () => {
               The best way to reach David is by email:
             </p>
             <a
-              href="mailto:david@daviddeanehaskell.com"
+              href={`mailto:${SITE_EMAIL}`}
               className="btn-primary inline-block"
             >
               EMAIL DAVID
@@ -52,7 +53,7 @@ const Contact = () => {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a
-                href="https://daviddeanehaskellstories.substack.com"
+                href={EXTERNAL_LINKS.fictionSubstack}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="link-accent text-sm"
@@ -60,7 +61,7 @@ const Contact = () => {
                 Fiction Substack
               </a>
               <a
-                href="https://innerchildjournal.substack.com"
+                href={EXTERNAL_LINKS.healingSubstack}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="link-accent text-sm"

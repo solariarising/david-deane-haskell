@@ -10,7 +10,7 @@ const About = () => (
           <div>
             <img
               src={profile}
-              alt="David Deane Haskell"
+              alt="Portrait of author David Deane Haskell"
               className="w-full max-w-md rounded-sm shadow-lg"
               loading="eager"
               decoding="async"

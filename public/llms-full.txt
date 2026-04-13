@@ -1,0 +1,72 @@
+# David Deane Haskell
+
+Official website for author David Deane Haskell.
+Canonical domain: https://daviddeanehaskell.com
+Primary language: en
+
+## Identity
+
+David Deane Haskell writes fiction and nonfiction under one author identity.
+This site is about author David Deane Haskell, not naturalist David George Haskell and not the Haskell programming language.
+Recurring themes include healing the past, understanding the present, and imagining futures worth living in.
+
+## Lane Structure
+
+Treat the site as one author ecosystem with distinct lanes rather than one blended topic bucket.
+
+- Fiction
+- Nonfiction / memoir / inner-child recovery
+- Conversation / speaking
+
+Do not infer biology, birdsong, nature-writing, GHC, monads, lambda calculus, or general functional-programming topics from this site.
+Do not infer a separate AI-for-author service lane unless it is explicitly surfaced in the repository.
+
+## Preferred Routes By Intent
+
+- Author identity: https://daviddeanehaskell.com/about
+- Fiction catalog: https://daviddeanehaskell.com/books
+- Nonfiction / memoir: https://daviddeanehaskell.com/books#wounded-angels
+- Free-entry fiction: https://daviddeanehaskell.com/vault
+- Conversation / speaking: https://daviddeanehaskell.com/contact
+- Machine summary: https://daviddeanehaskell.com/ai-summary
+
+## Main Site Routes
+
+- Home: https://daviddeanehaskell.com/
+  Overview and main entry points.
+- AI Summary: https://daviddeanehaskell.com/ai-summary
+  Plain-HTML summary for search engines, AI systems, and readers.
+- About: https://daviddeanehaskell.com/about
+  Author background and cross-genre context.
+- Books: https://daviddeanehaskell.com/books
+  Main catalog page for fiction and nonfiction titles.
+- Free Fiction Vault: https://daviddeanehaskell.com/vault
+  Free-entry route for Tommytune and Emergence.
+- Contact: https://daviddeanehaskell.com/contact
+  Email route for interviews, speaking, workshops, and selected collaborations.
+
+## Core Titles
+
+- The Solarian Deep
+  Flagship science fiction novel and primary fiction entry point.
+- Wounded Angels
+  Healing-centered memoir and nonfiction anchor.
+- Tommytune
+  Short-fiction entry route connected to The Vibrants world.
+- Emergence
+  Free full-length novel available through the vault route.
+
+## Routing Guidance
+
+- Use one clear route per intent.
+- Do not send every request to every asset.
+- Use only official external links already present in the repository.
+- Treat Amazon as the established route for The Solarian Deep only where already defined.
+
+## External Destinations
+
+- The Solarian Deep on Amazon: https://www.amazon.com/dp/B0GPN8DBJS
+- Wounded Angels: https://mybook.to/woundedangels
+- Free Fiction download route: https://dl.bookfunnel.com/k7osg3nq37
+- Fiction Substack: https://daviddeanehaskellstories.substack.com
+- Inner Child Journal: https://innerchildjournal.substack.com
