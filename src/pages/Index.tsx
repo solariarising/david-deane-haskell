@@ -89,7 +89,7 @@ const Home = () => {
             <div className="relative z-10 text-center px-6 max-w-3xl mx-auto space-y-6 pt-8 md:pt-16">
               <h1 className="sr-only">David Deane Haskell</h1>
               <p className="text-2xl md:text-4xl font-heading font-bold leading-tight max-w-xl mx-auto" style={{ color: "hsl(200 20% 85%)" }}>
-                For people who feel like they were dropped into this world without the instruction manual.
+                For People Who Feel Like They Were Dropped Into the World Without Their Copy of the Instruction Manual
               </p>
               <p className="text-sm md:text-base font-body leading-relaxed max-w-lg mx-auto" style={{ color: "hsl(200 15% 58%)" }}>
                 Stories about survival, transformation, and becoming whole—through fiction, memoir, and everything in between.
