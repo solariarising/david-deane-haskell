@@ -86,10 +86,8 @@ const Home = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
 
             {/* Hero content */}
-            <div className="relative z-10 text-center px-6 max-w-3xl mx-auto space-y-6 pt-16">
-              <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight leading-[1.05]" style={{ color: "hsl(200 30% 92%)" }}>
-                David Deane<br />Haskell
-              </h1>
+            <div className="relative z-10 text-center px-6 max-w-3xl mx-auto space-y-6 pt-8 md:pt-16">
+              <h1 className="sr-only">David Deane Haskell</h1>
               <p className="text-base md:text-lg font-body leading-relaxed max-w-xl mx-auto" style={{ color: "hsl(200 20% 70%)" }}>
                 Visionary fiction at the edge of consciousness, technology, and survival.
               </p>
