@@ -31,7 +31,7 @@ const About = () => (
                 He is drawn to stories of evolution under pressure: societies reshaped by artificial intelligence, people unraveling within systems they don't understand, and the lonely, wrenching but ultimately beautiful work of learning to listen to the heart.
               </p>
               <p>
-                Blending emotional honesty with speculative reach, his writing moves through technology, spirituality, trauma, and imagination to explore shame, connection, creativity, and the lifelong process of becoming real.
+                Blending emotional honesty with speculative reach, his writing moves through technology, spirituality, trauma, and imagination to explore shame, connection, creativity, and the lifelong process of becoming you.
               </p>
             </div>
             <div className="pt-2">
