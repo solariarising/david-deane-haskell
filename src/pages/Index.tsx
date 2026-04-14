@@ -88,11 +88,14 @@ const Home = () => {
             {/* Hero content */}
             <div className="relative z-10 text-center px-6 max-w-3xl mx-auto space-y-6 pt-8 md:pt-16">
               <h1 className="sr-only">David Deane Haskell</h1>
-              <p className="text-base md:text-lg font-body leading-relaxed max-w-xl mx-auto" style={{ color: "hsl(200 20% 70%)" }}>
-                Visionary fiction at the edge of consciousness, technology, and survival.
+              <p className="text-lg md:text-xl font-body leading-relaxed max-w-xl mx-auto" style={{ color: "hsl(200 20% 70%)" }}>
+                For people who feel like they were dropped into this world without the instruction manual.
               </p>
               <p className="text-sm md:text-base font-body leading-relaxed max-w-lg mx-auto" style={{ color: "hsl(200 15% 58%)" }}>
-                Start with two free stories where hidden worlds are revealed, dangerous transformations unfold, and the human spirit is always on the line.
+                Stories about survival, transformation, and becoming whole—through fiction, memoir, and everything in between.
+              </p>
+              <p className="text-xs md:text-sm font-body" style={{ color: "hsl(200 15% 50%)" }}>
+                Start with two free stories. See how it resonates.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                 <a
