@@ -94,10 +94,10 @@ const Home = () => {
               <p className="text-sm md:text-base font-body leading-relaxed max-w-lg mx-auto" style={{ color: "hsl(200 15% 58%)" }}>
                 Stories about survival, transformation, and becoming whole—through fiction, memoir, and everything in between.
               </p>
-              <p className="text-xs md:text-sm font-body" style={{ color: "hsl(200 15% 50%)" }}>
+              <p className="text-sm md:text-base font-body whitespace-nowrap" style={{ color: "hsl(200 15% 58%)" }}>
                 Start with two free stories. See how it resonates.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
                 <a
                   href="https://dl.bookfunnel.com/k7osg3nq37"
                   target="_blank"
