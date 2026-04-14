@@ -46,7 +46,7 @@ const Books = () => {
     {/* Scifi Zone */}
     <div className="zone-scifi">
       {/* Hero */}
-      <section className="section-spacing pb-8">
+      <section className="section-spacing pb-4">
         <div className="page-container text-center max-w-3xl mx-auto space-y-6">
           <h1 className="heading-display">Books</h1>
           <p className="body-large">
@@ -58,7 +58,7 @@ const Books = () => {
       <div className="divider" />
 
       {/* Scifi */}
-      <section className="section-spacing">
+      <section className="section-spacing pt-6 md:pt-10">
         <div className="page-container space-y-16">
           {/* Featured: Solarian Deep */}
           <div className="grid md:grid-cols-2 gap-12 items-center">

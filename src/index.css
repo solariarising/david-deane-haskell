@@ -151,7 +151,7 @@
   }
 
   .divider {
-    @apply w-16 h-px mx-auto;
+    @apply w-16 h-px mx-auto my-6 md:my-8;
     background: hsl(var(--border));
   }
 

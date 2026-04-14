@@ -86,7 +86,7 @@ const Home = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
 
             {/* Hero content */}
-            <div className="relative z-10 text-center px-6 max-w-3xl mx-auto space-y-6 pt-8 md:pt-16">
+            <div className="relative z-10 text-center px-6 max-w-3xl mx-auto space-y-4 md:space-y-5 pt-4 md:pt-12">
               <h1 className="sr-only">David Deane Haskell</h1>
               <p className="text-2xl md:text-4xl font-heading font-bold leading-tight max-w-xl mx-auto" style={{ color: "hsl(200 20% 85%)" }}>
                 For People Who Feel Like They Were Dropped Into the World Without Their Copy of the Instruction Manual
