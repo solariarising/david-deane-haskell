@@ -54,20 +54,21 @@ function HeroLine({ text, delay, weight }: { text: string; delay: number; weight
   return (
     <span
       ref={ref}
-      className="block transition-all duration-700 ease-out"
+      className="block transition-all ease-out"
       style={{
         opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(8px)",
-        filter: visible ? "blur(0px)" : "blur(3px)",
+        transform: visible ? "translateY(0) scale(1)" : "translateY(14px) scale(0.97)",
+        filter: visible ? "blur(0px)" : "blur(5px)",
         fontWeight: weight,
         backgroundImage: visible
-          ? "linear-gradient(90deg, transparent 0%, hsl(195 80% 70% / 0.15) 40%, transparent 80%)"
+          ? "linear-gradient(90deg, transparent 0%, hsl(195 80% 70% / 0.2) 40%, transparent 80%)"
           : "none",
         backgroundSize: "200% 100%",
         backgroundPosition: visible ? "100% 0" : "0% 0",
         WebkitBackgroundClip: "text",
         transitionProperty: "opacity, transform, filter, background-position",
-        transitionDuration: "0.7s, 0.7s, 0.7s, 1s",
+        transitionDuration: "0.9s, 0.9s, 0.8s, 1.2s",
+        transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
       }}
     >
       {text}
