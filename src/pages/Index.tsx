@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import PageLayout from "@/components/PageLayout";
 import heroBrand from "@/assets/hero-author-brand.webp";
 import woundedAngels from "@/assets/wounded-angels.webp";
@@ -20,8 +20,65 @@ function shouldSuppressPopup() {
   return false;
 }
 
+const HERO_LINES = [
+  { text: "They Control Us All.", delay: 0, weight: 700 },
+  { text: "Only Truth Will Stop Them.", delay: 1400, weight: 700 },
+  { text: "We All Pay the Price.", delay: 3200, weight: 800 },
+];
+
+function HeroLine({ text, delay, weight }: { text: string; delay: number; weight: number }) {
+  const [visible, setVisible] = useState(false);
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const t = setTimeout(() => setVisible(true), delay);
+    return () => clearTimeout(t);
+  }, [delay]);
+
+  useEffect(() => {
+    if (visible && ref.current) {
+      // light sweep
+      const el = ref.current;
+      el.style.setProperty("--sweep", "0");
+      requestAnimationFrame(() => {
+        el.style.transition = "none";
+        el.style.setProperty("--sweep", "0");
+        requestAnimationFrame(() => {
+          el.style.transition = "--sweep 1s ease-out";
+          el.style.setProperty("--sweep", "1");
+        });
+      });
+    }
+  }, [visible]);
+
+  return (
+    <span
+      ref={ref}
+      className="block transition-all duration-700 ease-out"
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(8px)",
+        filter: visible ? "blur(0px)" : "blur(3px)",
+        fontWeight: weight,
+        backgroundImage: visible
+          ? "linear-gradient(90deg, transparent 0%, hsl(195 80% 70% / 0.15) 40%, transparent 80%)"
+          : "none",
+        backgroundSize: "200% 100%",
+        backgroundPosition: visible ? "100% 0" : "0% 0",
+        WebkitBackgroundClip: "text",
+        transitionProperty: "opacity, transform, filter, background-position",
+        transitionDuration: "0.7s, 0.7s, 0.7s, 1s",
+      }}
+    >
+      {text}
+    </span>
+  );
+}
+
 const Home = () => {
   const [showPopup, setShowPopup] = useState(false);
+  const [showSupport, setShowSupport] = useState(false);
+  const [showCta, setShowCta] = useState(false);
 
   const triggerPopup = useCallback(() => {
     if (shouldSuppressPopup()) return;
@@ -39,25 +96,26 @@ const Home = () => {
     localStorage.setItem(POPUP_SIGNUP_KEY, "true");
   }, []);
 
+  // Sequential reveal: support line after last headline, then CTA
+  useEffect(() => {
+    const lastLineEnd = 3200 + 700; // last delay + animation duration
+    const t1 = setTimeout(() => setShowSupport(true), lastLineEnd + 500);
+    const t2 = setTimeout(() => setShowCta(true), lastLineEnd + 1100);
+    return () => { clearTimeout(t1); clearTimeout(t2); };
+  }, []);
+
   useEffect(() => {
     if (shouldSuppressPopup()) return;
-
-    // Exit intent on desktop
     const handleMouseLeave = (e: MouseEvent) => {
       if (e.clientY <= 0) triggerPopup();
     };
     document.addEventListener("mouseleave", handleMouseLeave);
-
-    // Scroll depth fallback (50% of page)
     const handleScroll = () => {
       const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
       if (scrollPercent > 0.5) triggerPopup();
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
-
-    // Time fallback (45s)
     const timer = setTimeout(triggerPopup, 45000);
-
     return () => {
       document.removeEventListener("mouseleave", handleMouseLeave);
       window.removeEventListener("scroll", handleScroll);
@@ -71,7 +129,6 @@ const Home = () => {
       <div className="zone-scifi">
         <section className="relative -mt-16 md:-mt-20">
           <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-            {/* Background image */}
             <img
               src={heroBrand}
               alt="Atmospheric deep-ocean science fiction scene evoking consciousness, technology, and survival"
@@ -82,22 +139,38 @@ const Home = () => {
               width={1920}
               height={1080}
             />
-            {/* Overlay for readability */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
 
-            {/* Hero content */}
-            <div className="relative z-10 text-center px-6 max-w-3xl mx-auto space-y-4 md:space-y-5 pt-4 md:pt-12">
+            <div className="relative z-10 text-center px-6 max-w-3xl mx-auto space-y-5 pt-4 md:pt-12">
               <h1 className="sr-only">David Deane Haskell</h1>
-              <p className="text-2xl md:text-4xl font-heading font-bold leading-tight max-w-xl mx-auto" style={{ color: "hsl(200 20% 85%)" }}>
-                For People Who Feel Like They Were Dropped Into the World Without Their Copy of the Instruction Manual
+              <div
+                className="text-2xl md:text-4xl font-heading leading-tight max-w-xl mx-auto"
+                style={{ color: "hsl(200 20% 85%)" }}
+                aria-label="They Control Us All. Only Truth Will Stop Them. We All Pay the Price."
+              >
+                {HERO_LINES.map((line) => (
+                  <HeroLine key={line.text} {...line} />
+                ))}
+              </div>
+
+              <p
+                className="text-sm md:text-base font-body whitespace-nowrap transition-all duration-700 ease-out"
+                style={{
+                  color: "hsl(200 15% 58%)",
+                  opacity: showSupport ? 1 : 0,
+                  transform: showSupport ? "translateY(0)" : "translateY(6px)",
+                }}
+              >
+                Start with Tommytune and Emergence — two free stories.
               </p>
-              <p className="text-sm md:text-base font-body leading-relaxed max-w-lg mx-auto" style={{ color: "hsl(200 15% 58%)" }}>
-                Stories about survival, transformation, and becoming whole—through fiction, memoir, and everything in between.
-              </p>
-              <p className="text-sm md:text-base font-body whitespace-nowrap" style={{ color: "hsl(200 15% 58%)" }}>
-                Start with two free stories. See how it resonates.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
+
+              <div
+                className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 transition-all duration-700 ease-out"
+                style={{
+                  opacity: showCta ? 1 : 0,
+                  transform: showCta ? "translateY(0)" : "translateY(6px)",
+                }}
+              >
                 <a
                   href="https://dl.bookfunnel.com/k7osg3nq37"
                   target="_blank"
@@ -105,13 +178,10 @@ const Home = () => {
                   className="btn-primary text-base px-10 py-4"
                   onClick={handleSignupClick}
                 >
-                  GET FREE FICTION
+                  READ THE FREE STORIES
                 </a>
-                <Link
-                  to="/books"
-                  className="btn-outline"
-                >
-                  Browse the Books
+                <Link to="/books" className="btn-outline">
+                  Explore the Books
                 </Link>
               </div>
             </div>
@@ -173,7 +243,7 @@ const Home = () => {
         </section>
       </div>
 
-      {/* Free fiction popup — secondary reinforcement */}
+      {/* Free fiction popup */}
       <Dialog open={showPopup} onOpenChange={(open) => { if (!open) dismissPopup(); }}>
         <DialogContent className="sm:max-w-md text-center space-y-6" style={{ background: "hsl(220 25% 10%)", borderColor: "hsl(195 60% 25%)" }}>
           <DialogTitle className="sr-only">Free Fiction Vault signup prompt</DialogTitle>
