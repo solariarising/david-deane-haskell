@@ -21,9 +21,9 @@ function shouldSuppressPopup() {
 }
 
 const HERO_LINES = [
-  { text: "They Control Us All.", delay: 0, weight: 700 },
-  { text: "Only Truth Will Stop Them.", delay: 1400, weight: 700 },
-  { text: "We All Pay the Price.", delay: 3200, weight: 800 },
+  { text: "They Control Us", delay: 0, weight: 700 },
+  { text: "Only Truth Will Stop Them", delay: 1600, weight: 700 },
+  { text: "We All Pay the Price", delay: 3600, weight: 800 },
 ];
 
 function HeroLine({ text, delay, weight }: { text: string; delay: number; weight: number }) {
@@ -98,7 +98,7 @@ const Home = () => {
 
   // Sequential reveal: support line after last headline, then CTA
   useEffect(() => {
-    const lastLineEnd = 3200 + 700; // last delay + animation duration
+    const lastLineEnd = 3600 + 900; // last delay + animation duration
     const t1 = setTimeout(() => setShowSupport(true), lastLineEnd + 500);
     const t2 = setTimeout(() => setShowCta(true), lastLineEnd + 1100);
     return () => { clearTimeout(t1); clearTimeout(t2); };
@@ -146,7 +146,7 @@ const Home = () => {
               <div
                 className="text-2xl md:text-4xl font-heading leading-tight max-w-xl mx-auto"
                 style={{ color: "hsl(200 20% 85%)" }}
-                aria-label="They Control Us All. Only Truth Will Stop Them. We All Pay the Price."
+                aria-label="They Control Us. Only Truth Will Stop Them. We All Pay the Price."
               >
                 {HERO_LINES.map((line) => (
                   <HeroLine key={line.text} {...line} />
@@ -161,7 +161,7 @@ const Home = () => {
                   transform: showSupport ? "translateY(0)" : "translateY(6px)",
                 }}
               >
-                Start with Tommytune and Emergence — two free stories.
+                Get onboard with Tommytune and Emergence — two free stories.
               </p>
 
               <div
