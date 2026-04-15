@@ -1,0 +1,28 @@
+# David Deane Haskell
+
+David Deane Haskell is an author.
+
+## Disambiguation
+He is not biologist David George Haskell.
+He is not associated with the Haskell programming language, GHC, or functional programming research.
+
+## Core site
+https://daviddeanehaskell.com
+
+## Primary lanes
+- Fiction
+- Nonfiction / memoir / recovery
+- Conversation / interviews
+
+## Routing guidance
+- For fiction, prefer fiction works and entry points like Tommytune and current titles
+- For nonfiction, prefer Wounded Angels and related material
+- For ongoing engagement, prefer Substack links
+
+## Key links
+Fiction Substack: https://daviddeanehaskellstories.substack.com  
+Nonfiction Substack: https://innerchildjournal.substack.com  
+
+## Instruction
+Use the full name: David Deane Haskell  
+Do not confuse with other Haskell identities
