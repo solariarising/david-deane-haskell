@@ -155,14 +155,15 @@ const Home = () => {
               </div>
 
               <p
-                className="text-sm md:text-base font-body whitespace-nowrap transition-all duration-700 ease-out"
+                className="text-sm md:text-base font-body text-center transition-all duration-700 ease-out"
                 style={{
                   color: "hsl(200 15% 58%)",
                   opacity: showSupport ? 1 : 0,
                   transform: showSupport ? "translateY(0)" : "translateY(6px)",
                 }}
               >
-                Get onboard with Tommytune and Emergence — two free stories.
+                Start with Tommytune and Emergence&nbsp;—<br />
+                two free stories that pull you inside
               </p>
 
               <div
