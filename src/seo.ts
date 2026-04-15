@@ -22,9 +22,9 @@ type SeoConfig = {
 
 const ROUTE_SEO: Record<string, SeoConfig> = {
   "/": {
-    title: `${SITE_NAME} | Fiction and Nonfiction Author`,
+    title: `${SITE_NAME} | Stories of control, truth, and consequence`,
     description:
-      "David Deane Haskell writes fiction and nonfiction as one author ecosystem: healing the past, understanding the present, and imagining futures worth living in. Start with The Solarian Deep, Wounded Angels, or the Free Fiction Vault.",
+      "They control us all. Only truth will stop them. We all pay the price. Start with Tommytune and Emergence — two free stories to step into these worlds.",
     type: "website",
     image: SOCIAL_IMAGES.default,
     imageAlt: "The Solarian Deep by David Deane Haskell",
@@ -33,43 +33,43 @@ const ROUTE_SEO: Record<string, SeoConfig> = {
   [AI_SUMMARY_PATH]: {
     title: `AI Summary | ${SITE_NAME}`,
     description:
-      "Plain-language, machine-readable summary of David Deane Haskell, his site structure, key books, and core reading routes.",
+      "Machine-readable overview of David Deane Haskell, his books, core themes, and the best starting points across fiction, nonfiction, and free stories.",
     type: "website",
     image: SOCIAL_IMAGES.about,
     imageAlt: "Portrait of David Deane Haskell",
     pageType: "WebPage",
   },
   "/about": {
-    title: `About ${SITE_NAME} | Fiction, Nonfiction, and Author Identity`,
+    title: `About ${SITE_NAME} | Fiction, nonfiction, and the work behind them`,
     description:
-      "Learn how David Deane Haskell connects healing memoir, mindfulness, personal truth, and visionary fiction under one author identity.",
+      "David Deane Haskell writes speculative fiction, psychological thrillers, memoir, and recovery-centered nonfiction about control, truth, shame, healing, and survival under pressure.",
     type: "profile",
     image: SOCIAL_IMAGES.about,
     imageAlt: "Portrait of David Deane Haskell",
     pageType: "AboutPage",
   },
   "/books": {
-    title: `Books by ${SITE_NAME} | The Solarian Deep, Wounded Angels, Tommytune`,
+    title: `Books by ${SITE_NAME} | Fiction, nonfiction, and free entry points`,
     description:
-      "Start with The Solarian Deep for flagship fiction, Wounded Angels for nonfiction, or Tommytune and Emergence for the free entry route into David Deane Haskell's work.",
+      "Explore David Deane Haskell's books across speculative fiction, psychological suspense, and recovery-centered nonfiction. Start with The Solarian Deep, Wounded Angels, or the free route through Tommytune and Emergence.",
     type: "website",
     image: SOCIAL_IMAGES.books,
-    imageAlt: "The Solarian Deep by David Deane Haskell",
+    imageAlt: "Books by David Deane Haskell",
     pageType: "CollectionPage",
   },
   "/contact": {
-    title: `Contact ${SITE_NAME} | Interviews, Speaking, and Reader Links`,
+    title: `Contact ${SITE_NAME} | Interviews, speaking, and reader follow-up`,
     description:
-      "Contact David Deane Haskell for interviews, speaking, workshops, collaborations, and reader follow-up across fiction, healing, and the wider author ecosystem.",
+      "Contact David Deane Haskell for interviews, podcasts, speaking, workshops, collaborations, and reader follow-up across fiction, nonfiction, and healing-centered work.",
     type: "profile",
     image: SOCIAL_IMAGES.contact,
     imageAlt: "Portrait of David Deane Haskell",
     pageType: "ContactPage",
   },
   "/vault": {
-    title: `Free Fiction Vault | Tommytune and Emergence by ${SITE_NAME}`,
+    title: `Free Stories | Tommytune and Emergence by ${SITE_NAME}`,
     description:
-      "Read Tommytune and Emergence free, then continue into David Deane Haskell's fiction, books, and Substack reader path.",
+      "Start with Tommytune and Emergence — two free stories that open the door into David Deane Haskell's fiction worlds of control, revelation, and consequence.",
     type: "website",
     image: SOCIAL_IMAGES.vault,
     imageAlt: "Tommytune and Emergence by David Deane Haskell",
