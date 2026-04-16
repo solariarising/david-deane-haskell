@@ -22,11 +22,11 @@ function shouldSuppressPopup() {
 
 const HERO_LINES = [
   { text: "Systems Reward Appearance Over Truth", delay: 350, weight: 700 },
-  { text: "Truth Is What They Fear", delay: 1750, weight: 700 },
-  { text: "What You Call Truth, They Call Dangerous", delay: 3650, weight: 800 },
-];
+  { text: "Truth Is What They Fear", delay: 2000, weight: 700 },
+  { text: "What You Call Truth, They Call ", delay: 4100, weight: 800, tailWord: "Dangerous" },
+] as const;
 
-function HeroLine({ text, delay, weight, isFirst, scaleDown }: { text: string; delay: number; weight: number; isFirst?: boolean; scaleDown?: boolean }) {
+function HeroLine({ text, delay, weight, isFirst, scaleDown, tailWord }: { text: string; delay: number; weight: number; isFirst?: boolean; scaleDown?: boolean; tailWord?: string }) {
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
 
@@ -70,7 +70,21 @@ function HeroLine({ text, delay, weight, isFirst, scaleDown }: { text: string; d
         transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
       }}
     >
-      <span style={scaleDown ? { display: "inline-block", fontSize: "0.96em" } : undefined}>{text}</span>
+      <span style={scaleDown ? { display: "inline-block", fontSize: "0.96em" } : undefined}>
+        {text}
+        {tailWord && (
+          <span
+            className="transition-opacity ease-out"
+            style={{
+              opacity: visible ? 1 : 0,
+              transitionDuration: "1.6s",
+              transitionDelay: visible ? "0.3s" : "0s",
+            }}
+          >
+            {tailWord}
+          </span>
+        )}
+      </span>
     </span>
   );
 }
@@ -98,7 +112,7 @@ const Home = () => {
 
   // Sequential reveal: support line after last headline, then CTA
   useEffect(() => {
-    const lastLineEnd = 3650 + 900;
+    const lastLineEnd = 4100 + 900;
     const t1 = setTimeout(() => setShowSupport(true), lastLineEnd + 500);
     const t2 = setTimeout(() => setShowCta(true), lastLineEnd + 1100);
     return () => { clearTimeout(t1); clearTimeout(t2); };
