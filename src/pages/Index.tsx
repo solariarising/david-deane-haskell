@@ -23,7 +23,7 @@ function shouldSuppressPopup() {
 const HERO_LINES = [
   { text: "Systems Reward Appearance Over Truth", delay: 350, weight: 700 },
   { text: "Truth Is What They Fear", delay: 2000, weight: 700 },
-  { text: "What You Call Truth, They Call ", delay: 4100, weight: 800, tailWord: "Dangerous" },
+  { text: "What You Call Truth, They Call Dangerous", delay: 4100, weight: 800 },
 ] as const;
 
 function HeroLine({ text, delay, weight, isFirst, scaleDown, tailWord }: { text: string; delay: number; weight: number; isFirst?: boolean; scaleDown?: boolean; tailWord?: string }) {
