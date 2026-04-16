@@ -21,12 +21,12 @@ function shouldSuppressPopup() {
 }
 
 const HERO_LINES = [
-  { text: "They Control Us", delay: 0, weight: 700 },
-  { text: "Only Truth Will Stop Them", delay: 1600, weight: 700 },
-  { text: "We All Pay the Price", delay: 3600, weight: 800 },
+  { text: "Systems Reward Appearance Over Truth", delay: 350, weight: 700 },
+  { text: "Truth Is What They Fear", delay: 1750, weight: 700 },
+  { text: "What You Call Truth, They Call Dangerous", delay: 3650, weight: 800 },
 ];
 
-function HeroLine({ text, delay, weight }: { text: string; delay: number; weight: number }) {
+function HeroLine({ text, delay, weight, isFirst }: { text: string; delay: number; weight: number; isFirst?: boolean }) {
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
 
@@ -37,7 +37,6 @@ function HeroLine({ text, delay, weight }: { text: string; delay: number; weight
 
   useEffect(() => {
     if (visible && ref.current) {
-      // light sweep
       const el = ref.current;
       el.style.setProperty("--sweep", "0");
       requestAnimationFrame(() => {
@@ -56,9 +55,9 @@ function HeroLine({ text, delay, weight }: { text: string; delay: number; weight
       ref={ref}
       className="block transition-all ease-out"
       style={{
-        opacity: visible ? 1 : 0,
+        opacity: visible ? 1 : (isFirst ? 0.12 : 0),
         transform: visible ? "translateY(0) scale(1)" : "translateY(14px) scale(0.97)",
-        filter: visible ? "blur(0px)" : "blur(5px)",
+        filter: visible ? "blur(0px)" : (isFirst ? "blur(2px)" : "blur(5px)"),
         fontWeight: weight,
         backgroundImage: visible
           ? "linear-gradient(90deg, transparent 0%, hsl(195 80% 70% / 0.2) 40%, transparent 80%)"
@@ -99,7 +98,7 @@ const Home = () => {
 
   // Sequential reveal: support line after last headline, then CTA
   useEffect(() => {
-    const lastLineEnd = 3600 + 900; // last delay + animation duration
+    const lastLineEnd = 3650 + 900;
     const t1 = setTimeout(() => setShowSupport(true), lastLineEnd + 500);
     const t2 = setTimeout(() => setShowCta(true), lastLineEnd + 1100);
     return () => { clearTimeout(t1); clearTimeout(t2); };
@@ -149,8 +148,8 @@ const Home = () => {
                 style={{ color: "hsl(200 20% 85%)" }}
                 aria-label="They Control Us. Only Truth Will Stop Them. We All Pay the Price."
               >
-                {HERO_LINES.map((line) => (
-                  <HeroLine key={line.text} {...line} />
+                {HERO_LINES.map((line, i) => (
+                  <HeroLine key={line.text} {...line} isFirst={i === 0} />
                 ))}
               </div>
 
@@ -162,8 +161,9 @@ const Home = () => {
                   transform: showSupport ? "translateY(0)" : "translateY(6px)",
                 }}
               >
-                Start with Tommytune and Emergence&nbsp;—<br />
-                two free stories that pull you inside
+                These books were written for the ones who already know.
+                <br />
+                Start with Tommytune and Emergence&nbsp;— two free stories that pull you inside.
               </p>
 
               <div
