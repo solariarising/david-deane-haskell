@@ -144,19 +144,19 @@ const Home = () => {
             <div className="relative z-10 text-center px-6 max-w-3xl mx-auto space-y-5 pt-4 md:pt-12">
               <h1 className="sr-only">David Deane Haskell</h1>
               <div
-                className="text-xl md:text-[1.75rem] lg:text-[2rem] font-heading leading-snug max-w-2xl mx-auto"
-                style={{ color: "hsl(200 20% 85%)" }}
+                className="text-xl md:text-[1.75rem] lg:text-[2rem] font-heading max-w-2xl mx-auto"
+                style={{ color: "hsl(200 20% 85%)", lineHeight: "1.65" }}
                 aria-label="Systems Reward Appearance Over Truth. Truth Is What They Fear. What You Call Truth, They Call Dangerous."
               >
                 {HERO_LINES.map((line, i) => (
-                  <HeroLine key={line.text} {...line} isFirst={i === 0} />
+                  <HeroLine key={line.text} {...line} isFirst={i === 0} scaleDown={i === 0} />
                 ))}
               </div>
 
               <p
                 className="text-sm md:text-base font-body text-center transition-all duration-700 ease-out"
                 style={{
-                  color: "hsl(200 15% 58%)",
+                  color: "hsl(200 15% 64%)",
                   opacity: showSupport ? 1 : 0,
                   transform: showSupport ? "translateY(0)" : "translateY(6px)",
                 }}
