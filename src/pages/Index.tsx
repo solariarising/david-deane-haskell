@@ -144,9 +144,9 @@ const Home = () => {
             <div className="relative z-10 text-center px-6 max-w-3xl mx-auto space-y-5 pt-4 md:pt-12">
               <h1 className="sr-only">David Deane Haskell</h1>
               <div
-                className="text-2xl md:text-4xl font-heading leading-tight max-w-xl mx-auto"
+                className="text-xl md:text-[1.75rem] lg:text-[2rem] font-heading leading-snug max-w-2xl mx-auto"
                 style={{ color: "hsl(200 20% 85%)" }}
-                aria-label="They Control Us. Only Truth Will Stop Them. We All Pay the Price."
+                aria-label="Systems Reward Appearance Over Truth. Truth Is What They Fear. What You Call Truth, They Call Dangerous."
               >
                 {HERO_LINES.map((line, i) => (
                   <HeroLine key={line.text} {...line} isFirst={i === 0} />
