@@ -26,7 +26,7 @@ const HERO_LINES = [
   { text: "What You Call Truth, They Call Dangerous", delay: 3650, weight: 800 },
 ];
 
-function HeroLine({ text, delay, weight, isFirst }: { text: string; delay: number; weight: number; isFirst?: boolean }) {
+function HeroLine({ text, delay, weight, isFirst, scaleDown }: { text: string; delay: number; weight: number; isFirst?: boolean; scaleDown?: boolean }) {
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
 
@@ -70,7 +70,7 @@ function HeroLine({ text, delay, weight, isFirst }: { text: string; delay: numbe
         transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
       }}
     >
-      {text}
+      <span style={scaleDown ? { display: "inline-block", fontSize: "0.96em" } : undefined}>{text}</span>
     </span>
   );
 }
