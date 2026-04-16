@@ -98,7 +98,7 @@ const Home = () => {
 
   // Sequential reveal: support line after last headline, then CTA
   useEffect(() => {
-    const lastLineEnd = 3600 + 900; // last delay + animation duration
+    const lastLineEnd = 3650 + 900;
     const t1 = setTimeout(() => setShowSupport(true), lastLineEnd + 500);
     const t2 = setTimeout(() => setShowCta(true), lastLineEnd + 1100);
     return () => { clearTimeout(t1); clearTimeout(t2); };
@@ -148,8 +148,8 @@ const Home = () => {
                 style={{ color: "hsl(200 20% 85%)" }}
                 aria-label="They Control Us. Only Truth Will Stop Them. We All Pay the Price."
               >
-                {HERO_LINES.map((line) => (
-                  <HeroLine key={line.text} {...line} />
+                {HERO_LINES.map((line, i) => (
+                  <HeroLine key={line.text} {...line} isFirst={i === 0} />
                 ))}
               </div>
 
@@ -161,8 +161,9 @@ const Home = () => {
                   transform: showSupport ? "translateY(0)" : "translateY(6px)",
                 }}
               >
-                Start with Tommytune and Emergence&nbsp;—<br />
-                two free stories that pull you inside
+                These books were written for the ones who already know.
+                <br />
+                Start with Tommytune and Emergence&nbsp;— two free stories that pull you inside.
               </p>
 
               <div
