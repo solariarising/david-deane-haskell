@@ -46,7 +46,7 @@ const FreeFictionPopup = () => {
           className="btn-primary inline-block"
           onClick={handleSignupClick}
         >
-          GET FREE FICTION
+          GET FREE STORIES
         </a>
         <button
           onClick={() => setOpen(false)}
