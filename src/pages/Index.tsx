@@ -1,24 +1,9 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import PageLayout from "@/components/PageLayout";
+import FreeFictionPopup from "@/components/FreeFictionPopup";
 import heroBrand from "@/assets/hero-author-brand.webp";
 import woundedAngels from "@/assets/wounded-angels.webp";
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-
-const POPUP_STORAGE_KEY = "freeStoriesPopupDismissed";
-const POPUP_SIGNUP_KEY = "freeStoriesSignedUp";
-const SUPPRESS_DAYS = 7;
-
-function shouldSuppressPopup() {
-  if (sessionStorage.getItem("freeStoriesPopupShownThisSession")) return true;
-  if (localStorage.getItem(POPUP_SIGNUP_KEY)) return true;
-  const dismissed = localStorage.getItem(POPUP_STORAGE_KEY);
-  if (dismissed) {
-    const diff = Date.now() - Number(dismissed);
-    if (diff < SUPPRESS_DAYS * 24 * 60 * 60 * 1000) return true;
-  }
-  return false;
-}
 
 const HERO_LINES = [
   { text: "Systems Reward Appearance Over Truth", delay: 350, weight: 700 },
@@ -26,7 +11,7 @@ const HERO_LINES = [
   { text: "What You Call Truth, They Call Dangerous", delay: 4100, weight: 800 },
 ] as const;
 
-function HeroLine({ text, delay, weight, isFirst, scaleDown, tailWord }: { text: string; delay: number; weight: number; isFirst?: boolean; scaleDown?: boolean; tailWord?: string }) {
+function HeroLine({ text, delay, weight, isFirst, scaleDown }: { text: string; delay: number; weight: number; isFirst?: boolean; scaleDown?: boolean }) {
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
 
@@ -72,70 +57,22 @@ function HeroLine({ text, delay, weight, isFirst, scaleDown, tailWord }: { text:
     >
       <span style={scaleDown ? { display: "inline-block", fontSize: "0.96em" } : undefined}>
         {text}
-        {tailWord && (
-          <span
-            className="transition-opacity ease-out"
-            style={{
-              opacity: visible ? 1 : 0,
-              transitionDuration: "1.6s",
-              transitionDelay: visible ? "0.3s" : "0s",
-            }}
-          >
-            {tailWord}
-          </span>
-        )}
       </span>
     </span>
   );
 }
 
 const Home = () => {
-  const [showPopup, setShowPopup] = useState(false);
   const [showSupport, setShowSupport] = useState(false);
   const [showCta, setShowCta] = useState(false);
 
-  const triggerPopup = useCallback(() => {
-    if (shouldSuppressPopup()) return;
-    setShowPopup(true);
-    sessionStorage.setItem("freeStoriesPopupShownThisSession", "true");
-  }, []);
-
-  const dismissPopup = useCallback(() => {
-    setShowPopup(false);
-    localStorage.setItem(POPUP_STORAGE_KEY, String(Date.now()));
-  }, []);
-
-  const handleSignupClick = useCallback(() => {
-    setShowPopup(false);
-    localStorage.setItem(POPUP_SIGNUP_KEY, "true");
-  }, []);
-
   // Sequential reveal: support line after last headline, then CTA
   useEffect(() => {
-    const lastLineEnd = 4100 + 900;
+    const lastLineEnd = 5000;
     const t1 = setTimeout(() => setShowSupport(true), lastLineEnd + 500);
     const t2 = setTimeout(() => setShowCta(true), lastLineEnd + 1100);
     return () => { clearTimeout(t1); clearTimeout(t2); };
   }, []);
-
-  useEffect(() => {
-    if (shouldSuppressPopup()) return;
-    const handleMouseLeave = (e: MouseEvent) => {
-      if (e.clientY <= 0) triggerPopup();
-    };
-    document.addEventListener("mouseleave", handleMouseLeave);
-    const handleScroll = () => {
-      const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-      if (scrollPercent > 0.5) triggerPopup();
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    const timer = setTimeout(triggerPopup, 45000);
-    return () => {
-      document.removeEventListener("mouseleave", handleMouseLeave);
-      window.removeEventListener("scroll", handleScroll);
-      clearTimeout(timer);
-    };
-  }, [triggerPopup]);
 
   return (
     <PageLayout>
@@ -192,7 +129,6 @@ const Home = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary text-base px-10 py-4"
-                  onClick={handleSignupClick}
                 >
                   READ THE FREE STORIES
                 </a>
@@ -259,38 +195,7 @@ const Home = () => {
         </section>
       </div>
 
-      {/* Free fiction popup */}
-      <Dialog open={showPopup} onOpenChange={(open) => { if (!open) dismissPopup(); }}>
-        <DialogContent className="sm:max-w-md text-center space-y-6" style={{ background: "hsl(220 25% 10%)", borderColor: "hsl(195 60% 25%)" }}>
-          <DialogTitle className="sr-only">Free Fiction Vault signup prompt</DialogTitle>
-          <div className="space-y-4 pt-4">
-            <p className="text-xs uppercase tracking-[0.3em] font-medium" style={{ color: "hsl(195 85% 50%)" }}>
-              Free Fiction Vault
-            </p>
-            <h2 className="font-heading text-2xl md:text-3xl font-semibold" style={{ color: "hsl(200 30% 90%)" }}>
-              Two free reads are waiting.
-            </h2>
-            <p className="text-sm leading-relaxed" style={{ color: "hsl(210 15% 58%)" }}>
-              A standalone short story and a full-length novel, free when you join.
-            </p>
-          </div>
-          <a
-            href="https://dl.bookfunnel.com/k7osg3nq37"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary inline-block"
-            onClick={handleSignupClick}
-          >
-            GET FREE FICTION
-          </a>
-          <button
-            onClick={dismissPopup}
-            className="text-xs transition-colors" style={{ color: "hsl(210 15% 45%)" }}
-          >
-            No thanks, maybe later
-          </button>
-        </DialogContent>
-      </Dialog>
+      <FreeFictionPopup />
     </PageLayout>
   );
 };
