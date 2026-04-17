@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
+import FreeFictionPopup from "@/components/FreeFictionPopup";
 import fictionBooks from "@/assets/fiction-books.webp";
 import solarianHero from "@/assets/solarian-deep-hero.webp";
 import woundedAngels from "@/assets/wounded-angels.webp";
@@ -172,6 +173,7 @@ const Books = () => {
         </div>
       </section>
     </div>
+    <FreeFictionPopup />
   </PageLayout>
   );
 };
