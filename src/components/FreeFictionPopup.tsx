@@ -3,7 +3,7 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 const POPUP_SESSION_KEY = "freeStoriesPopupShownThisSession";
 const POPUP_SIGNUP_KEY = "freeStoriesSignedUp";
-const TRIGGER_DELAY_MS = 33300;
+const TRIGGER_DELAY_MS = 27777;
 
 const FreeFictionPopup = () => {
   const [open, setOpen] = useState(false);
