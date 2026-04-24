@@ -1,5 +1,6 @@
 import PageLayout from "@/components/PageLayout";
 import logo from "@/assets/logo.webp";
+import { trackCtaClick } from "@/lib/analytics";
 import { EXTERNAL_LINKS, SITE_EMAIL } from "@/siteConfig";
 
 const Contact = () => {
@@ -40,6 +41,15 @@ const Contact = () => {
             <a
               href={`mailto:${SITE_EMAIL}`}
               className="btn-primary inline-block"
+              onClick={() =>
+                trackCtaClick({
+                  ctaId: "contact_email_david",
+                  ctaLabel: "EMAIL DAVID",
+                  ctaLocation: "contact_primary_cta",
+                  destinationUrl: `mailto:${SITE_EMAIL}`,
+                  destinationKind: "external",
+                })
+              }
             >
               EMAIL DAVID
             </a>
@@ -57,6 +67,15 @@ const Contact = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="link-accent text-sm"
+                onClick={() =>
+                  trackCtaClick({
+                    ctaId: "contact_fiction_substack",
+                    ctaLabel: "Fiction Substack",
+                    ctaLocation: "contact_substack_links",
+                    destinationUrl: EXTERNAL_LINKS.fictionSubstack,
+                    destinationKind: "external",
+                  })
+                }
               >
                 Fiction Substack
               </a>
@@ -65,6 +84,15 @@ const Contact = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="link-accent text-sm"
+                onClick={() =>
+                  trackCtaClick({
+                    ctaId: "contact_healing_substack",
+                    ctaLabel: "Inner Child Journal",
+                    ctaLocation: "contact_substack_links",
+                    destinationUrl: EXTERNAL_LINKS.healingSubstack,
+                    destinationKind: "external",
+                  })
+                }
               >
                 Inner Child Journal
               </a>

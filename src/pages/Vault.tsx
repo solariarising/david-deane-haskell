@@ -1,5 +1,6 @@
 import PageLayout from "@/components/PageLayout";
 import vaultBooks from "@/assets/vault-books-composite.webp";
+import { trackCtaClick } from "@/lib/analytics";
 import { EXTERNAL_LINKS } from "@/siteConfig";
 
 const Vault = () => (
@@ -33,6 +34,15 @@ const Vault = () => (
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"
+              onClick={() =>
+                trackCtaClick({
+                  ctaId: "vault_get_free_fiction_hero",
+                  ctaLabel: "GET FREE FICTION",
+                  ctaLocation: "vault_hero",
+                  destinationUrl: EXTERNAL_LINKS.freeFiction,
+                  destinationKind: "external",
+                })
+              }
             >
               GET FREE FICTION
             </a>
@@ -102,6 +112,15 @@ const Vault = () => (
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"
+            onClick={() =>
+              trackCtaClick({
+                ctaId: "vault_get_free_fiction_bottom",
+                ctaLabel: "GET FREE FICTION",
+                ctaLocation: "vault_close_section",
+                destinationUrl: EXTERNAL_LINKS.freeFiction,
+                destinationKind: "external",
+              })
+            }
           >
             GET FREE FICTION
           </a>
@@ -125,6 +144,15 @@ const Vault = () => (
               target="_blank"
               rel="noopener noreferrer"
               className="link-accent text-sm"
+              onClick={() =>
+                trackCtaClick({
+                  ctaId: "vault_fiction_substack",
+                  ctaLabel: "Fiction Substack",
+                  ctaLocation: "vault_substack_links",
+                  destinationUrl: EXTERNAL_LINKS.fictionSubstack,
+                  destinationKind: "external",
+                })
+              }
             >
               Fiction Substack
             </a>
@@ -133,6 +161,15 @@ const Vault = () => (
               target="_blank"
               rel="noopener noreferrer"
               className="link-accent text-sm"
+              onClick={() =>
+                trackCtaClick({
+                  ctaId: "vault_healing_substack",
+                  ctaLabel: "Inner Child Journal",
+                  ctaLocation: "vault_substack_links",
+                  destinationUrl: EXTERNAL_LINKS.healingSubstack,
+                  destinationKind: "external",
+                })
+              }
             >
               Inner Child Journal
             </a>

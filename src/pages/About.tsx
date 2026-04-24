@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
 import profile from "@/assets/profile.webp";
+import { trackCtaClick } from "@/lib/analytics";
 
 const About = () => (
   <PageLayout>
@@ -35,7 +36,19 @@ const About = () => (
               </p>
             </div>
             <div className="pt-2">
-              <Link to="/books" className="btn-primary">
+              <Link
+                to="/books"
+                className="btn-primary"
+                onClick={() =>
+                  trackCtaClick({
+                    ctaId: "about_books_by_david",
+                    ctaLabel: "BOOKS BY DAVID",
+                    ctaLocation: "about_primary_cta",
+                    destinationUrl: "/books",
+                    destinationKind: "internal",
+                  })
+                }
+              >
                 BOOKS BY DAVID
               </Link>
             </div>

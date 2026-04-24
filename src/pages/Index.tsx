@@ -4,6 +4,7 @@ import PageLayout from "@/components/PageLayout";
 import FreeFictionPopup from "@/components/FreeFictionPopup";
 import heroBrand from "@/assets/hero-author-brand.webp";
 import woundedAngels from "@/assets/wounded-angels.webp";
+import { trackCtaClick } from "@/lib/analytics";
 
 const HERO_LINES = [
   { text: "Systems Reward Appearance Over Truth", delay: 350, weight: 700 },
@@ -129,10 +130,31 @@ const Home = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary text-base px-10 py-4"
+                  onClick={() =>
+                    trackCtaClick({
+                      ctaId: "home_read_free_stories",
+                      ctaLabel: "READ THE FREE STORIES",
+                      ctaLocation: "home_hero",
+                      destinationUrl: "https://dl.bookfunnel.com/k7osg3nq37",
+                      destinationKind: "external",
+                    })
+                  }
                 >
                   READ THE FREE STORIES
                 </a>
-                <Link to="/books" className="btn-outline">
+                <Link
+                  to="/books"
+                  className="btn-outline"
+                  onClick={() =>
+                    trackCtaClick({
+                      ctaId: "home_explore_books",
+                      ctaLabel: "Explore the Books",
+                      ctaLocation: "home_hero",
+                      destinationUrl: "/books",
+                      destinationKind: "internal",
+                    })
+                  }
+                >
                   Explore the Books
                 </Link>
               </div>
@@ -179,7 +201,21 @@ const Home = () => {
                 <p className="body-text">
                   Honest explorations of the Inner Child, mindfulness, and the path to healing. Raw, unfolding, and deeply human.
                 </p>
-                <Link to="/books#wounded-angels" className="btn-outline">Learn More</Link>
+                <Link
+                  to="/books#wounded-angels"
+                  className="btn-outline"
+                  onClick={() =>
+                    trackCtaClick({
+                      ctaId: "home_wounded_angels_learn_more",
+                      ctaLabel: "Learn More",
+                      ctaLocation: "home_healing_section",
+                      destinationUrl: "/books#wounded-angels",
+                      destinationKind: "internal",
+                    })
+                  }
+                >
+                  Learn More
+                </Link>
               </div>
               <div className="md:order-0">
                 <img

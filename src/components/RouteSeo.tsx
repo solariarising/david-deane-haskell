@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
+import { trackPageView } from "@/lib/analytics";
 import { getSeoForPath, getStructuredData } from "@/seo";
 import { SITE_LANGUAGE, SITE_NAME } from "@/siteConfig";
 
@@ -31,6 +32,7 @@ const upsertMeta = (selector: string, attribute: "name" | "property", key: strin
 
 const RouteSeo = () => {
   const location = useLocation();
+  const hasHandledInitialPageview = useRef(false);
 
   useEffect(() => {
     const seo = getSeoForPath(location.pathname);
@@ -68,7 +70,16 @@ const RouteSeo = () => {
     });
 
     structuredData.textContent = JSON.stringify(getStructuredData(location.pathname));
-  }, [location.pathname]);
+
+    if (hasHandledInitialPageview.current) {
+      trackPageView({
+        pagePath: `${location.pathname}${location.search}${location.hash}`,
+        pageTitle: seo.title,
+      });
+    } else {
+      hasHandledInitialPageview.current = true;
+    }
+  }, [location.hash, location.pathname, location.search]);
 
   return null;
 };

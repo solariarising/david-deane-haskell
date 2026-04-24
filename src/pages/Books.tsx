@@ -6,6 +6,7 @@ import fictionBooks from "@/assets/fiction-books.webp";
 import solarianHero from "@/assets/solarian-deep-hero.webp";
 import woundedAngels from "@/assets/wounded-angels.webp";
 import tommytune from "@/assets/tommytune-cover.webp";
+import { trackCtaClick } from "@/lib/analytics";
 import { EXTERNAL_LINKS } from "@/siteConfig";
 
 interface BookCardProps {
@@ -15,16 +16,41 @@ interface BookCardProps {
   description: string;
   buyUrl: string;
   buyLabel?: string;
+  ctaId: string;
+  ctaLocation: string;
 }
 
-const BookCard = ({ id, title, subtitle, description, buyUrl, buyLabel = "Buy Novel" }: BookCardProps) => (
+const BookCard = ({
+  id,
+  title,
+  subtitle,
+  description,
+  buyUrl,
+  buyLabel = "Buy Novel",
+  ctaId,
+  ctaLocation,
+}: BookCardProps) => (
   <article id={id} className="space-y-4 scroll-mt-28">
     <div>
       <h3 className="heading-subsection">{title}</h3>
       {subtitle && <p className="text-xs uppercase tracking-widest text-muted-foreground mt-1">{subtitle}</p>}
     </div>
     <p className="body-text">{description}</p>
-    <a href={buyUrl} target="_blank" rel="noopener noreferrer" className="btn-outline text-xs py-2 px-6">
+    <a
+      href={buyUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="btn-outline text-xs py-2 px-6"
+      onClick={() =>
+        trackCtaClick({
+          ctaId,
+          ctaLabel: buyLabel,
+          ctaLocation,
+          destinationUrl: buyUrl,
+          destinationKind: "external",
+        })
+      }
+    >
       {buyLabel}
     </a>
   </article>
@@ -51,7 +77,19 @@ const Books = () => {
         <div className="page-container text-center max-w-3xl mx-auto space-y-6">
           <h1 className="heading-display">Books</h1>
           <p className="body-large">
-            Begin with <em>The Solarian Deep</em> for scifi, <em>Wounded Angels</em> for healing, or visit the <Link to="/vault" className="link-accent">Free Fiction Vault</Link> to see what resonates.
+            Begin with <em>The Solarian Deep</em> for scifi, <em>Wounded Angels</em> for healing, or visit the <Link
+              to="/vault"
+              className="link-accent"
+              onClick={() =>
+                trackCtaClick({
+                  ctaId: "books_free_fiction_vault_link",
+                  ctaLabel: "Free Fiction Vault",
+                  ctaLocation: "books_intro_copy",
+                  destinationUrl: "/vault",
+                  destinationKind: "internal",
+                })
+              }
+            >Free Fiction Vault</Link> to see what resonates.
           </p>
         </div>
       </section>
@@ -63,14 +101,41 @@ const Books = () => {
         <div className="page-container space-y-16">
           {/* Featured: Solarian Deep */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <a href={EXTERNAL_LINKS.solarianDeepAmazon} target="_blank" rel="noopener noreferrer">
+            <a
+              href={EXTERNAL_LINKS.solarianDeepAmazon}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() =>
+                trackCtaClick({
+                  ctaId: "books_solarian_deep_cover",
+                  ctaLabel: "The Solarian Deep cover",
+                  ctaLocation: "books_featured_solarian",
+                  destinationUrl: EXTERNAL_LINKS.solarianDeepAmazon,
+                  destinationKind: "external",
+                })
+              }
+            >
               <img src={solarianHero} alt="The Solarian Deep — Book 1 of the Technoquatics Series by David Deane Haskell" className="w-full rounded-sm shadow-lg hover:shadow-xl transition-shadow cursor-pointer" loading="eager" decoding="async" width={1536} height={1024} />
             </a>
             <article id="the-solarian-deep" className="space-y-4 scroll-mt-28">
               <h3 className="heading-subsection">The Solarian Deep</h3>
               <p className="text-xs uppercase tracking-widest text-muted-foreground">Novel — Book 1 of the Technoquatics Series</p>
               <p className="body-text">David Deane Haskell's latest novel, <em>The Solarian Deep</em>—start reading now.</p>
-              <a href={EXTERNAL_LINKS.solarianDeepAmazon} target="_blank" rel="noopener noreferrer" className="btn-primary inline-block">
+              <a
+                href={EXTERNAL_LINKS.solarianDeepAmazon}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary inline-block"
+                onClick={() =>
+                  trackCtaClick({
+                    ctaId: "books_read_the_solarian_deep",
+                    ctaLabel: "READ THE SOLARIAN DEEP",
+                    ctaLocation: "books_featured_solarian",
+                    destinationUrl: EXTERNAL_LINKS.solarianDeepAmazon,
+                    destinationKind: "external",
+                  })
+                }
+              >
                 READ THE SOLARIAN DEEP
               </a>
             </article>
@@ -90,6 +155,8 @@ const Books = () => {
               description="In the gleaming city of Tera-Prime, the future has just been cancelled. Alixs uncovers a 'kill switch' designed to wipe his people from existence. Marked for death, he must run into the shadows of the underground to expose the dangerous truth."
               buyUrl={EXTERNAL_LINKS.freeFiction}
               buyLabel="Read for Free"
+              ctaId="books_emergence_read_for_free"
+              ctaLocation="books_fiction_grid"
             />
             <BookCard
               id="the-gold-club"
@@ -98,6 +165,8 @@ const Books = () => {
               description="He found a loophole in the world's biggest corporate wallet. Now they want their change. Buried in the Sahara warehouse, Ted starts a multimillion-dollar shadow operation right under the nose of management."
               buyUrl="https://www.amazon.com/Gold-Club-White-Collar-Thriller-ebook/dp/B014XQH6M6"
               buyLabel="Buy Novel"
+              ctaId="books_gold_club_buy_novel"
+              ctaLocation="books_fiction_grid"
             />
             <BookCard
               id="dark-alignment"
@@ -106,6 +175,8 @@ const Books = () => {
               description="They erased his research. Then they erased him. Dean Eckert found a ghost in the atmospheric data—an anomaly that defies physics. Now he has to solve the most dangerous equation in history before the sky falls."
               buyUrl="https://www.amazon.com/Dark-Alignment-Dystopian-SciFi-Adventure-ebook/dp/B07B6XCDMM"
               buyLabel="Buy Novel"
+              ctaId="books_dark_alignment_buy_novel"
+              ctaLocation="books_fiction_grid"
             />
             <BookCard
               id="too-much-information"
@@ -114,6 +185,8 @@ const Books = () => {
               description="SecureSystems isn't just scanning for weapons. They're harvesting lives. Rob Folsom thought he was filing a simple lawsuit. Instead, he uncovered a data harvest that makes Big Brother look like an amateur."
               buyUrl="https://www.amazon.com/Too-Much-Information-David-Haskell/dp/1517788323"
               buyLabel="Buy Novel"
+              ctaId="books_too_much_information_buy_novel"
+              ctaLocation="books_fiction_grid"
             />
           </div>
 
@@ -126,6 +199,8 @@ const Books = () => {
               description="A Resona Series short story. A glimpse into the world of The Vibrants—where music, memory, and identity collide in unexpected ways."
               buyUrl={EXTERNAL_LINKS.freeFiction}
               buyLabel="Read for Free"
+              ctaId="books_tommytune_read_for_free"
+              ctaLocation="books_tommytune_section"
             />
           </div>
         </div>
@@ -165,7 +240,21 @@ const Books = () => {
               <p className="body-text">
                 In this raw, unfolding transformation, David introduces the many facets of himself—those inner child figures suppressed for years—and how they healed each other in real-time. This is the truth behind the fiction.
               </p>
-              <a href={EXTERNAL_LINKS.woundedAngels} target="_blank" rel="noopener noreferrer" className="btn-primary">
+              <a
+                href={EXTERNAL_LINKS.woundedAngels}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+                onClick={() =>
+                  trackCtaClick({
+                    ctaId: "books_wounded_angels_learn_more",
+                    ctaLabel: "LEARN MORE",
+                    ctaLocation: "books_healing_section",
+                    destinationUrl: EXTERNAL_LINKS.woundedAngels,
+                    destinationKind: "external",
+                  })
+                }
+              >
                 LEARN MORE
               </a>
             </div>

@@ -1,17 +1,63 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { trackCtaClick, trackPopupEvent } from "@/lib/analytics";
+import { EXTERNAL_LINKS } from "@/siteConfig";
 
 const POPUP_SESSION_KEY = "freeStoriesPopupShownThisSession";
 const POPUP_SIGNUP_KEY = "freeStoriesSignedUp";
 const TRIGGER_DELAY_MS = 27777;
+const POPUP_ID = "free_fiction_vault_popup";
+const POPUP_LOCATION = "global_popup";
 
 const FreeFictionPopup = () => {
   const [open, setOpen] = useState(false);
+  const popupShownRef = useRef(false);
+  const popupDismissedRef = useRef(false);
+  const popupSignupRef = useRef(false);
+
+  const recordDismissal = useCallback(() => {
+    if (!popupShownRef.current || popupDismissedRef.current || popupSignupRef.current) {
+      return;
+    }
+
+    popupDismissedRef.current = true;
+    trackPopupEvent({
+      popupId: POPUP_ID,
+      popupLocation: POPUP_LOCATION,
+      action: "dismissed",
+      destinationUrl: EXTERNAL_LINKS.freeFiction,
+    });
+  }, []);
 
   const handleSignupClick = useCallback(() => {
+    popupSignupRef.current = true;
+    trackPopupEvent({
+      popupId: POPUP_ID,
+      popupLocation: POPUP_LOCATION,
+      action: "signup_click",
+      destinationUrl: EXTERNAL_LINKS.freeFiction,
+    });
+    trackCtaClick({
+      ctaId: "popup_get_free_stories",
+      ctaLabel: "GET FREE STORIES",
+      ctaLocation: POPUP_LOCATION,
+      destinationUrl: EXTERNAL_LINKS.freeFiction,
+      destinationKind: "external",
+    });
     setOpen(false);
     localStorage.setItem(POPUP_SIGNUP_KEY, "true");
   }, []);
+
+  const handleOpenChange = useCallback(
+    (nextOpen: boolean) => {
+      if (!nextOpen && open) {
+        recordDismissal();
+      }
+
+      setOpen(nextOpen);
+    },
+    [open, recordDismissal],
+  );
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -19,13 +65,20 @@ const FreeFictionPopup = () => {
     if (localStorage.getItem(POPUP_SIGNUP_KEY)) return;
     const timer = setTimeout(() => {
       setOpen(true);
+      popupShownRef.current = true;
       sessionStorage.setItem(POPUP_SESSION_KEY, "true");
+      trackPopupEvent({
+        popupId: POPUP_ID,
+        popupLocation: POPUP_LOCATION,
+        action: "shown",
+        destinationUrl: EXTERNAL_LINKS.freeFiction,
+      });
     }, TRIGGER_DELAY_MS);
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogContent className="sm:max-w-md text-center space-y-6" style={{ background: "hsl(220 25% 10%)", borderColor: "hsl(195 60% 25%)" }}>
         <DialogTitle className="sr-only">Free Fiction Vault signup prompt</DialogTitle>
         <div className="space-y-4 pt-4">
@@ -49,7 +102,10 @@ const FreeFictionPopup = () => {
           GET FREE STORIES
         </a>
         <button
-          onClick={() => setOpen(false)}
+          onClick={() => {
+            recordDismissal();
+            setOpen(false);
+          }}
           className="text-xs transition-colors" style={{ color: "hsl(210 15% 45%)" }}
         >
           No thanks, maybe later
