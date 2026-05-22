@@ -9,7 +9,7 @@ import { trackCtaClick } from "@/lib/analytics";
 const HERO_LINES = [
   { text: "Systems Reward Appearance Over Truth", delay: 350, weight: 700 },
   { text: "Truth Is What They Fear", delay: 2000, weight: 700 },
-  { text: "What You Call Truth, They Call Dangerous", delay: 4100, weight: 800 },
+  { text: "What We Call Truth, They Call Dangerous", delay: 4100, weight: 800 },
 ] as const;
 
 function HeroLine({ text, delay, weight, isFirst, scaleDown }: { text: string; delay: number; weight: number; isFirst?: boolean; scaleDown?: boolean }) {
@@ -98,7 +98,7 @@ const Home = () => {
               <div
                 className="text-xl md:text-[1.75rem] lg:text-[2rem] font-heading max-w-2xl mx-auto"
                 style={{ color: "hsl(200 20% 85%)", lineHeight: "1.65" }}
-                aria-label="Systems Reward Appearance Over Truth. Truth Is What They Fear. What You Call Truth, They Call Dangerous."
+                aria-label="Systems Reward Appearance Over Truth. Truth Is What They Fear. What We Call Truth, They Call Dangerous."
               >
                 {HERO_LINES.map((line, i) => (
                   <HeroLine key={line.text} {...line} isFirst={i === 0} scaleDown={i === 0} />
