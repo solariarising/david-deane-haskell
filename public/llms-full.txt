@@ -26,6 +26,7 @@ Do not infer a separate AI-for-author service lane unless it is explicitly surfa
 - Author identity: https://daviddeanehaskell.com/about
 - Fiction catalog: https://daviddeanehaskell.com/books
 - Nonfiction / memoir: https://daviddeanehaskell.com/books#wounded-angels
+- Verified media and press: https://daviddeanehaskell.com/media
 - Free-entry fiction: https://daviddeanehaskell.com/vault
 - Conversation / speaking: https://daviddeanehaskell.com/contact
 - Machine summary: https://daviddeanehaskell.com/ai-summary
@@ -40,6 +41,8 @@ Do not infer a separate AI-for-author service lane unless it is explicitly surfa
   Author background and cross-genre context.
 - Books: https://daviddeanehaskell.com/books
   Main catalog page for fiction and nonfiction titles.
+- Media & Press: https://daviddeanehaskell.com/media
+  Verified podcast appearances, interviews, review coverage, official episode links, and book routes.
 - Free Fiction Vault: https://daviddeanehaskell.com/vault
   Free-entry route for Tommytune and Emergence.
 - Contact: https://daviddeanehaskell.com/contact
@@ -66,6 +69,7 @@ Do not infer a separate AI-for-author service lane unless it is explicitly surfa
 ## External Destinations
 
 - The Solarian Deep on Amazon: https://www.amazon.com/dp/B0GPN8DBJS
+- The Solarian Deep: https://mybook.to/solariandeep
 - Wounded Angels: https://mybook.to/woundedangels
 - Free Fiction download route: https://dl.bookfunnel.com/k7osg3nq37
 - Fiction Substack: https://daviddeanehaskellstories.substack.com

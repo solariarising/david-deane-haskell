@@ -24,6 +24,13 @@ type PopupEventPayload = {
   destinationUrl?: string;
 };
 
+type MediaPlayPayload = {
+  mediaId: string;
+  mediaTitle: string;
+  mediaLocation: string;
+  sourceUrl: string;
+};
+
 const canTrack = () =>
   typeof window !== "undefined" && typeof window.gtag === "function";
 
@@ -78,5 +85,19 @@ export const trackPopupEvent = ({
     popup_location: popupLocation,
     popup_action: action,
     destination_url: destinationUrl,
+  });
+};
+
+export const trackMediaPlay = ({
+  mediaId,
+  mediaTitle,
+  mediaLocation,
+  sourceUrl,
+}: MediaPlayPayload) => {
+  trackEvent("ddh_media_play", {
+    media_id: mediaId,
+    media_title: mediaTitle,
+    media_location: mediaLocation,
+    source_url: sourceUrl,
   });
 };

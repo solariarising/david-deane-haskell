@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Books from "./pages/Books";
 import Contact from "./pages/Contact";
 import Index from "./pages/Index";
+import Media from "./pages/Media";
 import NotFound from "./pages/NotFound";
 import Vault from "./pages/Vault";
 
@@ -20,6 +21,7 @@ export const AppRoutes = () => (
       <Route path="/about" element={<About />} />
       <Route path="/books" element={<Books />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/media" element={<Media />} />
       <Route path="/vault" element={<Vault />} />
       <Route path="*" element={<NotFound />} />
     </Routes>

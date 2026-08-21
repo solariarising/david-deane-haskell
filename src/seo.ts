@@ -9,6 +9,7 @@ import {
   SITE_URL,
   SOCIAL_IMAGES,
 } from "./siteConfig";
+import { MEDIA_APPEARANCES, REUSE_CLIPS } from "./mediaData";
 
 type SeoConfig = {
   title: string;
@@ -66,6 +67,15 @@ const ROUTE_SEO: Record<string, SeoConfig> = {
     imageAlt: "Portrait of David Deane Haskell",
     pageType: "ContactPage",
   },
+  "/media": {
+    title: `Media & Press | Podcast appearances and interviews with ${SITE_NAME}`,
+    description:
+      "Verified podcast appearances, interviews, review coverage, and official episode links for author David Deane Haskell, Wounded Angels, and The Solarian Deep.",
+    type: "profile",
+    image: SOCIAL_IMAGES.books,
+    imageAlt: "Books by David Deane Haskell",
+    pageType: "CollectionPage",
+  },
   "/vault": {
     title: `Free Stories | Tommytune and Emergence by ${SITE_NAME}`,
     description:
@@ -93,6 +103,7 @@ const ROUTE_LABELS: Record<string, string> = {
   "/about": "About",
   "/books": "Books",
   "/contact": "Contact",
+  "/media": "Media & Press",
   "/vault": "Free Fiction Vault",
 };
 
@@ -263,11 +274,62 @@ const buildGraph = (pathname: string) => {
     ],
   };
 
+  const mediaItems = MEDIA_APPEARANCES.map((appearance) => ({
+    "@type": appearance.format,
+    "@id": `${SITE_URL}/media#${appearance.id}`,
+    name: appearance.title,
+    url: appearance.url,
+    ...(appearance.published ? { datePublished: appearance.published } : {}),
+    contributor: {
+      "@id": personId,
+    },
+    about: {
+      "@id":
+        appearance.book === "Wounded Angels"
+          ? woundedAngels["@id"]
+          : solarianDeep["@id"],
+    },
+  }));
+
+  const mediaClips = REUSE_CLIPS.map((clip) => ({
+    "@type": "VideoObject",
+    "@id": `${SITE_URL}/media#${clip.id}`,
+    name: clip.title,
+    description: clip.description,
+    contentUrl: `${SITE_URL}${clip.src}`,
+    isBasedOn: clip.officialUrl,
+    about: [
+      { "@id": personId },
+      {
+        "@id":
+          clip.book === "Wounded Angels"
+            ? woundedAngels["@id"]
+            : solarianDeep["@id"],
+      },
+    ],
+  }));
+
+  const mediaList = {
+    "@type": "ItemList",
+    "@id": `${SITE_URL}/media#appearance-list`,
+    name: "Media appearances and press for David Deane Haskell",
+    numberOfItems: mediaItems.length,
+    itemListElement: mediaItems.map((appearance, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@id": appearance["@id"],
+      },
+    })),
+  };
+
   const mainEntityId =
     normalizedPath === "/about" || normalizedPath === AI_SUMMARY_PATH
       ? personId
       : normalizedPath === "/books"
         ? booksList["@id"]
+        : normalizedPath === "/media"
+          ? mediaList["@id"]
         : normalizedPath === "/vault"
           ? vaultList["@id"]
           : undefined;
@@ -333,6 +395,23 @@ const buildGraph = (pathname: string) => {
         vaultList,
         tommytune,
         emergence,
+      ],
+    };
+  }
+
+  if (normalizedPath === "/media") {
+    return {
+      "@context": "https://schema.org",
+      "@graph": [
+        person,
+        website,
+        webpage,
+        ...(breadcrumbList ? [breadcrumbList] : []),
+        mediaList,
+        ...mediaItems,
+        ...mediaClips,
+        solarianDeep,
+        woundedAngels,
       ],
     };
   }

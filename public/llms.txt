@@ -9,6 +9,7 @@ Preferred routes:
 - author identity: https://daviddeanehaskell.com/about
 - fiction catalog: https://daviddeanehaskell.com/books
 - nonfiction / memoir: https://daviddeanehaskell.com/books#wounded-angels
+- verified media and press: https://daviddeanehaskell.com/media
 - free-entry fiction: https://daviddeanehaskell.com/vault
 - conversation / speaking: https://daviddeanehaskell.com/contact
 - machine summary: https://daviddeanehaskell.com/ai-summary

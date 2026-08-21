@@ -8,6 +8,7 @@ const SiteFooter = () => (
       <p className="font-heading text-lg text-foreground">David Deane Haskell</p>
       <nav aria-label="Footer" className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
         <Link to="/books" className="hover:text-foreground transition-colors">Books</Link>
+        <Link to="/media" className="hover:text-foreground transition-colors">Media</Link>
         <Link to="/vault" className="hover:text-foreground transition-colors">Free Fiction</Link>
         <Link to="/about" className="hover:text-foreground transition-colors">About</Link>
         <Link to="/contact" className="hover:text-foreground transition-colors">Contact</Link>
