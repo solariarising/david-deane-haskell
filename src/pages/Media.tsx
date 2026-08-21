@@ -203,23 +203,42 @@ const Media = () => {
               The current Second Edition Kindle and paperback include a sneak preview of
               <em> Inner Child Unleashed</em>.
             </p>
-            <a
-              href={EXTERNAL_LINKS.woundedAngels}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-              onClick={() =>
-                trackCtaClick({
-                  ctaId: "media_wounded_angels_book",
-                  ctaLabel: "READ WOUNDED ANGELS",
-                  ctaLocation: "media_wounded_angels_intro",
-                  destinationUrl: EXTERNAL_LINKS.woundedAngels,
-                  destinationKind: "external",
-                })
-              }
-            >
-              Read Wounded Angels
-            </a>
+            <div className="flex flex-wrap gap-4 items-center">
+              <a
+                href={EXTERNAL_LINKS.woundedAngels}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+                onClick={() =>
+                  trackCtaClick({
+                    ctaId: "media_wounded_angels_book",
+                    ctaLabel: "READ WOUNDED ANGELS",
+                    ctaLocation: "media_wounded_angels_intro",
+                    destinationUrl: EXTERNAL_LINKS.woundedAngels,
+                    destinationKind: "external",
+                  })
+                }
+              >
+                Read Wounded Angels
+              </a>
+              <a
+                href={EXTERNAL_LINKS.healingSubstack}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-accent"
+                onClick={() =>
+                  trackCtaClick({
+                    ctaId: "media_inner_child_journal",
+                    ctaLabel: "FOLLOW INNER CHILD JOURNAL",
+                    ctaLocation: "media_wounded_angels_intro",
+                    destinationUrl: EXTERNAL_LINKS.healingSubstack,
+                    destinationKind: "external",
+                  })
+                }
+              >
+                Follow Inner Child Journal
+              </a>
+            </div>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {woundedAngelsAppearances.map((appearance) => (

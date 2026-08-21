@@ -132,6 +132,36 @@ const Vault = () => (
 
       <div className="divider" />
 
+      {/* Paid next read */}
+      <section className="section-spacing">
+        <div className="page-container text-center max-w-2xl mx-auto space-y-5">
+          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Your Next Dive</p>
+          <h2 className="heading-section">Continue with The Solarian Deep</h2>
+          <p className="body-large">
+            Ready for a full-length descent into an ocean world? Start Book 1 of the Technoquatics Series.
+          </p>
+          <a
+            href={EXTERNAL_LINKS.solarianDeep}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-outline inline-block"
+            onClick={() =>
+              trackCtaClick({
+                ctaId: "vault_paid_next_read_solarian_deep",
+                ctaLabel: "READ THE SOLARIAN DEEP",
+                ctaLocation: "vault_paid_next_read",
+                destinationUrl: EXTERNAL_LINKS.solarianDeep,
+                destinationKind: "external",
+              })
+            }
+          >
+            READ THE SOLARIAN DEEP
+          </a>
+        </div>
+      </section>
+
+      <div className="divider" />
+
       {/* Substacks */}
       <section className="section-spacing">
         <div className="page-container text-center max-w-2xl mx-auto space-y-4">

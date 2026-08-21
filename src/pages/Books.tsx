@@ -102,7 +102,7 @@ const Books = () => {
           {/* Featured: Solarian Deep */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <a
-              href={EXTERNAL_LINKS.solarianDeepAmazon}
+              href={EXTERNAL_LINKS.solarianDeep}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() =>
@@ -110,7 +110,7 @@ const Books = () => {
                   ctaId: "books_solarian_deep_cover",
                   ctaLabel: "The Solarian Deep cover",
                   ctaLocation: "books_featured_solarian",
-                  destinationUrl: EXTERNAL_LINKS.solarianDeepAmazon,
+                  destinationUrl: EXTERNAL_LINKS.solarianDeep,
                   destinationKind: "external",
                 })
               }
@@ -122,7 +122,7 @@ const Books = () => {
               <p className="text-xs uppercase tracking-widest text-muted-foreground">Novel — Book 1 of the Technoquatics Series</p>
               <p className="body-text">David Deane Haskell's latest novel, <em>The Solarian Deep</em>—start reading now.</p>
               <a
-                href={EXTERNAL_LINKS.solarianDeepAmazon}
+                href={EXTERNAL_LINKS.solarianDeep}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary inline-block"
@@ -131,7 +131,7 @@ const Books = () => {
                     ctaId: "books_read_the_solarian_deep",
                     ctaLabel: "READ THE SOLARIAN DEEP",
                     ctaLocation: "books_featured_solarian",
-                    destinationUrl: EXTERNAL_LINKS.solarianDeepAmazon,
+                    destinationUrl: EXTERNAL_LINKS.solarianDeep,
                     destinationKind: "external",
                   })
                 }
@@ -240,23 +240,46 @@ const Books = () => {
               <p className="body-text">
                 In this raw, unfolding transformation, David introduces the many facets of himself—those inner child figures suppressed for years—and how they healed each other in real-time. This is the truth behind the fiction.
               </p>
-              <a
-                href={EXTERNAL_LINKS.woundedAngels}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary"
-                onClick={() =>
-                  trackCtaClick({
-                    ctaId: "books_wounded_angels_learn_more",
-                    ctaLabel: "LEARN MORE",
-                    ctaLocation: "books_healing_section",
-                    destinationUrl: EXTERNAL_LINKS.woundedAngels,
-                    destinationKind: "external",
-                  })
-                }
-              >
-                LEARN MORE
-              </a>
+              <p className="body-text">
+                The current Second Edition Kindle and paperback include a sneak preview of
+                <em> Inner Child Unleashed</em>, the follow-up now in progress.
+              </p>
+              <div className="flex flex-wrap gap-4 items-center">
+                <a
+                  href={EXTERNAL_LINKS.woundedAngels}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary"
+                  onClick={() =>
+                    trackCtaClick({
+                      ctaId: "books_wounded_angels_read_second_edition",
+                      ctaLabel: "READ THE SECOND EDITION",
+                      ctaLocation: "books_healing_section",
+                      destinationUrl: EXTERNAL_LINKS.woundedAngels,
+                      destinationKind: "external",
+                    })
+                  }
+                >
+                  READ THE SECOND EDITION
+                </a>
+                <a
+                  href={EXTERNAL_LINKS.healingSubstack}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-accent"
+                  onClick={() =>
+                    trackCtaClick({
+                      ctaId: "books_inner_child_journal",
+                      ctaLabel: "FOLLOW INNER CHILD JOURNAL",
+                      ctaLocation: "books_healing_section",
+                      destinationUrl: EXTERNAL_LINKS.healingSubstack,
+                      destinationKind: "external",
+                    })
+                  }
+                >
+                  Follow Inner Child Journal
+                </a>
+              </div>
             </div>
           </div>
         </div>

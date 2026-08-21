@@ -5,6 +5,7 @@ import FreeFictionPopup from "@/components/FreeFictionPopup";
 import heroBrand from "@/assets/hero-author-brand.webp";
 import woundedAngels from "@/assets/wounded-angels.webp";
 import { trackCtaClick } from "@/lib/analytics";
+import { EXTERNAL_LINKS } from "@/siteConfig";
 
 const HERO_LINES = [
   { text: "Systems Reward Appearance Over Truth", delay: 350, weight: 700 },
@@ -201,21 +202,44 @@ const Home = () => {
                 <p className="body-text">
                   Honest explorations of the Inner Child, mindfulness, and the path to healing. Raw, unfolding, and deeply human.
                 </p>
-                <Link
-                  to="/books#wounded-angels"
-                  className="btn-outline"
-                  onClick={() =>
-                    trackCtaClick({
-                      ctaId: "home_wounded_angels_learn_more",
-                      ctaLabel: "Learn More",
-                      ctaLocation: "home_healing_section",
-                      destinationUrl: "/books#wounded-angels",
-                      destinationKind: "internal",
-                    })
-                  }
-                >
-                  Learn More
-                </Link>
+                <p className="body-text">
+                  The current Second Edition Kindle and paperback include a sneak preview of
+                  <em> Inner Child Unleashed</em>.
+                </p>
+                <div className="flex flex-wrap gap-4 items-center">
+                  <a
+                    href={EXTERNAL_LINKS.woundedAngels}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-outline"
+                    onClick={() =>
+                      trackCtaClick({
+                        ctaId: "home_wounded_angels_second_edition",
+                        ctaLabel: "READ WOUNDED ANGELS",
+                        ctaLocation: "home_healing_section",
+                        destinationUrl: EXTERNAL_LINKS.woundedAngels,
+                        destinationKind: "external",
+                      })
+                    }
+                  >
+                    Read Wounded Angels
+                  </a>
+                  <Link
+                    to="/media#wounded-angels-media"
+                    className="link-accent"
+                    onClick={() =>
+                      trackCtaClick({
+                        ctaId: "home_wounded_angels_conversations",
+                        ctaLabel: "HEAR THE CONVERSATIONS",
+                        ctaLocation: "home_healing_section",
+                        destinationUrl: "/media#wounded-angels-media",
+                        destinationKind: "internal",
+                      })
+                    }
+                  >
+                    Hear the conversations
+                  </Link>
+                </div>
               </div>
               <div className="md:order-0">
                 <img
