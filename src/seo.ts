@@ -9,7 +9,11 @@ import {
   SITE_URL,
   SOCIAL_IMAGES,
 } from "./siteConfig";
-import { MEDIA_APPEARANCES, REUSE_CLIPS } from "./mediaData";
+import {
+  MEDIA_APPEARANCES,
+  REUSE_CLIPS,
+  SEARCH_ONLY_MEDIA_APPEARANCES,
+} from "./mediaData";
 
 type SeoConfig = {
   title: string;
@@ -274,7 +278,12 @@ const buildGraph = (pathname: string) => {
     ],
   };
 
-  const mediaItems = MEDIA_APPEARANCES.map((appearance) => ({
+  const discoveryAppearances = [
+    ...MEDIA_APPEARANCES,
+    ...SEARCH_ONLY_MEDIA_APPEARANCES,
+  ];
+
+  const mediaItems = discoveryAppearances.map((appearance) => ({
     "@type": appearance.format,
     "@id": `${SITE_URL}/media#${appearance.id}`,
     name: appearance.title,

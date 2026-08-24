@@ -9,6 +9,7 @@
     "build:client": "vite build",
     "build:ssr": "vite build --ssr src/entry-server.tsx --outDir .ssr-temp",
     "build:dev": "vite build --mode development",
+    "check:discovery": "node scripts/check-discovery-data.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",

@@ -66,6 +66,25 @@ Do not infer a separate AI-for-author service lane unless it is explicitly surfa
 - Use only official external links already present in the repository.
 - Treat Amazon as the established route for The Solarian Deep only where already defined.
 
+## Verified Public Media Proof
+
+The Media route and its structured data describe 25 verified public appearances or coverage items.
+These are durable source pages, not unpublished recordings or outreach claims.
+
+Additional verified appearance sources represented in the machine-readable graph include:
+
+- Mystical Wellness: https://www.youtube.com/watch?v=n9cM-ZRUiSA
+- We Are All Psychic: https://www.listennotes.com/podcasts/were-all-psychic/spiritual-inner-child-oWv8Zy5CkQP/
+- Normalizing Men's Mental Health: https://www.youtube.com/watch?v=4WfJwGmc7sY
+- Writer Craft Podcast: https://theindieauthorlife.libsyn.com/writing-traveling-and-trauma-healing-a-last-ditch-effort-to-be-heard-with-david-deane-haskell-ep216
+- The Way Out: https://www.alcoholfree.com/listen/podcasts/episode/recovery-means-healing-the-inner-child-with-david-deane-haskell-episode-509
+- Real Talk Recovery: https://realtalkrecovery.podbean.com/
+- Create Art Podcast: https://createartpodcast.com/the-architecture-of-recovery-writing-through-the-unknown-with-david-deane-haskell/
+- I'm only human!: https://open.spotify.com/episode/6O7T6diKtci1C7ANg09yFp
+- Whereabouts Tales: https://open.spotify.com/episode/5GbJK0WomorEtG5QKOGmIw
+- Adult Child of Dysfunction: https://open.spotify.com/episode/1aPeKeSPevPTmTe2aCKhMN
+- The Blasters and Blades Podcast: https://open.spotify.com/episode/1MUHgkhetmb0TqyqDtYQjf
+
 ## External Destinations
 
 - The Solarian Deep on Amazon: https://www.amazon.com/dp/B0GPN8DBJS

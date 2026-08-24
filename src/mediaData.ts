@@ -201,6 +201,135 @@ export const MEDIA_APPEARANCES: MediaAppearance[] = [
   },
 ];
 
+// Verified public appearances that are not yet presented on the visible Media page.
+// They remain search-only so this layer can improve machine discovery without changing
+// public copy, layout, or page length. Source authority checked 2026-08-25:
+// - AA DDH BUSINESS 2026/MEDIA/PODCAST APPEARANCES/PODCAST_APPEARANCE_MASTER_LINKS.md
+// - AA DDH BUSINESS 2026/MEDIA/PODCAST APPEARANCES/PODCAST_APPEARANCE_INVENTORY_2026-07-13.md
+export const SEARCH_ONLY_MEDIA_APPEARANCES: MediaAppearance[] = [
+  {
+    id: "mystical-wellness",
+    title: "Facing the Mystical",
+    outlet: "Mystical Wellness with Julia Anchorhaven",
+    description:
+      "David Deane Haskell discusses Wounded Angels, inner-child recovery, and spiritual experience.",
+    url: "https://www.youtube.com/watch?v=n9cM-ZRUiSA",
+    book: "Wounded Angels",
+    format: "PodcastEpisode",
+    published: "2025-08-26",
+  },
+  {
+    id: "we-are-all-psychic",
+    title: "Spiritual Inner Child Healing for Addiction",
+    outlet: "We Are All Psychic",
+    description:
+      "A published conversation with David Deane Haskell about addiction, inner-child recovery, and Wounded Angels.",
+    url: "https://www.listennotes.com/podcasts/were-all-psychic/spiritual-inner-child-oWv8Zy5CkQP/",
+    book: "Wounded Angels",
+    format: "PodcastEpisode",
+    published: "2026-06-16",
+  },
+  {
+    id: "normalizing-mens-mental-health",
+    title: "David Deane Haskell on Normalizing Men's Mental Health",
+    outlet: "Normalizing Men's Mental Health",
+    description:
+      "A published conversation about men's mental health, recovery, and Wounded Angels.",
+    url: "https://www.youtube.com/watch?v=4WfJwGmc7sY",
+    book: "Wounded Angels",
+    format: "PodcastEpisode",
+    published: "2026-06-19",
+  },
+  {
+    id: "writer-craft",
+    title: "Writing, Traveling, and Trauma Healing: A Last Ditch Effort to Be Heard",
+    outlet: "Writer Craft Podcast — Episode 216",
+    description:
+      "David Deane Haskell discusses writing, trauma recovery, and the work behind Wounded Angels.",
+    url: "https://theindieauthorlife.libsyn.com/writing-traveling-and-trauma-healing-a-last-ditch-effort-to-be-heard-with-david-deane-haskell-ep216",
+    book: "Wounded Angels",
+    format: "PodcastEpisode",
+    published: "2026-07-02",
+  },
+  {
+    id: "the-way-out",
+    title: "Recovery Means Healing the Inner Child with David Deane Haskell",
+    outlet: "The Way Out — Episode 509",
+    description:
+      "A published longform recovery conversation tied directly to Wounded Angels.",
+    url: "https://www.alcoholfree.com/listen/podcasts/episode/recovery-means-healing-the-inner-child-with-david-deane-haskell-episode-509",
+    book: "Wounded Angels",
+    format: "PodcastEpisode",
+    published: "2026-07-05",
+  },
+  {
+    id: "real-talk-recovery",
+    title: "Learning to Live After the Crisis",
+    outlet: "Real Talk Recovery with Miss Mo",
+    description:
+      "David Deane Haskell discusses recovery after crisis and the lived experience behind Wounded Angels.",
+    url: "https://realtalkrecovery.podbean.com/",
+    book: "Wounded Angels",
+    format: "PodcastEpisode",
+    published: "2026-07-10",
+  },
+  {
+    id: "create-art",
+    title: "The Architecture of Recovery: Writing Through the Unknown",
+    outlet: "Create Art Podcast",
+    description:
+      "A conversation with David Deane Haskell about recovery, writing, and Wounded Angels.",
+    url: "https://createartpodcast.com/the-architecture-of-recovery-writing-through-the-unknown-with-david-deane-haskell/",
+    book: "Wounded Angels",
+    format: "PodcastEpisode",
+    published: "2026-07-12",
+  },
+  {
+    id: "artists-corner",
+    title: "Artists Corner: David Deane Haskell",
+    outlet: "I'm only human!",
+    description:
+      "A published author conversation naming Wounded Angels and The Solarian Deep.",
+    url: "https://open.spotify.com/episode/6O7T6diKtci1C7ANg09yFp",
+    book: "Wounded Angels",
+    format: "PodcastEpisode",
+    published: "2026-07-16",
+  },
+  {
+    id: "whereabouts-tales",
+    title: "Toxic Shame, Codependency & Inner Child Recovery",
+    outlet: "Whereabouts Tales",
+    description:
+      "David Deane Haskell discusses toxic shame, codependency, recovery, and Wounded Angels.",
+    url: "https://open.spotify.com/episode/5GbJK0WomorEtG5QKOGmIw",
+    book: "Wounded Angels",
+    format: "PodcastEpisode",
+    published: "2026-07-22",
+  },
+  {
+    id: "adult-child-of-dysfunction",
+    title: "Why Your Childhood Still Controls Your Reactions",
+    outlet: "Adult Child of Dysfunction — Episode 351",
+    description:
+      "A published conversation with David Deane Haskell about childhood patterns and Wounded Angels.",
+    url: "https://open.spotify.com/episode/1aPeKeSPevPTmTe2aCKhMN",
+    book: "Wounded Angels",
+    format: "PodcastEpisode",
+    published: "2026-07-29",
+  },
+  {
+    id: "blasters-and-blades",
+    title: "The Solarian Deep by David Deane Haskell",
+    outlet: "The Blasters and Blades Podcast — Episode 779",
+    description:
+      "A book-specific science-fiction conversation about The Solarian Deep.",
+    url: "https://open.spotify.com/episode/1MUHgkhetmb0TqyqDtYQjf",
+    book: "The Solarian Deep",
+    format: "PodcastEpisode",
+    published: "2026-07-31",
+  },
+];
+
 export const REUSE_CLIPS: ReuseClip[] = [
   {
     id: "willpower-shame",
