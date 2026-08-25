@@ -31,8 +31,64 @@ type MediaPlayPayload = {
   sourceUrl: string;
 };
 
+type AttributionContext = {
+  attribution_source: string;
+  attribution_medium: string;
+  attribution_campaign: string;
+  attribution_content: string;
+  attribution_referrer: string;
+  attribution_landing_path: string;
+};
+
+const ATTRIBUTION_STORAGE_KEY = "ddh_attribution_v1";
+
 const canTrack = () =>
   typeof window !== "undefined" && typeof window.gtag === "function";
+
+const readStoredAttribution = (): AttributionContext | null => {
+  try {
+    const stored = window.sessionStorage.getItem(ATTRIBUTION_STORAGE_KEY);
+    return stored ? (JSON.parse(stored) as AttributionContext) : null;
+  } catch {
+    return null;
+  }
+};
+
+const getAttributionContext = (): AttributionContext => {
+  const query = new URLSearchParams(window.location.search);
+  const stored = readStoredAttribution();
+  const hasFreshSource = query.has("utm_source") || query.has("ref");
+
+  if (!hasFreshSource && stored) {
+    return stored;
+  }
+
+  const attribution: AttributionContext = {
+    attribution_source:
+      query.get("utm_source") ?? query.get("ref") ?? stored?.attribution_source ?? "direct",
+    attribution_medium:
+      query.get("utm_medium") ?? stored?.attribution_medium ?? "none",
+    attribution_campaign:
+      query.get("utm_campaign") ?? stored?.attribution_campaign ?? "none",
+    attribution_content:
+      query.get("utm_content") ?? stored?.attribution_content ?? "none",
+    attribution_referrer:
+      document.referrer || stored?.attribution_referrer || "direct",
+    attribution_landing_path:
+      stored?.attribution_landing_path || `${window.location.pathname}${window.location.search}`,
+  };
+
+  try {
+    window.sessionStorage.setItem(
+      ATTRIBUTION_STORAGE_KEY,
+      JSON.stringify(attribution),
+    );
+  } catch {
+    // Analytics must never interfere with reader navigation.
+  }
+
+  return attribution;
+};
 
 const trackEvent = (eventName: string, params: Record<string, unknown>) => {
   if (!canTrack()) {
@@ -41,6 +97,7 @@ const trackEvent = (eventName: string, params: Record<string, unknown>) => {
 
   window.gtag?.("event", eventName, {
     transport_type: "beacon",
+    ...getAttributionContext(),
     ...params,
   });
 };
@@ -55,6 +112,7 @@ export const trackPageView = ({ pagePath, pageTitle }: PageViewPayload) => {
     page_title: pageTitle ?? document.title,
     page_location: window.location.href,
     transport_type: "beacon",
+    ...getAttributionContext(),
   });
 };
 

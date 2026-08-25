@@ -13,6 +13,7 @@ describe("analytics tracking", () => {
     delete window.gtag;
     document.title = "David Deane Haskell";
     window.history.pushState({}, "", "/");
+    window.sessionStorage.clear();
   });
 
   it("does not throw when Google Analytics is unavailable", () => {
@@ -41,12 +42,18 @@ describe("analytics tracking", () => {
 
     trackPageView({ pagePath: "/books" });
 
-    expect(gtag).toHaveBeenCalledWith("event", "page_view", {
-      page_path: "/books",
-      page_title: "Books | David Deane Haskell",
-      page_location: window.location.href,
-      transport_type: "beacon",
-    });
+    expect(gtag).toHaveBeenCalledWith(
+      "event",
+      "page_view",
+      expect.objectContaining({
+        page_path: "/books",
+        page_title: "Books | David Deane Haskell",
+        page_location: window.location.href,
+        transport_type: "beacon",
+        attribution_source: "test",
+        attribution_landing_path: "/books?utm_source=test",
+      }),
+    );
   });
 
   it("allows explicit page titles to override the document title", () => {
@@ -78,14 +85,19 @@ describe("analytics tracking", () => {
       destinationKind: "external",
     });
 
-    expect(gtag).toHaveBeenCalledWith("event", "ddh_cta_click", {
-      transport_type: "beacon",
-      cta_id: "popup_get_free_stories",
-      cta_label: "GET FREE STORIES",
-      cta_location: "global_popup",
-      destination_url: "https://dl.bookfunnel.com/k7osg3nq37",
-      destination_kind: "external",
-    });
+    expect(gtag).toHaveBeenCalledWith(
+      "event",
+      "ddh_cta_click",
+      expect.objectContaining({
+        transport_type: "beacon",
+        cta_id: "popup_get_free_stories",
+        cta_label: "GET FREE STORIES",
+        cta_location: "global_popup",
+        destination_url: "https://dl.bookfunnel.com/k7osg3nq37",
+        destination_kind: "external",
+        attribution_source: "direct",
+      }),
+    );
   });
 
   it("sends popup events with the popup action field", () => {
@@ -98,12 +110,48 @@ describe("analytics tracking", () => {
       destinationUrl: "https://dl.bookfunnel.com/k7osg3nq37",
     });
 
-    expect(gtag).toHaveBeenCalledWith("event", "ddh_popup_event", {
-      transport_type: "beacon",
-      popup_id: "free_fiction_vault_popup",
-      popup_location: "global_popup",
-      popup_action: "signup_click",
-      destination_url: "https://dl.bookfunnel.com/k7osg3nq37",
+    expect(gtag).toHaveBeenCalledWith(
+      "event",
+      "ddh_popup_event",
+      expect.objectContaining({
+        transport_type: "beacon",
+        popup_id: "free_fiction_vault_popup",
+        popup_location: "global_popup",
+        popup_action: "signup_click",
+        destination_url: "https://dl.bookfunnel.com/k7osg3nq37",
+        attribution_source: "direct",
+      }),
+    );
+  });
+
+  it("persists source attribution across later route events", () => {
+    const gtag = setGtag();
+    window.history.pushState(
+      {},
+      "",
+      "/media?utm_source=writer_craft&utm_medium=podcast&utm_campaign=media_proof",
+    );
+
+    trackPageView({ pagePath: "/media" });
+    window.history.pushState({}, "", "/books");
+    trackCtaClick({
+      ctaId: "books_wounded_angels_read",
+      ctaLabel: "READ WOUNDED ANGELS",
+      ctaLocation: "books_page",
+      destinationUrl: "https://mybook.to/woundedangels",
+      destinationKind: "external",
     });
+
+    expect(gtag).toHaveBeenLastCalledWith(
+      "event",
+      "ddh_cta_click",
+      expect.objectContaining({
+        attribution_source: "writer_craft",
+        attribution_medium: "podcast",
+        attribution_campaign: "media_proof",
+        attribution_landing_path:
+          "/media?utm_source=writer_craft&utm_medium=podcast&utm_campaign=media_proof",
+      }),
+    );
   });
 });

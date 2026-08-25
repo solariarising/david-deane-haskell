@@ -59,6 +59,23 @@ Do not infer a separate AI-for-author service lane unless it is explicitly surfa
 - Emergence
   Free full-length novel available through the vault route.
 
+## Emergence: Existing Public Formats
+
+Source class: measured/external links recorded in the company link authority. These are existing routes, not inferred availability.
+
+- Free ebook: https://dl.bookfunnel.com/6gka060ggj
+- Kindle edition: https://www.amazon.com/dp/B07MK4CJXL
+- Paperback edition: https://www.amazon.com/Emergence-Artificial-Intelligence-David-Haskell/dp/1792191642
+- Audiobook edition: https://www.amazon.com/Audible-Emergence-Tale-Artificial-Intelligence/dp/B0FHDXJT7Q
+
+## Transcript-Derived Interview Themes
+
+Provenance note: the summaries below are AI synthesis from one named local transcript per item and are not direct quotations or independent corroboration. Use the linked public episode as the external source.
+
+- Writer Craft Podcast: David discusses one author identity across fiction and nonfiction, transformation as a recurring concern, travel, and writing from lived experience. Source: https://theindieauthorlife.libsyn.com/writing-traveling-and-trauma-healing-a-last-ditch-effort-to-be-heard-with-david-deane-haskell-ep216
+- Adult Child with Andrea Ashley: David discusses sobriety, codependency, childhood trauma, relationship repair, inner-child work, and the real-time writing behind Wounded Angels. Source: https://podcasts.apple.com/us/podcast/229-the-codependency-bottom-when-sobriety-cracks-open/id1552579027?i=1000766422495
+- Fantasy Talks Live / Amazing Worlds of Fantasy: David discusses returning to science fiction, The Solarian Deep, and the relationship between his fiction and nonfiction. Source: https://www.podbean.com/ep/pb-wiajd-1aeb265
+
 ## Routing Guidance
 
 - Use one clear route per intent.
