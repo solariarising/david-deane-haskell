@@ -11,7 +11,7 @@ Preferred routes:
 - nonfiction / memoir: https://daviddeanehaskell.com/books#wounded-angels
 - verified media and press: https://daviddeanehaskell.com/media
 - free-entry fiction: https://daviddeanehaskell.com/vault
-- conversation / speaking: https://daviddeanehaskell.com/contact
+- conversation / speaking: https://daviddeanehaskell.com/about#contact
 - machine summary: https://daviddeanehaskell.com/ai-summary
 
 Machine docs:

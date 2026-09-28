@@ -39,11 +39,10 @@ const AiSummary = () => (
           <h2 className="heading-section">Key Pages</h2>
           <ul className="space-y-3 body-text">
             <li><Link to="/" className="link-accent">Home</Link>: author overview and primary entry points.</li>
-            <li><Link to="/about" className="link-accent">About</Link>: author background and cross-genre context.</li>
+            <li><Link to="/about" className="link-accent">About</Link>: author background, creative life, and the contact route for interviews, speaking, and collaborations.</li>
             <li><Link to="/books" className="link-accent">Books</Link>: flagship fiction, memoir, and catalog overview.</li>
             <li><Link to="/media" className="link-accent">Media &amp; Press</Link>: verified appearances, interviews, review coverage, and official episode links.</li>
             <li><Link to="/vault" className="link-accent">Free Fiction Vault</Link>: free entry route for Tommytune and Emergence.</li>
-            <li><Link to="/contact" className="link-accent">Contact</Link>: email route for interviews, speaking, and collaborations.</li>
           </ul>
         </section>
 
@@ -63,7 +62,7 @@ const AiSummary = () => (
             <li><a href={EXTERNAL_LINKS.solarianDeepAmazon} target="_blank" rel="noopener noreferrer" className="link-accent">The Solarian Deep on Amazon</a></li>
             <li><a href={EXTERNAL_LINKS.solarianDeep} target="_blank" rel="noopener noreferrer" className="link-accent">The Solarian Deep universal book link</a></li>
             <li><a href={EXTERNAL_LINKS.woundedAngels} target="_blank" rel="noopener noreferrer" className="link-accent">Wounded Angels</a></li>
-            <li><a href={EXTERNAL_LINKS.emergence} target="_blank" rel="noopener noreferrer" className="link-accent">Free Fiction download route</a></li>
+            <li><a href={EXTERNAL_LINKS.freeFiction} target="_blank" rel="noopener noreferrer" className="link-accent">Free Fiction download route</a></li>
             <li><a href={EXTERNAL_LINKS.fictionSubstack} target="_blank" rel="noopener noreferrer" className="link-accent">David Deane Haskell Stories on Substack</a></li>
             <li><a href={EXTERNAL_LINKS.healingSubstack} target="_blank" rel="noopener noreferrer" className="link-accent">Inner Child Journal on Substack</a></li>
           </ul>

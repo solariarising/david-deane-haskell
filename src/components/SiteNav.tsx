@@ -9,7 +9,6 @@ const navItems = [
   { label: "Books", path: "/books" },
   { label: "Media", path: "/media" },
   { label: "Free Fiction", path: "/vault" },
-  { label: "Contact", path: "/contact" },
 ];
 
 const SiteNav = () => {

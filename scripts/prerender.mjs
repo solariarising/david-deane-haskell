@@ -11,7 +11,6 @@ const routes = [
   { pathname: "/ai-summary", output: path.join("ai-summary", "index.html") },
   { pathname: "/about", output: path.join("about", "index.html") },
   { pathname: "/books", output: path.join("books", "index.html") },
-  { pathname: "/contact", output: path.join("contact", "index.html") },
   { pathname: "/media", output: path.join("media", "index.html") },
   { pathname: "/vault", output: path.join("vault", "index.html") },
   { pathname: "/404", output: "404.html" },

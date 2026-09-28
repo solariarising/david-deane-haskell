@@ -28,7 +28,7 @@ Do not infer a separate AI-for-author service lane unless it is explicitly surfa
 - Nonfiction / memoir: https://daviddeanehaskell.com/books#wounded-angels
 - Verified media and press: https://daviddeanehaskell.com/media
 - Free-entry fiction: https://daviddeanehaskell.com/vault
-- Conversation / speaking: https://daviddeanehaskell.com/contact
+- Conversation / speaking: https://daviddeanehaskell.com/about#contact
 - Machine summary: https://daviddeanehaskell.com/ai-summary
 
 ## Main Site Routes
@@ -38,15 +38,15 @@ Do not infer a separate AI-for-author service lane unless it is explicitly surfa
 - AI Summary: https://daviddeanehaskell.com/ai-summary
   Plain-HTML summary for search engines, AI systems, and readers.
 - About: https://daviddeanehaskell.com/about
-  Author background and cross-genre context.
+  Author background, creative life, and contact route (interviews, speaking, workshops, collaborations).
 - Books: https://daviddeanehaskell.com/books
   Main catalog page for fiction and nonfiction titles.
 - Media & Press: https://daviddeanehaskell.com/media
   Verified podcast appearances, interviews, review coverage, official episode links, and book routes.
 - Free Fiction Vault: https://daviddeanehaskell.com/vault
   Free-entry route for Tommytune and Emergence.
-- Contact: https://daviddeanehaskell.com/contact
-  Email route for interviews, speaking, workshops, and selected collaborations.
+
+Note: /contact was retired and now redirects (301) to /about#contact.
 
 ## Core Titles
 
@@ -107,6 +107,6 @@ Additional verified appearance sources represented in the machine-readable graph
 - The Solarian Deep on Amazon: https://www.amazon.com/dp/B0GPN8DBJS
 - The Solarian Deep: https://mybook.to/solariandeep
 - Wounded Angels: https://books2read.com/woundedangels
-- Free Fiction download route: https://reads.daviddeanehaskell.com/emergence
+- Free Fiction download route (Tommytune + Emergence bundle): https://dl.bookfunnel.com/k7osg3nq37
 - Fiction Substack: https://daviddeanehaskellstories.substack.com
 - Inner Child Journal: https://innerchildjournal.substack.com

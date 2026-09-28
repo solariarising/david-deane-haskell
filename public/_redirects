@@ -1,0 +1,3 @@
+# Retired standalone Contact page — merged into About.
+# 301 (permanent) so search engines and old links transfer cleanly.
+/contact  /about#contact  301

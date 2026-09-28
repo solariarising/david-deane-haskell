@@ -9,7 +9,7 @@ const SiteFooter = () => (
       <div className="flex justify-center gap-6 text-sm text-muted-foreground">
         <Link to="/books" className="hover:text-foreground transition-colors">Books</Link>
         <Link to="/about" className="hover:text-foreground transition-colors">About</Link>
-        <Link to="/contact" className="hover:text-foreground transition-colors">Contact</Link>
+        <Link to="/about#contact" className="hover:text-foreground transition-colors">Contact</Link>
       </div>
       <p className="text-xs text-muted-foreground pt-4">
         © {new Date().getFullYear()} David Deane Haskell. All rights reserved.

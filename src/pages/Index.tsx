@@ -127,7 +127,7 @@ const Home = () => {
                 }}
               >
                 <a
-                  href={EXTERNAL_LINKS.emergence}
+                  href={EXTERNAL_LINKS.freeFiction}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary text-base px-10 py-4"
@@ -136,7 +136,7 @@ const Home = () => {
                       ctaId: "home_read_free_stories",
                       ctaLabel: "READ THE FREE STORIES",
                       ctaLocation: "home_hero",
-                      destinationUrl: EXTERNAL_LINKS.emergence,
+                      destinationUrl: EXTERNAL_LINKS.freeFiction,
                       destinationKind: "external",
                     })
                   }

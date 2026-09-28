@@ -197,7 +197,7 @@ const Books = () => {
               title="Tommytune"
               subtitle="Short Story"
               description="A Resona Series short story. A glimpse into the world of The Vibrants—where music, memory, and identity collide in unexpected ways."
-              buyUrl={EXTERNAL_LINKS.tommytune}
+              buyUrl={EXTERNAL_LINKS.freeFiction}
               buyLabel="Read for Free"
               ctaId="books_tommytune_read_for_free"
               ctaLocation="books_tommytune_section"

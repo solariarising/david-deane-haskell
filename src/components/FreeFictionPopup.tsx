@@ -25,7 +25,7 @@ const FreeFictionPopup = () => {
       popupId: POPUP_ID,
       popupLocation: POPUP_LOCATION,
       action: "dismissed",
-      destinationUrl: EXTERNAL_LINKS.emergence,
+      destinationUrl: EXTERNAL_LINKS.freeFiction,
     });
   }, []);
 
@@ -35,13 +35,13 @@ const FreeFictionPopup = () => {
       popupId: POPUP_ID,
       popupLocation: POPUP_LOCATION,
       action: "signup_click",
-      destinationUrl: EXTERNAL_LINKS.emergence,
+      destinationUrl: EXTERNAL_LINKS.freeFiction,
     });
     trackCtaClick({
       ctaId: "popup_get_free_stories",
       ctaLabel: "GET FREE STORIES",
       ctaLocation: POPUP_LOCATION,
-      destinationUrl: EXTERNAL_LINKS.emergence,
+      destinationUrl: EXTERNAL_LINKS.freeFiction,
       destinationKind: "external",
     });
     setOpen(false);
@@ -71,7 +71,7 @@ const FreeFictionPopup = () => {
         popupId: POPUP_ID,
         popupLocation: POPUP_LOCATION,
         action: "shown",
-        destinationUrl: EXTERNAL_LINKS.emergence,
+        destinationUrl: EXTERNAL_LINKS.freeFiction,
       });
     }, TRIGGER_DELAY_MS);
     return () => clearTimeout(timer);
@@ -93,7 +93,7 @@ const FreeFictionPopup = () => {
           </p>
         </div>
         <a
-          href={EXTERNAL_LINKS.emergence}
+          href={EXTERNAL_LINKS.freeFiction}
           target="_blank"
           rel="noopener noreferrer"
           className="btn-primary inline-block"

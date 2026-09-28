@@ -45,9 +45,9 @@ const ROUTE_SEO: Record<string, SeoConfig> = {
     pageType: "WebPage",
   },
   "/about": {
-    title: `About ${SITE_NAME} | Writing about control, truth, and transformation`,
+    title: `About ${SITE_NAME} | Author, drummer, and storyteller`,
     description:
-      "David Deane Haskell writes speculative fiction, psychological thrillers, memoir, and recovery-centered nonfiction exploring control, truth, trauma, and the process of becoming whole.",
+      "David Deane Haskell writes speculative fiction and memoir-driven nonfiction, teaches drumming, and gets in touch with readers, hosts, and collaborators.",
     type: "profile",
     image: SOCIAL_IMAGES.about,
     imageAlt: "Portrait of David Deane Haskell",
@@ -61,15 +61,6 @@ const ROUTE_SEO: Record<string, SeoConfig> = {
     image: SOCIAL_IMAGES.books,
     imageAlt: "Books by David Deane Haskell",
     pageType: "CollectionPage",
-  },
-  "/contact": {
-    title: `Contact ${SITE_NAME} | Interviews, speaking, and collaboration`,
-    description:
-      "Contact David Deane Haskell for interviews, podcasts, speaking, workshops, and collaborations across fiction, nonfiction, and recovery-centered work.",
-    type: "profile",
-    image: SOCIAL_IMAGES.contact,
-    imageAlt: "Portrait of David Deane Haskell",
-    pageType: "ContactPage",
   },
   "/media": {
     title: `Media & Press | Podcast appearances and interviews with ${SITE_NAME}`,
@@ -106,7 +97,6 @@ const ROUTE_LABELS: Record<string, string> = {
   [AI_SUMMARY_PATH]: "AI Summary",
   "/about": "About",
   "/books": "Books",
-  "/contact": "Contact",
   "/media": "Media & Press",
   "/vault": "Free Fiction Vault",
 };
@@ -171,7 +161,7 @@ const buildGraph = (pathname: string) => {
     description: SITE_DESCRIPTION,
     disambiguatingDescription: SITE_DISAMBIGUATION,
     knowsLanguage: SITE_LANGUAGE,
-    sameAs: [EXTERNAL_LINKS.fictionSubstack, EXTERNAL_LINKS.healingSubstack],
+    sameAs: [EXTERNAL_LINKS.fictionSubstack, EXTERNAL_LINKS.healingSubstack, EXTERNAL_LINKS.instagram],
   };
 
   const website = {
@@ -236,7 +226,7 @@ const buildGraph = (pathname: string) => {
     "@type": "ShortStory",
     "@id": `${SITE_URL}/vault#tommytune`,
     name: "Tommytune",
-    url: EXTERNAL_LINKS.tommytune,
+    url: EXTERNAL_LINKS.freeFiction,
     author: {
       "@id": personId,
     },

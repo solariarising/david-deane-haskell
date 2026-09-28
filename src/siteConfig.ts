@@ -9,13 +9,12 @@ export const SITE_DESCRIPTION =
 export const SITE_DISAMBIGUATION =
   "Author David Deane Haskell is distinct from naturalist David George Haskell and from the Haskell programming language.";
 
-export const ROUTE_PATHS = ["/", "/about", "/books", "/contact", "/media", "/vault", AI_SUMMARY_PATH] as const;
+export const ROUTE_PATHS = ["/", "/about", "/books", "/media", "/vault", AI_SUMMARY_PATH] as const;
 
 export const SOCIAL_IMAGES = {
   default: "/social/solarian-deep-hero.jpg",
   about: "/social/profile.jpg",
   books: "/social/solarian-deep-hero.jpg",
-  contact: "/social/profile.jpg",
   vault: "/social/vault-books-composite.jpg",
   healing: "/social/wounded-angels.jpg",
 };
@@ -25,10 +24,11 @@ export const EXTERNAL_LINKS = {
   solarianDeep: "https://mybook.to/solariandeep",
   woundedAngels: "https://books2read.com/woundedangels",
   emergence: "https://reads.daviddeanehaskell.com/emergence",
-  tommytune: "https://dl.bookfunnel.com/w22icdykd9",
+  freeFiction: "https://dl.bookfunnel.com/k7osg3nq37",
   goldClub: "https://mybook.to/goldclub",
   darkAlignment: "https://mybook.to/darkalignment",
   tooMuchInformation: "https://mybook.to/toomuchinformation",
   fictionSubstack: "https://daviddeanehaskellstories.substack.com",
   healingSubstack: "https://innerchildjournal.substack.com",
+  instagram: "https://www.instagram.com/daviddeanehaskell/",
 };
