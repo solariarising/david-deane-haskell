@@ -1,7 +1,7 @@
-import { ExternalLink, Headphones, Trophy } from "lucide-react";
+import { ExternalLink, Headphones } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
-import { trackCtaClick, trackMediaPlay } from "@/lib/analytics";
-import { MEDIA_APPEARANCES, MediaAppearance, REUSE_CLIPS, ReuseClip } from "@/mediaData";
+import { trackCtaClick } from "@/lib/analytics";
+import { MEDIA_APPEARANCES, MediaAppearance } from "@/mediaData";
 import { EXTERNAL_LINKS } from "@/siteConfig";
 
 const MediaCard = ({ appearance }: { appearance: MediaAppearance }) => (
@@ -61,57 +61,9 @@ const MediaCard = ({ appearance }: { appearance: MediaAppearance }) => (
   </article>
 );
 
-const ReuseClipCard = ({ clip }: { clip: ReuseClip }) => (
-  <article className="card-elevated rounded-lg p-5 space-y-4">
-    <video
-      className="w-full max-h-[34rem] rounded-md bg-black object-contain"
-      controls
-      playsInline
-      preload="metadata"
-      aria-label={`${clip.title} — ${clip.outlet}`}
-      onPlay={() =>
-        trackMediaPlay({
-          mediaId: clip.id,
-          mediaTitle: clip.title,
-          mediaLocation: "media_reuse_clip",
-          sourceUrl: clip.src,
-        })
-      }
-    >
-      <source src={clip.src} type="video/mp4" />
-      Your browser does not support embedded video.
-    </video>
-    <div className="space-y-2">
-      <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">{clip.outlet}</p>
-      <h3 className="heading-subsection text-2xl">{clip.title}</h3>
-      <p className="body-text">{clip.description}</p>
-      <div className="flex flex-wrap gap-4 items-center pt-1">
-        <a
-          href={clip.officialUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="link-accent inline-flex items-center gap-2"
-          onClick={() =>
-            trackCtaClick({
-              ctaId: `media_${clip.id}_source`,
-              ctaLabel: `OPEN ${clip.outlet}`,
-              ctaLocation: "media_reuse_clip",
-              destinationUrl: clip.officialUrl,
-              destinationKind: "external",
-            })
-          }
-        >
-          Open the full official episode <ExternalLink size={16} aria-hidden="true" />
-        </a>
-        <span className="text-xs text-muted-foreground">Featured book: {clip.book}</span>
-      </div>
-    </div>
-  </article>
-);
-
 const Media = () => {
   const woundedAngelsAppearances = MEDIA_APPEARANCES.filter(
-    (appearance) => appearance.book === "Wounded Angels",
+    (appearance) => appearance.book === "Wounded Angels" && !appearance.embedUrl,
   );
   const solarianAppearances = MEDIA_APPEARANCES.filter(
     (appearance) => appearance.book === "The Solarian Deep",
@@ -173,23 +125,6 @@ const Media = () => {
                   </a>
                 </div>
               </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="pb-16 md:pb-24" aria-labelledby="reuse-clips">
-        <div className="page-container space-y-8">
-          <div className="max-w-3xl space-y-3">
-            <h2 id="reuse-clips" className="heading-section">Watch a short moment</h2>
-            <p className="body-text">
-              These clips came from the hosts' media packets. The full conversations remain linked
-              to the original shows.
-            </p>
-          </div>
-          <div className="grid lg:grid-cols-2 gap-8 items-start">
-            {REUSE_CLIPS.map((clip) => (
-              <ReuseClipCard key={clip.id} clip={clip} />
             ))}
           </div>
         </div>
@@ -278,26 +213,6 @@ const Media = () => {
             {solarianAppearances.map((appearance) => (
               <MediaCard key={appearance.id} appearance={appearance} />
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-spacing" aria-labelledby="ranking-proof">
-        <div className="page-container max-w-4xl">
-          <div className="card-elevated rounded-lg p-8 md:p-10 space-y-5">
-            <div className="flex items-center gap-3">
-              <Trophy aria-hidden="true" />
-              <h2 id="ranking-proof" className="heading-section">Ranking proof</h2>
-            </div>
-            <p className="body-large">
-              During an August 2026 free promotion, <em>The Solarian Deep</em> reached #4 on
-              Amazon.com's free Cyberpunk Science Fiction list and #9 on Amazon Japan's free
-              foreign-language Science Fiction list.
-            </p>
-            <p className="text-sm text-muted-foreground">
-              Amazon category rankings change over time. These positions were captured while the
-              promotion was live.
-            </p>
           </div>
         </div>
       </section>

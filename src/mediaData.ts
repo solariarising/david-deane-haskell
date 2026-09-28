@@ -71,16 +71,6 @@ export const MEDIA_APPEARANCES: MediaAppearance[] = [
     format: "PodcastEpisode",
   },
   {
-    id: "sobertown",
-    title: "Episode 406: Interview with Author David Deane Haskell",
-    outlet: "Sobertown / Early Days",
-    description: "David talks about shame, codependency, and recovery after the crisis.",
-    url: "https://www.sobertownpodcast.com/sober-podcast-episodes/url-/sobe/sober-podcast-episodes/r-podcast-episodes/episode-406-interview-with-author-david-dean-haskell",
-    book: "Wounded Angels",
-    format: "PodcastEpisode",
-    published: "2026-05-28",
-  },
-  {
     id: "evidence-based-recovery",
     title: "David Deane Haskell on Evidence Based Recovery",
     outlet: "Evidence Based Recovery",
@@ -98,6 +88,7 @@ export const MEDIA_APPEARANCES: MediaAppearance[] = [
     url: "https://www.youtube.com/watch?v=IPcet_e2CjE",
     book: "Wounded Angels",
     format: "PodcastEpisode",
+    embedUrl: "https://www.youtube-nocookie.com/embed/IPcet_e2CjE",
   },
   {
     id: "behind-the-shades",
@@ -139,7 +130,6 @@ export const MEDIA_APPEARANCES: MediaAppearance[] = [
     book: "The Solarian Deep",
     format: "PodcastEpisode",
     published: "2026-06-14",
-    embedUrl: "https://www.youtube-nocookie.com/embed/umP1M6EBXTc?start=859",
     highlights: [
       {
         label: "14:20 — Returning to science fiction",
