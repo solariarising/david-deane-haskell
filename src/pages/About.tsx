@@ -67,13 +67,13 @@ const About = () => {
         <h2 className="heading-section">A Life Built From Different Rooms</h2>
         <div className="space-y-5 body-text">
           <p>
-            David's path to the page ran through a drum line first. He came up in competitive marching percussion, spent ten years performing at Tokyo Disneyland, and has played and coached with corps and ensembles on both sides of the Pacific, including Japan's Yokohama Scouts. He still teaches drumming today—rudiments and fundamentals for adult beginners and returning players—and has led clinics as far as Indonesia.
+            David's path to the page ran through a drum line first. He came up in competitive marching percussion, played snare for the world-renowned Concord Blue Devils, spent ten years performing at Tokyo Disneyland, and has drummed and coached with corps and ensembles on both sides of the Pacific, including Japan's Yokohama Scouts. He still teaches drumming today—rudiments and fundamentals for adult beginners and returning players—and has led clinics as far afield as Thailand and Indonesia.
           </p>
           <p>
-            Writing came later, and not in a straight line. He self-published his first novel in 2013, in the early days of the Kindle wave, then went quiet on fiction for the better part of five years. When he came back, he came back on his own terms: fiction and nonfiction under one name, no pen name, no tidy genre lane. His science fiction tends to stay close to home—plausible, near-future technology rather than distant galaxies—because what actually interests him is how ordinary people and institutions react when the ground shifts under them. He gravitates toward defiant underdogs pushing back against systems built to flatten them.
+            Writing came later, and not in a straight line. He self-published his first four novels between 2013–2019, in the early days of the Kindle wave, then went quiet for five full years. When he came back, he came back on his own terms: fiction and nonfiction under one name, no pen name, no specialized niche or genre. His cyberpunk sci-fi sticks close to future-plausible, with gritty, real-world technology that feels close-to-home rather than distant galaxies and impossible tales. What actually drives him is how ordinary people and institutions react when the ground shifts under them, whether through overwhelming change or powerful oppression. He gravitates toward defiant underdogs pushing back against systems built to squash them flat.
           </p>
           <p>
-            Drumming and writing turn out to share a discipline: repetition, patience with a slow build, and trusting a process before you can see where it's going. Both come from the same restless curiosity about how things—people, machines, rhythms—actually work.
+            Drumming and writing turn out to share a discipline: persistence, patience with a slow build, and trusting a process before you can see where it's going. Both come from the same restless curiosity about how things—people, machines, rhythms—actually work.
           </p>
         </div>
       </div>
