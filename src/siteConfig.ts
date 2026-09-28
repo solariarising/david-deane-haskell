@@ -23,8 +23,12 @@ export const SOCIAL_IMAGES = {
 export const EXTERNAL_LINKS = {
   solarianDeepAmazon: "https://www.amazon.com/dp/B0GPN8DBJS",
   solarianDeep: "https://mybook.to/solariandeep",
-  woundedAngels: "https://mybook.to/woundedangels",
-  freeFiction: "https://dl.bookfunnel.com/k7osg3nq37",
+  woundedAngels: "https://books2read.com/woundedangels",
+  emergence: "https://reads.daviddeanehaskell.com/emergence",
+  tommytune: "https://dl.bookfunnel.com/w22icdykd9",
+  goldClub: "https://mybook.to/goldclub",
+  darkAlignment: "https://mybook.to/darkalignment",
+  tooMuchInformation: "https://mybook.to/toomuchinformation",
   fictionSubstack: "https://daviddeanehaskellstories.substack.com",
   healingSubstack: "https://innerchildjournal.substack.com",
 };

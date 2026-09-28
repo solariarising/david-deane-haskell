@@ -30,7 +30,7 @@ describe("analytics tracking", () => {
         popupId: "free_fiction_vault_popup",
         popupLocation: "global_popup",
         action: "shown",
-        destinationUrl: "https://dl.bookfunnel.com/k7osg3nq37",
+        destinationUrl: "https://reads.daviddeanehaskell.com/emergence",
       });
     }).not.toThrow();
   });
@@ -81,7 +81,7 @@ describe("analytics tracking", () => {
       ctaId: "popup_get_free_stories",
       ctaLabel: "GET FREE STORIES",
       ctaLocation: "global_popup",
-      destinationUrl: "https://dl.bookfunnel.com/k7osg3nq37",
+      destinationUrl: "https://reads.daviddeanehaskell.com/emergence",
       destinationKind: "external",
     });
 
@@ -93,7 +93,7 @@ describe("analytics tracking", () => {
         cta_id: "popup_get_free_stories",
         cta_label: "GET FREE STORIES",
         cta_location: "global_popup",
-        destination_url: "https://dl.bookfunnel.com/k7osg3nq37",
+        destination_url: "https://reads.daviddeanehaskell.com/emergence",
         destination_kind: "external",
         attribution_source: "direct",
       }),
@@ -107,7 +107,7 @@ describe("analytics tracking", () => {
       popupId: "free_fiction_vault_popup",
       popupLocation: "global_popup",
       action: "signup_click",
-      destinationUrl: "https://dl.bookfunnel.com/k7osg3nq37",
+      destinationUrl: "https://reads.daviddeanehaskell.com/emergence",
     });
 
     expect(gtag).toHaveBeenCalledWith(
@@ -118,7 +118,7 @@ describe("analytics tracking", () => {
         popup_id: "free_fiction_vault_popup",
         popup_location: "global_popup",
         popup_action: "signup_click",
-        destination_url: "https://dl.bookfunnel.com/k7osg3nq37",
+        destination_url: "https://reads.daviddeanehaskell.com/emergence",
         attribution_source: "direct",
       }),
     );

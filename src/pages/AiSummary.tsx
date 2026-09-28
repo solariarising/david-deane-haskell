@@ -63,7 +63,7 @@ const AiSummary = () => (
             <li><a href={EXTERNAL_LINKS.solarianDeepAmazon} target="_blank" rel="noopener noreferrer" className="link-accent">The Solarian Deep on Amazon</a></li>
             <li><a href={EXTERNAL_LINKS.solarianDeep} target="_blank" rel="noopener noreferrer" className="link-accent">The Solarian Deep universal book link</a></li>
             <li><a href={EXTERNAL_LINKS.woundedAngels} target="_blank" rel="noopener noreferrer" className="link-accent">Wounded Angels</a></li>
-            <li><a href={EXTERNAL_LINKS.freeFiction} target="_blank" rel="noopener noreferrer" className="link-accent">Free Fiction download route</a></li>
+            <li><a href={EXTERNAL_LINKS.emergence} target="_blank" rel="noopener noreferrer" className="link-accent">Free Fiction download route</a></li>
             <li><a href={EXTERNAL_LINKS.fictionSubstack} target="_blank" rel="noopener noreferrer" className="link-accent">David Deane Haskell Stories on Substack</a></li>
             <li><a href={EXTERNAL_LINKS.healingSubstack} target="_blank" rel="noopener noreferrer" className="link-accent">Inner Child Journal on Substack</a></li>
           </ul>

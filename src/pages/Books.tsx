@@ -153,7 +153,7 @@ const Books = () => {
               title="Emergence"
               subtitle="Standalone Novel"
               description="In the gleaming city of Tera-Prime, the future has just been cancelled. Alixs uncovers a 'kill switch' designed to wipe his people from existence. Marked for death, he must run into the shadows of the underground to expose the dangerous truth."
-              buyUrl={EXTERNAL_LINKS.freeFiction}
+              buyUrl={EXTERNAL_LINKS.emergence}
               buyLabel="Read for Free"
               ctaId="books_emergence_read_for_free"
               ctaLocation="books_fiction_grid"
@@ -163,7 +163,7 @@ const Books = () => {
               title="The Gold Club"
               subtitle="Standalone Novel"
               description="He found a loophole in the world's biggest corporate wallet. Now they want their change. Buried in the Sahara warehouse, Ted starts a multimillion-dollar shadow operation right under the nose of management."
-              buyUrl="https://www.amazon.com/Gold-Club-White-Collar-Thriller-ebook/dp/B014XQH6M6"
+              buyUrl={EXTERNAL_LINKS.goldClub}
               buyLabel="Buy Novel"
               ctaId="books_gold_club_buy_novel"
               ctaLocation="books_fiction_grid"
@@ -173,7 +173,7 @@ const Books = () => {
               title="Dark Alignment"
               subtitle="Standalone Novel"
               description="They erased his research. Then they erased him. Dean Eckert found a ghost in the atmospheric data—an anomaly that defies physics. Now he has to solve the most dangerous equation in history before the sky falls."
-              buyUrl="https://www.amazon.com/Dark-Alignment-Dystopian-SciFi-Adventure-ebook/dp/B07B6XCDMM"
+              buyUrl={EXTERNAL_LINKS.darkAlignment}
               buyLabel="Buy Novel"
               ctaId="books_dark_alignment_buy_novel"
               ctaLocation="books_fiction_grid"
@@ -183,7 +183,7 @@ const Books = () => {
               title="Too Much Information"
               subtitle="Standalone Novel"
               description="SecureSystems isn't just scanning for weapons. They're harvesting lives. Rob Folsom thought he was filing a simple lawsuit. Instead, he uncovered a data harvest that makes Big Brother look like an amateur."
-              buyUrl="https://www.amazon.com/Too-Much-Information-David-Haskell/dp/1517788323"
+              buyUrl={EXTERNAL_LINKS.tooMuchInformation}
               buyLabel="Buy Novel"
               ctaId="books_too_much_information_buy_novel"
               ctaLocation="books_fiction_grid"
@@ -197,7 +197,7 @@ const Books = () => {
               title="Tommytune"
               subtitle="Short Story"
               description="A Resona Series short story. A glimpse into the world of The Vibrants—where music, memory, and identity collide in unexpected ways."
-              buyUrl={EXTERNAL_LINKS.freeFiction}
+              buyUrl={EXTERNAL_LINKS.tommytune}
               buyLabel="Read for Free"
               ctaId="books_tommytune_read_for_free"
               ctaLocation="books_tommytune_section"

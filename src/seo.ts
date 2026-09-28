@@ -236,7 +236,7 @@ const buildGraph = (pathname: string) => {
     "@type": "ShortStory",
     "@id": `${SITE_URL}/vault#tommytune`,
     name: "Tommytune",
-    url: EXTERNAL_LINKS.freeFiction,
+    url: EXTERNAL_LINKS.tommytune,
     author: {
       "@id": personId,
     },
@@ -249,7 +249,7 @@ const buildGraph = (pathname: string) => {
     "@type": "Book",
     "@id": `${SITE_URL}/vault#emergence`,
     name: "Emergence",
-    url: EXTERNAL_LINKS.freeFiction,
+    url: EXTERNAL_LINKS.emergence,
     author: {
       "@id": personId,
     },

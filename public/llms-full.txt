@@ -63,7 +63,7 @@ Do not infer a separate AI-for-author service lane unless it is explicitly surfa
 
 Source class: measured/external links recorded in the company link authority. These are existing routes, not inferred availability.
 
-- Free ebook: https://dl.bookfunnel.com/6gka060ggj
+- Free ebook (dedicated landing page): https://reads.daviddeanehaskell.com/emergence
 - Kindle edition: https://www.amazon.com/dp/B07MK4CJXL
 - Paperback edition: https://www.amazon.com/Emergence-Artificial-Intelligence-David-Haskell/dp/1792191642
 - Audiobook edition: https://www.amazon.com/Audible-Emergence-Tale-Artificial-Intelligence/dp/B0FHDXJT7Q
@@ -106,7 +106,7 @@ Additional verified appearance sources represented in the machine-readable graph
 
 - The Solarian Deep on Amazon: https://www.amazon.com/dp/B0GPN8DBJS
 - The Solarian Deep: https://mybook.to/solariandeep
-- Wounded Angels: https://mybook.to/woundedangels
-- Free Fiction download route: https://dl.bookfunnel.com/k7osg3nq37
+- Wounded Angels: https://books2read.com/woundedangels
+- Free Fiction download route: https://reads.daviddeanehaskell.com/emergence
 - Fiction Substack: https://daviddeanehaskellstories.substack.com
 - Inner Child Journal: https://innerchildjournal.substack.com

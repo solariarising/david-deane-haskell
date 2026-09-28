@@ -30,7 +30,7 @@ const Vault = () => (
               A standalone story and a full-length novel, free when you join.
             </p>
             <a
-              href={EXTERNAL_LINKS.freeFiction}
+              href={EXTERNAL_LINKS.emergence}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"
@@ -39,7 +39,7 @@ const Vault = () => (
                   ctaId: "vault_get_free_fiction_hero",
                   ctaLabel: "GET FREE FICTION",
                   ctaLocation: "vault_hero",
-                  destinationUrl: EXTERNAL_LINKS.freeFiction,
+                  destinationUrl: EXTERNAL_LINKS.emergence,
                   destinationKind: "external",
                 })
               }
@@ -79,6 +79,23 @@ const Vault = () => (
                     <p className="body-text">
                       A standalone story set on the edge of a larger world—where resonance, confidence, and identity collide in vibrant, unexpected ways. Your first glimpse into the Resona universe.
                     </p>
+                    <a
+                      href={EXTERNAL_LINKS.tommytune}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-outline inline-block text-xs py-2 px-6"
+                      onClick={() =>
+                        trackCtaClick({
+                          ctaId: "vault_tommytune_read_for_free",
+                          ctaLabel: "Get Tommytune Free",
+                          ctaLocation: "vault_books_section",
+                          destinationUrl: EXTERNAL_LINKS.tommytune,
+                          destinationKind: "external",
+                        })
+                      }
+                    >
+                      Get Tommytune Free
+                    </a>
                   </div>
 
                   <div className="h-px w-12" style={{ background: "hsl(var(--scifi-border))" }} />
@@ -91,6 +108,23 @@ const Vault = () => (
                     <p className="body-text">
                       In the gleaming city of Tera-Prime, the future has just been cancelled. Alixs uncovers a kill switch designed to wipe his people from existence. Marked for death, he must run into the shadows of the underground to expose the chilling truth.
                     </p>
+                    <a
+                      href={EXTERNAL_LINKS.emergence}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-outline inline-block text-xs py-2 px-6"
+                      onClick={() =>
+                        trackCtaClick({
+                          ctaId: "vault_emergence_read_for_free",
+                          ctaLabel: "Get Emergence Free",
+                          ctaLocation: "vault_books_section",
+                          destinationUrl: EXTERNAL_LINKS.emergence,
+                          destinationKind: "external",
+                        })
+                      }
+                    >
+                      Get Emergence Free
+                    </a>
                   </div>
                 </div>
               </div>
@@ -108,7 +142,7 @@ const Vault = () => (
             For readers drawn to science fiction with relentless tension, sweeping vision, and existential stakes. About people trying to stay human inside systems that don't care whether they survive.
           </p>
           <a
-            href={EXTERNAL_LINKS.freeFiction}
+            href={EXTERNAL_LINKS.emergence}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"
@@ -117,7 +151,7 @@ const Vault = () => (
                 ctaId: "vault_get_free_fiction_bottom",
                 ctaLabel: "GET FREE FICTION",
                 ctaLocation: "vault_close_section",
-                destinationUrl: EXTERNAL_LINKS.freeFiction,
+                destinationUrl: EXTERNAL_LINKS.emergence,
                 destinationKind: "external",
               })
             }

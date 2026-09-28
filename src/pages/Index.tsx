@@ -127,7 +127,7 @@ const Home = () => {
                 }}
               >
                 <a
-                  href="https://dl.bookfunnel.com/k7osg3nq37"
+                  href={EXTERNAL_LINKS.emergence}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary text-base px-10 py-4"
@@ -136,7 +136,7 @@ const Home = () => {
                       ctaId: "home_read_free_stories",
                       ctaLabel: "READ THE FREE STORIES",
                       ctaLocation: "home_hero",
-                      destinationUrl: "https://dl.bookfunnel.com/k7osg3nq37",
+                      destinationUrl: EXTERNAL_LINKS.emergence,
                       destinationKind: "external",
                     })
                   }
