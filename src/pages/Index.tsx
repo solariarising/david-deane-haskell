@@ -116,7 +116,7 @@ const Home = () => {
               >
                 These books were written for the ones who already know.
                 <br />
-                Start with Tommytune and Emergence&nbsp;— two free stories that pull you inside.
+                Start with Tommytune and Emergence&nbsp;— two free reads that pull you inside.
               </p>
 
               <div

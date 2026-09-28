@@ -47,7 +47,7 @@ const ROUTE_SEO: Record<string, SeoConfig> = {
   "/about": {
     title: `About ${SITE_NAME} | Author, drummer, and storyteller`,
     description:
-      "David Deane Haskell writes speculative fiction and memoir-driven nonfiction, teaches drumming, and gets in touch with readers, hosts, and collaborators.",
+      "David Deane Haskell writes speculative fiction and memoir-driven nonfiction and teaches drumming, drawing on a creative life spanning writing, music, technology, and performance.",
     type: "profile",
     image: SOCIAL_IMAGES.about,
     imageAlt: "Portrait of David Deane Haskell",
