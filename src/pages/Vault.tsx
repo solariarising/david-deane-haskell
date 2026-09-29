@@ -184,7 +184,7 @@ const Vault = () => (
                 })
               }
             >
-              Fiction Substack
+              FREE SHORT FICTION
             </a>
             <a
               href={EXTERNAL_LINKS.healingSubstack}
