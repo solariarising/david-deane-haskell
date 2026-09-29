@@ -2,7 +2,34 @@ import { ExternalLink, Headphones } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import { trackCtaClick } from "@/lib/analytics";
 import { MEDIA_APPEARANCES, MediaAppearance } from "@/mediaData";
-import { EXTERNAL_LINKS } from "@/siteConfig";
+import { EXTERNAL_LINKS, SITE_EMAIL, SOCIAL_IMAGES } from "@/siteConfig";
+
+// Same official episode referenced on the About page's Drummer and Writer section.
+const DRUMMING_EPISODE_URL = "https://www.youtube.com/watch?v=HBKQhGXTzT4";
+
+const HOST_CONVERSATION_AREAS = [
+  {
+    id: "fiction-technology",
+    label: "Fiction & technology",
+    description: "The Solarian Deep, near-future systems, and speculative fiction craft.",
+    url: "https://www.podbean.com/ep/pb-wiajd-1aeb265",
+    linkLabel: "Fantasy Talks Live / Amazing Worlds of Fantasy",
+  },
+  {
+    id: "memoir-recovery",
+    label: "Memoir, recovery & inner-child work",
+    description: "Wounded Angels, codependency, and honest recovery conversation.",
+    url: "https://podcasts.apple.com/us/podcast/229-the-codependency-bottom-when-sobriety-cracks-open/id1552579027?i=1000766422495",
+    linkLabel: "Adult Child with Andrea Ashley",
+  },
+  {
+    id: "percussion-teaching",
+    label: "Percussion & teaching",
+    description: "Drum-corps years, ten years at Tokyo Disneyland, and teaching rudiments to adult students.",
+    url: DRUMMING_EPISODE_URL,
+    linkLabel: "Drumming Up Conversation",
+  },
+] as const;
 
 const MediaCard = ({ appearance }: { appearance: MediaAppearance }) => (
   <article className="card-elevated rounded-lg p-6 flex flex-col gap-4">
@@ -83,6 +110,75 @@ const Media = () => {
         </div>
       </section>
 
+      <section className="pb-16 md:pb-24" aria-labelledby="for-hosts">
+        <div className="page-container max-w-4xl mx-auto space-y-6">
+          <h2 id="for-hosts" className="heading-section">For hosts and producers</h2>
+          <p className="body-text max-w-3xl">
+            David Deane Haskell is an author working across speculative fiction, memoir-driven
+            recovery writing, and drumming. He speaks with hosts in three distinct lanes:
+          </p>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {HOST_CONVERSATION_AREAS.map((area) => (
+              <div key={area.id} className="space-y-2">
+                <h3 className="font-heading text-lg font-medium text-foreground">{area.label}</h3>
+                <p className="text-sm text-muted-foreground">{area.description}</p>
+                <a
+                  href={area.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-accent text-sm inline-flex items-center gap-1"
+                  onClick={() =>
+                    trackCtaClick({
+                      ctaId: `media_host_area_${area.id}`,
+                      ctaLabel: area.linkLabel,
+                      ctaLocation: "media_for_hosts",
+                      destinationUrl: area.url,
+                      destinationKind: "external",
+                    })
+                  }
+                >
+                  {area.linkLabel} <ExternalLink size={14} aria-hidden="true" />
+                </a>
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-4 items-center pt-2">
+            <a
+              href={`mailto:${SITE_EMAIL}`}
+              className="btn-primary inline-block"
+              onClick={() =>
+                trackCtaClick({
+                  ctaId: "media_for_hosts_email",
+                  ctaLabel: "BOOK AN INTERVIEW",
+                  ctaLocation: "media_for_hosts",
+                  destinationUrl: `mailto:${SITE_EMAIL}`,
+                  destinationKind: "external",
+                })
+              }
+            >
+              Book an Interview
+            </a>
+            <a
+              href={SOCIAL_IMAGES.about}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-accent text-sm"
+              onClick={() =>
+                trackCtaClick({
+                  ctaId: "media_for_hosts_press_photo",
+                  ctaLabel: "Press photo",
+                  ctaLocation: "media_for_hosts",
+                  destinationUrl: SOCIAL_IMAGES.about,
+                  destinationKind: "external",
+                })
+              }
+            >
+              Press photo
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section className="pb-16 md:pb-24" aria-labelledby="featured-media">
         <div className="page-container space-y-8">
           <div className="flex items-center gap-3">
@@ -135,8 +231,9 @@ const Media = () => {
           <div className="max-w-3xl space-y-5">
             <h2 id="wounded-angels-media" className="heading-section">Wounded Angels conversations</h2>
             <p className="body-large">
-              The current Second Edition Kindle and paperback include a sneak preview of
-              <em> Inner Child Unleashed</em>.
+              The current Second Edition Kindle and paperback include a sneak preview of the
+              follow-up now in progress, <em>What the Child Knows</em> (previewed there under its
+              earlier working title, <em>Inner Child Unleashed</em>).
             </p>
             <div className="flex flex-wrap gap-4 items-center">
               <a

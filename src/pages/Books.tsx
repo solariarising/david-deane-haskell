@@ -8,6 +8,11 @@ import woundedAngels from "@/assets/wounded-angels.webp";
 import tommytune from "@/assets/tommytune-cover.webp";
 import { trackCtaClick } from "@/lib/analytics";
 import { EXTERNAL_LINKS } from "@/siteConfig";
+import { MEDIA_APPEARANCES } from "@/mediaData";
+
+const SOLARIAN_DEEP_SAMPLE = MEDIA_APPEARANCES.find(
+  (appearance) => appearance.id === "connor-legacies-unearthed",
+);
 
 interface BookCardProps {
   id?: string;
@@ -120,24 +125,48 @@ const Books = () => {
             <article id="the-solarian-deep" className="space-y-4 scroll-mt-28">
               <h3 className="heading-subsection">The Solarian Deep</h3>
               <p className="text-xs uppercase tracking-widest text-muted-foreground">Novel — Book 1 of the Technoquatics Series</p>
-              <p className="body-text">David Deane Haskell's latest novel, <em>The Solarian Deep</em>—start reading now.</p>
-              <a
-                href={EXTERNAL_LINKS.solarianDeep}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary inline-block"
-                onClick={() =>
-                  trackCtaClick({
-                    ctaId: "books_read_the_solarian_deep",
-                    ctaLabel: "READ THE SOLARIAN DEEP",
-                    ctaLocation: "books_featured_solarian",
-                    destinationUrl: EXTERNAL_LINKS.solarianDeep,
-                    destinationKind: "external",
-                  })
-                }
-              >
-                READ THE SOLARIAN DEEP
-              </a>
+              <p className="body-text">
+                An oceanpunk first-contact story: a hidden underwater civilization, and the friendship
+                and adventure of the people who find it.
+              </p>
+              <div className="flex flex-wrap gap-4 items-center">
+                <a
+                  href={EXTERNAL_LINKS.solarianDeep}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary inline-block"
+                  onClick={() =>
+                    trackCtaClick({
+                      ctaId: "books_read_the_solarian_deep",
+                      ctaLabel: "READ THE SOLARIAN DEEP",
+                      ctaLocation: "books_featured_solarian",
+                      destinationUrl: EXTERNAL_LINKS.solarianDeep,
+                      destinationKind: "external",
+                    })
+                  }
+                >
+                  READ THE SOLARIAN DEEP
+                </a>
+                {SOLARIAN_DEEP_SAMPLE && (
+                  <a
+                    href={SOLARIAN_DEEP_SAMPLE.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-accent"
+                    onClick={() =>
+                      trackCtaClick({
+                        ctaId: "books_solarian_deep_performed_sample",
+                        ctaLabel: "Hear a performed chapter",
+                        ctaLocation: "books_featured_solarian",
+                        destinationUrl: SOLARIAN_DEEP_SAMPLE.url,
+                        destinationKind: "external",
+                      })
+                    }
+                  >
+                    Hear a performed chapter
+                  </a>
+                )}
+              </div>
             </article>
           </div>
 
@@ -241,8 +270,9 @@ const Books = () => {
                 In this raw, unfolding transformation, David introduces the many facets of himself—those inner child figures suppressed for years—and how they healed each other in real-time. This is the truth behind the fiction.
               </p>
               <p className="body-text">
-                The current Second Edition Kindle and paperback include a sneak preview of
-                <em> Inner Child Unleashed</em>, the follow-up now in progress.
+                The current Second Edition Kindle and paperback include a sneak preview of the
+                follow-up now in progress, <em>What the Child Knows</em> (that preview was written
+                under its earlier working title, <em>Inner Child Unleashed</em>).
               </p>
               <div className="flex flex-wrap gap-4 items-center">
                 <a

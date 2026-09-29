@@ -221,7 +221,7 @@ const About = () => {
           <p className="body-text">The best way to reach David is by email:</p>
           <a
             href={`mailto:${SITE_EMAIL}`}
-            className="btn-primary inline-block"
+            className="btn-primary inline-block max-w-full whitespace-normal break-words px-4 sm:px-8"
             onClick={() =>
               trackCtaClick({
                 ctaId: "about_email_david",

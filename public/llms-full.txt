@@ -85,7 +85,7 @@ Provenance note: the summaries below are AI synthesis from one named local trans
 
 ## Verified Public Media Proof
 
-The Media route and its structured data describe 25 verified public appearances or coverage items.
+The Media route and its structured data describe 24 verified public appearances or coverage items.
 These are durable source pages, not unpublished recordings or outreach claims.
 
 Additional verified appearance sources represented in the machine-readable graph include:

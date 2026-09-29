@@ -2,7 +2,7 @@ export const SITE_NAME = "David Deane Haskell";
 export const SITE_URL = "https://daviddeanehaskell.com";
 export const SITE_EMAIL = "david@daviddeanehaskell.com";
 export const SITE_LANGUAGE = "en";
-export const SITE_LAST_MODIFIED = "2026-08-25";
+export const SITE_LAST_MODIFIED = "2026-09-29";
 export const AI_SUMMARY_PATH = "/ai-summary";
 export const SITE_DESCRIPTION =
   "Official website for David Deane Haskell, featuring science fiction, healing-centered nonfiction, free fiction, and reader contact routes.";

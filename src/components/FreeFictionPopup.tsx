@@ -86,7 +86,7 @@ const FreeFictionPopup = () => {
             Free Fiction Vault
           </p>
           <h2 className="font-heading text-2xl md:text-3xl font-semibold" style={{ color: "hsl(200 30% 90%)" }}>
-            Two free reads are waiting.
+            Tommytune + Emergence are waiting.
           </h2>
           <p className="text-sm leading-relaxed" style={{ color: "hsl(210 15% 58%)" }}>
             A standalone short story and a full-length novel, free when you join.

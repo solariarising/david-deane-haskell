@@ -15,6 +15,11 @@ No hard blockers remain for a GitHub -> Cloudflare Pages deployment from a clean
   - 7 `react-refresh/only-export-components` warnings remain in shared shadcn UI files.
   - These do not block build, test, or deploy.
 
+- URL canonicalization needed on `/books`, `/about`, `/contact`:
+  - Google Search Console is indexing the trailing-slash and non-trailing-slash form of each route as two separate URLs, splitting their impression/click signal.
+  - Source: `Website_DDH_Project/90_Final_Deliverables/2026-09-09_WEBSITE_SEARCH_LANDSCAPE_READ.md`.
+  - Fix by picking one canonical form per route (a redirect or a `<link rel="canonical">`); does not change visible page content or block build/deploy.
+
 ## Weight Sources In This Workspace
 
 - `.git`: `2.63 MB`

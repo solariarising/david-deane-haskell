@@ -65,16 +65,10 @@ function HeroLine({ text, delay, weight, isFirst, scaleDown }: { text: string; d
 }
 
 const Home = () => {
-  const [showSupport, setShowSupport] = useState(false);
-  const [showCta, setShowCta] = useState(false);
-
-  // Sequential reveal: support line after last headline, then CTA
-  useEffect(() => {
-    const lastLineEnd = 5000;
-    const t1 = setTimeout(() => setShowSupport(true), lastLineEnd + 500);
-    const t2 = setTimeout(() => setShowCta(true), lastLineEnd + 1100);
-    return () => { clearTimeout(t1); clearTimeout(t2); };
-  }, []);
+  // The free-fiction offer and primary CTA are visible and usable on first render.
+  // The headline sweep above them is decorative only and never gates them.
+  const showSupport = true;
+  const showCta = true;
 
   return (
     <PageLayout>
@@ -203,8 +197,9 @@ const Home = () => {
                   Honest explorations of the Inner Child, mindfulness, and the path to healing. Raw, unfolding, and deeply human.
                 </p>
                 <p className="body-text">
-                  The current Second Edition Kindle and paperback include a sneak preview of
-                  <em> Inner Child Unleashed</em>.
+                  The current Second Edition Kindle and paperback include a sneak preview of the
+                  follow-up now in progress, <em>What the Child Knows</em> (previewed there under
+                  its earlier working title, <em>Inner Child Unleashed</em>).
                 </p>
                 <div className="flex flex-wrap gap-4 items-center">
                   <a

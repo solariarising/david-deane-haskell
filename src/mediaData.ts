@@ -1,10 +1,14 @@
+// `book` is a free-text title rather than a closed union so a future title (e.g. The
+// Vibrants, What the Child Knows) can be added here without a type change elsewhere.
+// A title with no matching structured-data entity is simply omitted from "about"
+// attribution in src/seo.ts rather than being misattributed to another book.
 export type MediaAppearance = {
   id: string;
   title: string;
   outlet: string;
   description: string;
   url: string;
-  book: "Wounded Angels" | "The Solarian Deep";
+  book: string;
   format: "PodcastEpisode" | "Article";
   published?: string;
   embedUrl?: string;
@@ -21,7 +25,7 @@ export type ReuseClip = {
   description: string;
   src: string;
   officialUrl: string;
-  book: "Wounded Angels" | "The Solarian Deep";
+  book: string;
 };
 
 // Source basis and voice mode: compact factual website copy, checked 2026-08-21.

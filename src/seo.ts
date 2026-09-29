@@ -248,6 +248,42 @@ const buildGraph = (pathname: string) => {
     isAccessibleForFree: true,
   };
 
+  const goldClub = {
+    "@type": "Book",
+    "@id": `${SITE_URL}/books#the-gold-club`,
+    name: "The Gold Club",
+    url: EXTERNAL_LINKS.goldClub,
+    author: {
+      "@id": personId,
+    },
+    inLanguage: SITE_LANGUAGE,
+    genre: ["Techno-Thriller", "Satire"],
+  };
+
+  const darkAlignment = {
+    "@type": "Book",
+    "@id": `${SITE_URL}/books#dark-alignment`,
+    name: "Dark Alignment",
+    url: EXTERNAL_LINKS.darkAlignment,
+    author: {
+      "@id": personId,
+    },
+    inLanguage: SITE_LANGUAGE,
+    genre: ["Technothriller"],
+  };
+
+  const tooMuchInformation = {
+    "@type": "Book",
+    "@id": `${SITE_URL}/books#too-much-information`,
+    name: "Too Much Information",
+    url: EXTERNAL_LINKS.tooMuchInformation,
+    author: {
+      "@id": personId,
+    },
+    inLanguage: SITE_LANGUAGE,
+    genre: ["Technothriller"],
+  };
+
   const booksList = {
     "@type": "ItemList",
     "@id": `${SITE_URL}/books#book-list`,
@@ -256,7 +292,18 @@ const buildGraph = (pathname: string) => {
       { "@type": "ListItem", position: 2, item: { "@id": woundedAngels["@id"] } },
       { "@type": "ListItem", position: 3, item: { "@id": emergence["@id"] } },
       { "@type": "ListItem", position: 4, item: { "@id": tommytune["@id"] } },
+      { "@type": "ListItem", position: 5, item: { "@id": goldClub["@id"] } },
+      { "@type": "ListItem", position: 6, item: { "@id": darkAlignment["@id"] } },
+      { "@type": "ListItem", position: 7, item: { "@id": tooMuchInformation["@id"] } },
     ],
+  };
+
+  // Media attribution: looked up by book title rather than a binary fallback, so a
+  // title with no verified page-visible entry is omitted instead of silently
+  // misattributed to whichever book happens to be the ternary's default.
+  const bookEntityByTitle: Record<string, { "@id": string }> = {
+    "Wounded Angels": woundedAngels,
+    "The Solarian Deep": solarianDeep,
   };
 
   const vaultList = {
@@ -273,40 +320,33 @@ const buildGraph = (pathname: string) => {
     ...SEARCH_ONLY_MEDIA_APPEARANCES,
   ];
 
-  const mediaItems = discoveryAppearances.map((appearance) => ({
-    "@type": appearance.format,
-    "@id": `${SITE_URL}/media#${appearance.id}`,
-    name: appearance.title,
-    url: appearance.url,
-    ...(appearance.published ? { datePublished: appearance.published } : {}),
-    contributor: {
-      "@id": personId,
-    },
-    about: {
-      "@id":
-        appearance.book === "Wounded Angels"
-          ? woundedAngels["@id"]
-          : solarianDeep["@id"],
-    },
-  }));
-
-  const mediaClips = REUSE_CLIPS.map((clip) => ({
-    "@type": "VideoObject",
-    "@id": `${SITE_URL}/media#${clip.id}`,
-    name: clip.title,
-    description: clip.description,
-    contentUrl: `${SITE_URL}${clip.src}`,
-    isBasedOn: clip.officialUrl,
-    about: [
-      { "@id": personId },
-      {
-        "@id":
-          clip.book === "Wounded Angels"
-            ? woundedAngels["@id"]
-            : solarianDeep["@id"],
+  const mediaItems = discoveryAppearances.map((appearance) => {
+    const aboutBook = bookEntityByTitle[appearance.book];
+    return {
+      "@type": appearance.format,
+      "@id": `${SITE_URL}/media#${appearance.id}`,
+      name: appearance.title,
+      url: appearance.url,
+      ...(appearance.published ? { datePublished: appearance.published } : {}),
+      contributor: {
+        "@id": personId,
       },
-    ],
-  }));
+      ...(aboutBook ? { about: { "@id": aboutBook["@id"] } } : {}),
+    };
+  });
+
+  const mediaClips = REUSE_CLIPS.map((clip) => {
+    const aboutBook = bookEntityByTitle[clip.book];
+    return {
+      "@type": "VideoObject",
+      "@id": `${SITE_URL}/media#${clip.id}`,
+      name: clip.title,
+      description: clip.description,
+      contentUrl: `${SITE_URL}${clip.src}`,
+      isBasedOn: clip.officialUrl,
+      about: aboutBook ? [{ "@id": personId }, { "@id": aboutBook["@id"] }] : [{ "@id": personId }],
+    };
+  });
 
   const mediaList = {
     "@type": "ItemList",
@@ -379,6 +419,9 @@ const buildGraph = (pathname: string) => {
         woundedAngels,
         emergence,
         tommytune,
+        goldClub,
+        darkAlignment,
+        tooMuchInformation,
       ],
     };
   }

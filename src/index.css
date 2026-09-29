@@ -143,11 +143,11 @@
 
   .btn-outline {
     @apply inline-flex items-center justify-center px-8 py-3 text-sm font-medium tracking-wider uppercase rounded-full border;
-    border-color: hsl(200 55% 50% / 0.5);
-    color: hsl(200 30% 85%);
+    border-color: hsl(var(--foreground) / 0.35);
+    color: hsl(var(--foreground));
     letter-spacing: 0.1em;
     backdrop-filter: blur(8px);
-    @apply transition-all duration-300 hover:bg-[hsl(200_55%_40%/0.3)] hover:border-[hsl(195_80%_50%/0.6)];
+    @apply transition-all duration-300 hover:bg-[hsl(var(--foreground)/0.06)] hover:border-[hsl(var(--foreground)/0.55)];
   }
 
   .divider {
@@ -318,4 +318,16 @@
 main > section img:not([class*="rounded-full"]) {
   mask-image: radial-gradient(ellipse 98% 96% at center, black 86%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse 98% 96% at center, black 86%, transparent 100%);
+}
+
+/* Reduced motion: decorative animation only, never a gate on usable content */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
