@@ -231,9 +231,7 @@ const Media = () => {
           <div className="max-w-3xl space-y-5">
             <h2 id="wounded-angels-media" className="heading-section">Wounded Angels conversations</h2>
             <p className="body-large">
-              The current Second Edition Kindle and paperback include a sneak preview of the
-              follow-up now in progress, <em>What the Child Knows</em> (previewed there under its
-              earlier working title, <em>Inner Child Unleashed</em>).
+              The current Second Edition Kindle and paperback include a sneak preview of the follow-up book you’ll be reading before the new year arrives, <em>What the Child Knows</em>.
             </p>
             <div className="flex flex-wrap gap-4 items-center">
               <a
