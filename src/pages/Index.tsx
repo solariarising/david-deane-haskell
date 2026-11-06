@@ -197,7 +197,7 @@ const Home = () => {
                   Honest explorations of the Inner Child, mindfulness, and the path to healing. Raw, unfolding, and deeply human.
                 </p>
                 <p className="body-text">
-                  The current Second Edition Kindle and paperback include a sneak preview of the follow-up book you’ll be reading before the new year arrives, <em>What the Child Knows</em>.
+                  The second edition includes a preview of the follow-up book.
                 </p>
                 <div className="flex flex-wrap gap-4 items-center">
                   <a
