@@ -124,7 +124,7 @@ const Books = () => {
             </a>
             <article id="the-solarian-deep" className="space-y-4 scroll-mt-28">
               <h3 className="heading-subsection">The Solarian Deep</h3>
-              <p className="text-xs uppercase tracking-widest text-muted-foreground">Novel — Book 1 of the Technoquatics Series</p>
+              <p className="text-xs uppercase tracking-widest text-muted-foreground">Novel — Book 1 of the Technoquatics Series · Free in Kindle Unlimited</p>
               <p className="body-text">
                 An oceanpunk first-contact story: a hidden underwater civilization, and the friendship
                 and adventure of the people who find it.
@@ -138,14 +138,14 @@ const Books = () => {
                   onClick={() =>
                     trackCtaClick({
                       ctaId: "books_read_the_solarian_deep",
-                      ctaLabel: "READ THE SOLARIAN DEEP",
+                      ctaLabel: "READ IN KU / BUY NOVEL",
                       ctaLocation: "books_featured_solarian",
                       destinationUrl: EXTERNAL_LINKS.solarianDeep,
                       destinationKind: "external",
                     })
                   }
                 >
-                  READ THE SOLARIAN DEEP
+                  READ IN KU / BUY NOVEL
                 </a>
                 {SOLARIAN_DEEP_SAMPLE && (
                   <a
@@ -190,30 +190,30 @@ const Books = () => {
             <BookCard
               id="the-gold-club"
               title="The Gold Club"
-              subtitle="Standalone Novel"
+              subtitle="Standalone Novel · Free in Kindle Unlimited"
               description="He found a loophole in the world's biggest corporate wallet. Now they want their change. Buried in the Sahara warehouse, Ted starts a multimillion-dollar shadow operation right under the nose of management."
               buyUrl={EXTERNAL_LINKS.goldClub}
-              buyLabel="Buy Novel"
+              buyLabel="Read in KU / Buy Novel"
               ctaId="books_gold_club_buy_novel"
               ctaLocation="books_fiction_grid"
             />
             <BookCard
               id="dark-alignment"
               title="Dark Alignment"
-              subtitle="Standalone Novel"
+              subtitle="Standalone Novel · Free in Kindle Unlimited"
               description="They erased his research. Then they erased him. Dean Eckert found a ghost in the atmospheric data—an anomaly that defies physics. Now he has to solve the most dangerous equation in history before the sky falls."
               buyUrl={EXTERNAL_LINKS.darkAlignment}
-              buyLabel="Buy Novel"
+              buyLabel="Read in KU / Buy Novel"
               ctaId="books_dark_alignment_buy_novel"
               ctaLocation="books_fiction_grid"
             />
             <BookCard
               id="too-much-information"
               title="Too Much Information"
-              subtitle="Standalone Novel"
+              subtitle="Standalone Novel · Free in Kindle Unlimited"
               description="SecureSystems isn't just scanning for weapons. They're harvesting lives. Rob Folsom thought he was filing a simple lawsuit. Instead, he uncovered a data harvest that makes Big Brother look like an amateur."
               buyUrl={EXTERNAL_LINKS.tooMuchInformation}
-              buyLabel="Buy Novel"
+              buyLabel="Read in KU / Buy Novel"
               ctaId="books_too_much_information_buy_novel"
               ctaLocation="books_fiction_grid"
             />
