@@ -1,6 +1,7 @@
 import {
   AI_SUMMARY_PATH,
   EXTERNAL_LINKS,
+  SAME_AS_LINKS,
   SITE_DESCRIPTION,
   SITE_DISAMBIGUATION,
   SITE_EMAIL,
@@ -45,18 +46,18 @@ const ROUTE_SEO: Record<string, SeoConfig> = {
     pageType: "WebPage",
   },
   "/about": {
-    title: `About ${SITE_NAME} | Author, drummer, and storyteller`,
+    title: `About ${SITE_NAME} | Science Fiction & Memoir Author`,
     description:
-      "David Deane Haskell writes speculative fiction and memoir-driven nonfiction and teaches drumming, drawing on a creative life spanning writing, music, technology, and performance.",
+      "David Deane Haskell writes speculative science fiction (The Solarian Deep, Emergence) and healing memoir (Wounded Angels) about identity and transformation.",
     type: "profile",
     image: SOCIAL_IMAGES.about,
     imageAlt: "Portrait of David Deane Haskell",
     pageType: "AboutPage",
   },
   "/books": {
-    title: `Books by ${SITE_NAME} | Fiction, nonfiction, and entry points`,
+    title: `Books by ${SITE_NAME} | Sci-Fi Novels, Thrillers & Memoir`,
     description:
-      "Explore books by David Deane Haskell across speculative fiction, psychological suspense, and recovery-centered nonfiction—stories shaped by control, revelation, and consequence.",
+      "Explore The Solarian Deep, Wounded Angels, free novel Emergence, Dark Alignment, Too Much Information, The Gold Club, and Tommytune by David Deane Haskell.",
     type: "website",
     image: SOCIAL_IMAGES.books,
     imageAlt: "Books by David Deane Haskell",
@@ -161,7 +162,7 @@ const buildGraph = (pathname: string) => {
     description: SITE_DESCRIPTION,
     disambiguatingDescription: SITE_DISAMBIGUATION,
     knowsLanguage: SITE_LANGUAGE,
-    sameAs: [EXTERNAL_LINKS.fictionSubstack, EXTERNAL_LINKS.healingSubstack, EXTERNAL_LINKS.instagram],
+    sameAs: [...SAME_AS_LINKS],
   };
 
   const website = {
@@ -208,6 +209,9 @@ const buildGraph = (pathname: string) => {
     },
     inLanguage: SITE_LANGUAGE,
     genre: ["Science Fiction", "Technothriller"],
+    isbn: "9798258917720",
+    description:
+      "An oceanpunk first-contact story: a hidden underwater civilization, and the friendship and adventure of the people who find it.",
   };
 
   const woundedAngels = {
@@ -220,6 +224,9 @@ const buildGraph = (pathname: string) => {
     },
     inLanguage: SITE_LANGUAGE,
     genre: ["Memoir", "Nonfiction"],
+    isbn: "9798266454729",
+    description:
+      "In this raw, unfolding transformation, David introduces the many facets of himself—those inner child figures suppressed for years—and how they healed each other in real-time. This is the truth behind the fiction.",
   };
 
   const tommytune = {
@@ -233,6 +240,8 @@ const buildGraph = (pathname: string) => {
     inLanguage: SITE_LANGUAGE,
     genre: ["Short Story", "Science Fiction"],
     isAccessibleForFree: true,
+    description:
+      "A Resona Series short story. A glimpse into the world of The Vibrants—where music, memory, and identity collide in unexpected ways.",
   };
 
   const emergence = {
@@ -246,6 +255,9 @@ const buildGraph = (pathname: string) => {
     inLanguage: SITE_LANGUAGE,
     genre: ["Science Fiction"],
     isAccessibleForFree: true,
+    isbn: "9781792191640",
+    description:
+      "In the gleaming city of Tera-Prime, the future has just been cancelled. Alixs uncovers a 'kill switch' designed to wipe his people from existence. Marked for death, he must run into the shadows of the underground to expose the dangerous truth.",
   };
 
   const goldClub = {
@@ -258,6 +270,9 @@ const buildGraph = (pathname: string) => {
     },
     inLanguage: SITE_LANGUAGE,
     genre: ["Techno-Thriller", "Satire"],
+    isbn: "9781518832031",
+    description:
+      "He found a loophole in the world's biggest corporate wallet. Now they want their change. Buried in the Sahara warehouse, Ted starts a multimillion-dollar shadow operation right under the nose of management.",
   };
 
   const darkAlignment = {
@@ -270,6 +285,9 @@ const buildGraph = (pathname: string) => {
     },
     inLanguage: SITE_LANGUAGE,
     genre: ["Technothriller"],
+    isbn: "9781986407694",
+    description:
+      "They erased his research. Then they erased him. Dean Eckert found a ghost in the atmospheric data—an anomaly that defies physics. Now he has to solve the most dangerous equation in history before the sky falls.",
   };
 
   const tooMuchInformation = {
@@ -282,6 +300,9 @@ const buildGraph = (pathname: string) => {
     },
     inLanguage: SITE_LANGUAGE,
     genre: ["Technothriller"],
+    isbn: "9781517788322",
+    description:
+      "SecureSystems isn't just scanning for weapons. They're harvesting lives. Rob Folsom thought he was filing a simple lawsuit. Instead, he uncovered a data harvest that makes Big Brother look like an amateur.",
   };
 
   const booksList = {

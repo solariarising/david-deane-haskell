@@ -51,8 +51,11 @@ const AiSummary = () => (
           <ul className="space-y-3 body-text">
             <li><strong>The Solarian Deep</strong>: flagship science fiction novel and primary fiction entry point.</li>
             <li><strong>Wounded Angels</strong>: healing-centered memoir and nonfiction anchor.</li>
+            <li><strong>Emergence</strong>: full-length science fiction novel available free through the official reader route.</li>
+            <li><strong>Dark Alignment</strong>: standalone technothriller in Kindle Unlimited.</li>
+            <li><strong>Too Much Information</strong>: standalone technothriller in Kindle Unlimited.</li>
+            <li><strong>The Gold Club</strong>: standalone techno-thriller satire in Kindle Unlimited.</li>
             <li><strong>Tommytune</strong>: short-fiction entry route connected to The Vibrants world.</li>
-            <li><strong>Emergence</strong>: free full-length novel available through the vault route.</li>
           </ul>
         </section>
 
@@ -62,6 +65,9 @@ const AiSummary = () => (
             <li><a href={EXTERNAL_LINKS.solarianDeepAmazon} target="_blank" rel="noopener noreferrer" className="link-accent">The Solarian Deep on Amazon</a></li>
             <li><a href={EXTERNAL_LINKS.solarianDeep} target="_blank" rel="noopener noreferrer" className="link-accent">The Solarian Deep universal book link</a></li>
             <li><a href={EXTERNAL_LINKS.woundedAngels} target="_blank" rel="noopener noreferrer" className="link-accent">Wounded Angels</a></li>
+            <li><a href={EXTERNAL_LINKS.woundedAngelsAudible} target="_blank" rel="noopener noreferrer" className="link-accent">Wounded Angels Audiobook (Audible, author-narrated)</a></li>
+            <li><a href={EXTERNAL_LINKS.woundedAngelsAppleAudio} target="_blank" rel="noopener noreferrer" className="link-accent">Wounded Angels Audiobook (Apple Books, author-narrated)</a></li>
+            <li><a href={EXTERNAL_LINKS.emergence} target="_blank" rel="noopener noreferrer" className="link-accent">Emergence (free complete ebook route)</a></li>
             <li><a href={EXTERNAL_LINKS.freeFiction} target="_blank" rel="noopener noreferrer" className="link-accent">Free Fiction download route</a></li>
             <li><a href={EXTERNAL_LINKS.fictionSubstack} target="_blank" rel="noopener noreferrer" className="link-accent">David Deane Haskell Stories on Substack</a></li>
             <li><a href={EXTERNAL_LINKS.healingSubstack} target="_blank" rel="noopener noreferrer" className="link-accent">Inner Child Journal on Substack</a></li>

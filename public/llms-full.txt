@@ -51,13 +51,19 @@ Note: /contact was retired and now redirects (301) to /about#contact.
 ## Core Titles
 
 - The Solarian Deep
-  Flagship science fiction novel and primary fiction entry point.
+  Flagship science fiction novel and primary fiction entry point (Book 1 of the Technoquatics Series; paperback ISBN 9798258917720).
 - Wounded Angels
-  Healing-centered memoir and nonfiction anchor.
+  Healing-centered memoir and nonfiction anchor (paperback ISBN 9798266454729; wide distribution including Audible and Apple Books audio).
+- Emergence
+  Full-length science fiction novel (362 pages; paperback ISBN 9781792191640) available free as a complete ebook via the official reader route.
+- Dark Alignment
+  Standalone science fiction technothriller (439 pages; paperback ISBN 9781986407694).
+- Too Much Information
+  Standalone dystopian surveillance thriller (337 pages; paperback ISBN 9781517788322).
+- The Gold Club
+  Standalone corporate techno-thriller satire (406 pages; paperback ISBN 9781518832031).
 - Tommytune
   Short-fiction entry route connected to The Vibrants world.
-- Emergence
-  Free full-length novel available through the vault route.
 
 ## Emergence: Existing Public Formats
 
@@ -107,6 +113,8 @@ Additional verified appearance sources represented in the machine-readable graph
 - The Solarian Deep on Amazon: https://www.amazon.com/dp/B0GPN8DBJS
 - The Solarian Deep: https://mybook.to/solariandeep
 - Wounded Angels: https://books2read.com/woundedangels
+- Wounded Angels Audiobook (Audible): https://www.audible.com/pd/Wounded-Angels-Audiobook/B0HHSVGS52
+- Wounded Angels Audiobook (Apple Books): https://books.apple.com/us/audiobook/wounded-angels-a-memoir-that-lights-the-path-to/id6809852816
 - Free Fiction download route (Tommytune + Emergence bundle): https://dl.bookfunnel.com/k7osg3nq37
 - Fiction Substack: https://daviddeanehaskellstories.substack.com
 - Inner Child Journal: https://innerchildjournal.substack.com
