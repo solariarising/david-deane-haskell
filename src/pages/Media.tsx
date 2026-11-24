@@ -102,6 +102,53 @@ const Media = () => {
         </div>
       </section>
 
+      <section className="pb-16 md:pb-24" aria-labelledby="featured-media">
+        <div className="page-container space-y-8">
+          <div className="flex items-center gap-3">
+            <Headphones aria-hidden="true" />
+            <h2 id="featured-media" className="heading-section">Featured conversations</h2>
+          </div>
+          <div className="grid lg:grid-cols-2 gap-8">
+            {featured.map((appearance) => (
+              <article key={appearance.id} className="space-y-4">
+                <div className="aspect-video overflow-hidden rounded-lg bg-black shadow-card">
+                  <iframe
+                    className="h-full w-full"
+                    src={appearance.embedUrl}
+                    title={`${appearance.title} — ${appearance.outlet}`}
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+                <div>
+                  <h3 className="heading-subsection text-2xl">{appearance.title}</h3>
+                  <p className="body-text mt-2">{appearance.description}</p>
+                  <a
+                    href={appearance.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-accent inline-flex items-center gap-2 mt-3"
+                    onClick={() =>
+                      trackCtaClick({
+                        ctaId: `media_${appearance.id}_featured`,
+                        ctaLabel: `OPEN ${appearance.outlet}`,
+                        ctaLocation: "media_featured_embed",
+                        destinationUrl: appearance.url,
+                        destinationKind: "external",
+                      })
+                    }
+                  >
+                    Open the official page <ExternalLink size={16} aria-hidden="true" />
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="pb-16 md:pb-24" aria-labelledby="for-hosts">
         <div className="page-container max-w-4xl mx-auto space-y-8">
           <h2 id="for-hosts" className="heading-section text-center">For hosts and producers</h2>
@@ -167,53 +214,6 @@ const Media = () => {
             >
               Press photo
             </a>
-          </div>
-        </div>
-      </section>
-
-      <section className="pb-16 md:pb-24" aria-labelledby="featured-media">
-        <div className="page-container space-y-8">
-          <div className="flex items-center gap-3">
-            <Headphones aria-hidden="true" />
-            <h2 id="featured-media" className="heading-section">Featured conversations</h2>
-          </div>
-          <div className="grid lg:grid-cols-2 gap-8">
-            {featured.map((appearance) => (
-              <article key={appearance.id} className="space-y-4">
-                <div className="aspect-video overflow-hidden rounded-lg bg-black shadow-card">
-                  <iframe
-                    className="h-full w-full"
-                    src={appearance.embedUrl}
-                    title={`${appearance.title} — ${appearance.outlet}`}
-                    loading="lazy"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                  />
-                </div>
-                <div>
-                  <h3 className="heading-subsection text-2xl">{appearance.title}</h3>
-                  <p className="body-text mt-2">{appearance.description}</p>
-                  <a
-                    href={appearance.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="link-accent inline-flex items-center gap-2 mt-3"
-                    onClick={() =>
-                      trackCtaClick({
-                        ctaId: `media_${appearance.id}_featured`,
-                        ctaLabel: `OPEN ${appearance.outlet}`,
-                        ctaLocation: "media_featured_embed",
-                        destinationUrl: appearance.url,
-                        destinationKind: "external",
-                      })
-                    }
-                  >
-                    Open the official page <ExternalLink size={16} aria-hidden="true" />
-                  </a>
-                </div>
-              </article>
-            ))}
           </div>
         </div>
       </section>
