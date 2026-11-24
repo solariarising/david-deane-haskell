@@ -42,6 +42,51 @@ export type ReuseClip = {
 
 export const MEDIA_APPEARANCES: MediaAppearance[] = [
   {
+    id: "creative-people-roundtable",
+    title: "The Independence of Creativity",
+    outlet: "Creative People Roundtable",
+    description:
+      "A live roundtable conversation on independent creativity, staying true to the page, and writing across genres.",
+    url: "https://www.youtube.com/watch?v=qtLExs4FI24",
+    book: "Wounded Angels",
+    format: "PodcastEpisode",
+    published: "2026-11-16",
+    embedUrl: "https://www.youtube-nocookie.com/embed/qtLExs4FI24",
+  },
+  {
+    id: "stories-from-real-life",
+    title: "From Childhood Trauma to the Freedom of Recovery",
+    outlet: "Stories from Real Life — Episode 229",
+    description:
+      "David speaks with Melvin Edwards about childhood trauma, emotional recovery, and writing Wounded Angels inside healing as it happened.",
+    url: "https://www.podcastreallife.com/david-deane-haskell-from-childhood-trauma-to-the-freedom-of-recovery/",
+    book: "Wounded Angels",
+    format: "PodcastEpisode",
+    published: "2026-11-10",
+  },
+  {
+    id: "review-it-yourself",
+    title: "Sci-Fi Films and The Solarian Deep",
+    outlet: "Review It Yourself",
+    description:
+      "A conversation about science-fiction cinema, oceanpunk worldbuilding, and The Solarian Deep.",
+    url: "https://shows.acast.com/review-it-yourself/episodes/sci-fi-films-and-the-solarian-deep-with-author-david-deane-h",
+    book: "The Solarian Deep",
+    format: "PodcastEpisode",
+    published: "2026-10-24",
+  },
+  {
+    id: "nina-soden-interview",
+    title: "Author Interview with David Deane Haskell",
+    outlet: "Nina Soden",
+    description:
+      "An author Q&A covering David Deane Haskell's speculative fiction, storytelling process, and The Solarian Deep.",
+    url: "https://ninasoden.com/2026/09/18/author-interview-with-david-deane-haskell/",
+    book: "The Solarian Deep",
+    format: "Article",
+    published: "2026-09-18",
+  },
+  {
     id: "willpower",
     title: "What Happens After Rock Bottom: Inner Child Work & Honest Recovery",
     outlet: "TheWillpowerPodcast",
